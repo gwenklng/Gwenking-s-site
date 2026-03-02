@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/moulo/Downloads/gwenking_1.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GWENKING ✂</title>
+<link href="./GWENKING ✂_files/css2" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#faf8ff;--card:#f7f4ff;--border:#e0d8f5;--violet:#7c5cbf;--lilas:#a87dd4;--pale:#3d2566;--muted:#b0a0cc;--nerf:#d4607a;--buff:#4faa80;--neutral:#c4a040;--text:#4a3870;--blush:#fde8f4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;cursor:none!important;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden;}
+
+/* DECO */
+.deco-layer{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.deco-item{position:absolute;animation:floatD var(--d,8s) ease-in-out infinite var(--dl,0s);opacity:var(--o,.15);left:var(--x);top:var(--y);}
+@keyframes floatD{0%,100%{transform:rotate(var(--r,0deg)) translateY(0);}50%{transform:rotate(calc(var(--r,0deg)+6deg)) translateY(-14px);}}
+.wrapper{position:relative;z-index:1;}
+
+/* HERO */
+.hero{text-align:center;padding:100px 24px 80px;border-bottom:1px solid var(--border);}
+.hero-tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;}
+.hero-tag::before,.hero-tag::after{content:'✂';color:var(--violet);font-size:15px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,7rem);font-weight:300;color:var(--pale);letter-spacing:10px;line-height:1;margin-bottom:8px;}
+.hero h1 em{font-style:italic;color:var(--violet);}
+.hero-sub{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:52px;}
+
+/* SOCIALS */
+.socials{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
+.soc{position:relative;display:flex;align-items:center;gap:10px;padding:12px 28px;text-decoration:none;color:var(--violet);font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1.5px solid var(--border);background:var(--surface);transition:all .3s;overflow:hidden;border-radius:30px;}
+.soc::before{content:'✂';position:absolute;left:-24px;font-size:15px;color:var(--violet);transition:left .3s;}
+.soc:hover{border-color:var(--violet);color:var(--pale);background:var(--blush);padding-left:38px;box-shadow:0 4px 20px rgba(124,92,191,.12);}
+.soc:hover::before{left:13px;}
+.soc svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;}
+
+/* MAIN */
+main{max-width:840px;margin:0 auto;padding:80px 24px 120px;}
+.section-head{display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+.section-head h2{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(--violet);white-space:nowrap;}
+.section-head .snips{color:var(--muted);font-size:15px;letter-spacing:4px;}
+.section-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+
+/* PATCHES */
+.patches{display:flex;flex-direction:column;gap:10px;}
+.patch{background:var(--card);border:1.5px solid var(--border);padding:40px 44px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s;animation:slideIn .5s ease both;border-radius:6px;}
+.patch:nth-child(2){animation-delay:.07s;}.patch:nth-child(3){animation-delay:.14s;}.patch:nth-child(4){animation-delay:.21s;}.patch:nth-child(5){animation-delay:.28s;}
+@keyframes slideIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.patch::before{content:'✂';position:absolute;top:20px;right:24px;font-size:20px;color:var(--border);transition:color .25s,transform .3s;}
+.patch::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ab,var(--muted));opacity:.6;border-radius:2px 0 0 2px;}
+.patch.nerf{--ab:var(--nerf);}.patch.buff{--ab:var(--buff);}.patch.neutral{--ab:var(--neutral);}
+.patch:hover{border-color:rgba(124,92,191,.35);box-shadow:0 6px 30px rgba(124,92,191,.08);}
+.patch:hover::before{color:var(--muted);transform:rotate(18deg) scale(1.1);}
+.patch-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.patch-name{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--pale);letter-spacing:2px;}
+.patch-right{display:flex;align-items:center;gap:12px;}
+.patch-date{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.badge{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;font-weight:500;}
+.badge.nerf{background:rgba(212,96,122,.1);color:var(--nerf);border:1.5px solid rgba(212,96,122,.25);}
+.badge.buff{background:rgba(79,170,128,.1);color:var(--buff);border:1.5px solid rgba(79,170,128,.25);}
+.badge.neutral{background:rgba(196,160,64,.1);color:var(--neutral);border:1.5px solid rgba(196,160,64,.25);}
+.patch-summary{font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:20px;}
+.changes{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.changes li{font-size:13px;line-height:1.7;padding-left:22px;position:relative;color:var(--text);}
+.changes li::before{content:'✂';position:absolute;left:0;font-size:11px;color:var(--muted);}
+.changes li.nerf{color:#b84060;}.changes li.buff{color:#2e8060;}
+
+/* RUNES */
+.runes-section{margin-top:80px;}
+.runes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.rune-card{background:var(--card);border:1.5px solid var(--border);padding:28px 26px 24px;position:relative;transition:border-color .25s,box-shadow .25s;border-radius:8px;}
+.rune-card::before{content:'✂';position:absolute;top:14px;right:16px;font-size:13px;color:var(--border);}
+.rune-card:hover{border-color:rgba(124,92,191,.35);box-shadow:0 6px 24px rgba(124,92,191,.08);}
+.rune-card-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.rune-game-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.rune-result{font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
+.rune-result.win{color:var(--buff);border:1.5px solid rgba(79,170,128,.3);background:rgba(79,170,128,.07);}
+.rune-result.jng{color:var(--violet);border:1.5px solid rgba(124,92,191,.3);background:rgba(124,92,191,.07);}
+.rune-card h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--pale);letter-spacing:1px;margin-bottom:16px;}
+.rune-path-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:6px;margin-top:12px;}
+.rune-path:first-of-type .rune-path-label{margin-top:0;}
+.rune-row{display:flex;flex-wrap:wrap;gap:6px;}
+.rune-pill{font-size:11px;padding:4px 12px;border:1.5px solid var(--border);color:var(--text);background:var(--surface);border-radius:20px;}
+.rune-pill.keystone{border-color:var(--violet);color:var(--violet);background:rgba(124,92,191,.08);font-weight:600;}
+.rune-hint{display:flex;align-items:center;gap:10px;margin-top:36px;padding:16px 20px;border:1.5px dashed var(--border);border-radius:8px;font-size:12px;color:var(--muted);}
+.rune-hint span{color:var(--violet);font-size:17px;}
+
+/* FOOTER */
+footer{border-top:1.5px solid var(--border);text-align:center;padding:44px 24px;}
+.footer-scissors{font-size:18px;letter-spacing:12px;color:var(--muted);margin-bottom:16px;opacity:.4;}
+footer p{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+footer a{color:var(--violet);text-decoration:none;}
+
+/* CURSOR */
+#sc-cursor{position:fixed;pointer-events:none;z-index:99999;left:-200px;top:-200px;transform:translate(-50%,-50%);}
+.snip-p{position:fixed;pointer-events:none;z-index:99998;font-size:var(--fs,15px);color:var(--col,#7c5cbf);animation:spFly var(--dur,.7s) ease-out forwards;}
+@keyframes spFly{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0) rotate(var(--tr));}}
+.snip-word{position:fixed;pointer-events:none;z-index:99998;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--violet);letter-spacing:2px;animation:spWord .85s ease-out forwards;white-space:nowrap;}
+@keyframes spWord{0%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-34px) scale(.75);}}
+
+/* ═══════════════════════
+   MINI GAME TAB
+═══════════════════════ */
+#game-tab{position:fixed;bottom:0;right:28px;z-index:8000;display:flex;flex-direction:column;align-items:stretch;width:300px;filter:drop-shadow(0 -2px 18px rgba(124,92,191,.2));}
+#game-toggle{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 0;background:var(--violet);color:#fff;border:none;border-radius:12px 12px 0 0;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:background .2s;}
+#game-toggle:hover{background:#5a3e9a;cursor:none!important;}
+#game-toggle .arr{transition:transform .3s;display:inline-block;}
+#game-panel{height:0;overflow:hidden;transition:height .35s cubic-bezier(.4,0,.2,1);background:#fff;border:2px solid var(--border);border-bottom:none;border-radius:12px 12px 0 0;position:relative;}
+#game-panel.open{height:440px;}
+#gc{display:block;width:100%;height:100%;}
+
+/* game overlay */
+#g-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,.94);z-index:20;transition:opacity .2s;border-radius:10px;}
+#g-ov.hidden{opacity:0;pointer-events:none;}
+#g-ov .gsc{font-size:38px;animation:gspin 2s ease-in-out infinite;margin-bottom:6px;}
+@keyframes gspin{0%,100%{transform:rotate(-14deg);}50%{transform:rotate(14deg) scale(1.08);}}
+#g-ov h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.45rem;color:var(--pale);letter-spacing:3px;margin-bottom:4px;}
+#g-ov .gsub{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+#g-ov .gds{font-size:13px;font-weight:700;color:var(--violet);margin-bottom:14px;display:none;}
+#g-btn{padding:9px 26px;background:var(--violet);color:#fff;border:none;border-radius:24px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background .2s;}
+#g-btn:hover{background:#5a3e9a;cursor:none!important;}
+#g-ui{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:5px 10px;background:rgba(255,255,255,.8);backdrop-filter:blur(4px);font-size:10px;font-weight:700;color:var(--violet);letter-spacing:2px;text-transform:uppercase;z-index:10;pointer-events:none;border-bottom:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<!-- DECO LAYER -->
+<div class="deco-layer" aria-hidden="true">
+  <!-- Chibi 1 -->
+  <div class="deco-item" style="--x:3%;--y:8%;--d:9s;--dl:0s;--o:.13;--r:-10deg">
+    <svg width="80" viewBox="0 0 80 110" fill="none">
+      <ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse>
+      <path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path>
+      <path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path>
+      <ellipse cx="40" cy="14" rx="10" ry="5" fill="#d4a8e8"></ellipse><circle cx="40" cy="14" r="4" fill="#c090d8"></circle>
+      <ellipse cx="28" cy="14" rx="7" ry="4" fill="#d4a8e8" opacity=".7" transform="rotate(-20 28 14)"></ellipse>
+      <ellipse cx="52" cy="14" rx="7" ry="4" fill="#d4a8e8" opacity=".7" transform="rotate(20 52 14)"></ellipse>
+      <ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse>
+      <ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse>
+      <circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle>
+      <ellipse cx="29" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
+      <ellipse cx="51" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
+      <path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
+      <path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path>
+      <path d="M32 52 Q40 55 48 52 L50 90 Q40 95 30 90Z" fill="#fff" opacity=".8"></path>
+      <path d="M24 56 Q10 65 12 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <path d="M56 56 Q70 65 68 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect>
+      <ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse>
+    </svg>
+  </div>
+  <!-- Chibi 2 -->
+  <div class="deco-item" style="--x:88%;--y:70%;--d:11s;--dl:2s;--o:.10;--r:8deg">
+    <svg width="64" viewBox="0 0 80 110" fill="none">
+      <ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse>
+      <path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path>
+      <path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path>
+      <ellipse cx="40" cy="14" rx="10" ry="5" fill="#f4c0d8"></ellipse><circle cx="40" cy="14" r="4" fill="#e090b8"></circle>
+      <ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse>
+      <ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse>
+      <circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle>
+      <ellipse cx="29" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
+      <ellipse cx="51" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
+      <path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
+      <path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path>
+      <path d="M32 52 Q40 55 48 52 L50 90 Q40 95 30 90Z" fill="#fff" opacity=".8"></path>
+      <path d="M24 56 Q10 65 12 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <path d="M56 56 Q70 65 68 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect>
+      <ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse>
+    </svg>
+  </div>
+  <!-- Chibi 3 -->
+  <div class="deco-item" style="--x:1%;--y:50%;--d:13s;--dl:4s;--o:.08;--r:5deg">
+    <svg width="56" viewBox="0 0 80 110" fill="none">
+      <ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse>
+      <path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path>
+      <path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path>
+      <ellipse cx="40" cy="14" rx="10" ry="5" fill="#d4a8e8"></ellipse><circle cx="40" cy="14" r="4" fill="#c090d8"></circle>
+      <ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse>
+      <ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse>
+      <circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle>
+      <ellipse cx="29" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
+      <ellipse cx="51" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
+      <path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
+      <path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path>
+      <path d="M32 52 Q40 55 48 52 L50 90 Q40 95 30 90Z" fill="#fff" opacity=".8"></path>
+      <path d="M24 56 Q10 65 12 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <path d="M56 56 Q70 65 68 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect>
+      <ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse>
+    </svg>
+  </div>
+  <!-- Flowers -->
+  <div class="deco-item" style="--x:82%;--y:5%;--d:10s;--dl:1s;--o:.18;--r:15deg"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><g transform="translate(26,26)"><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(288)"></ellipse><circle r="7" fill="#ffe8a0"></circle><circle r="3" fill="#f4d060"></circle></g></svg></div>
+  <div class="deco-item" style="--x:46%;--y:3%;--d:12s;--dl:3s;--o:.14;--r:-8deg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><g transform="translate(24,24)"><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(60)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(120)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(180)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(240)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(300)"></ellipse><circle r="6" fill="#ffe0c8"></circle><circle r="2.5" fill="#f4c090"></circle></g></svg></div>
+  <div class="deco-item" style="--x:12%;--y:80%;--d:8s;--dl:0.5s;--o:.16;--r:20deg"><svg width="44" height="44" viewBox="0 0 44 44" fill="none"><g transform="translate(22,22)"><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(288)"></ellipse><circle r="6" fill="#ffeea0"></circle><circle r="2.5" fill="#f8d840"></circle></g></svg></div>
+  <div class="deco-item" style="--x:93%;--y:38%;--d:14s;--dl:6s;--o:.12;--r:-15deg"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><g transform="translate(28,28)"><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(288)"></ellipse><circle r="7" fill="#ffe8c0"></circle><circle r="3" fill="#f8d070"></circle></g></svg></div>
+  <div class="deco-item" style="--x:38%;--y:92%;--d:11s;--dl:4.5s;--o:.15;--r:-5deg"><svg width="50" height="50" viewBox="0 0 50 50" fill="none"><g transform="translate(25,25)"><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(288)"></ellipse><circle r="7" fill="#fff0b0"></circle><circle r="3" fill="#f8e040"></circle></g></svg></div>
+</div>
+
+<!-- WRAPPER -->
+<div class="wrapper">
+<header class="hero">
+  <div class="hero-tag">League of Legends</div>
+  <h1>GWEN<em>KING</em></h1>
+  <p class="hero-sub">Patch Tracker &amp; Runes</p>
+  <div class="socials">
+    <a class="soc" href="https://www.twitch.tv/gwenking_" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"></path></svg>Twitch
+    </a>
+    <a class="soc" href="https://www.tiktok.com/@gwenklng" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"></path></svg>TikTok
+    </a>
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_1.html#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube
+    </a>
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_1.html#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="section-head"><h2>Historique des patchs</h2><span class="snips">✂ ✂ ✂</span></div>
+  <div class="patches">
+    <div class="patch nerf">
+      <div class="patch-top"><span class="patch-name">Patch 26.4</span><div class="patch-right"><span class="patch-date">19 Fév 2026</span><span class="badge nerf">Nerf</span></div></div>
+      <p class="patch-summary">Gwen trop dominante avec le nouvel item Dusk &amp; Dawn. Riot réduit le burst sur le Q et les dégâts d'ulti, sans toucher à la montée en puissance globale.</p>
+      <ul class="changes">
+        <li class="nerf"><strong>Q — Snip Snip! :</strong> Dégâts par snip 10/15/20/25/30 → 10/13.5/17/20.5/24</li>
+        <li class="nerf"><strong>Q — Minion damage :</strong> Augmenté à 80% (compensation laning)</li>
+        <li class="nerf"><strong>R — Needlework :</strong> Dégâts par aiguille 35/65/95 → 30/50/70</li>
+        <li class="nerf">Jungle Gwen affaiblie — cap de dégâts monstres réduit</li>
+      </ul>
+    </div>
+    <div class="patch neutral">
+      <div class="patch-top"><span class="patch-name">Patch 25.21</span><div class="patch-right"><span class="patch-date">22 Oct 2025</span><span class="badge neutral">Ajustement</span></div></div>
+      <p class="patch-summary">Riot revient presque à la version pre-25.06. Le nouveau style de jeu était jugé moins satisfaisant. Deux exceptions : armure growth réduite et jungle moins forte.</p>
+      <ul class="changes">
+        <li>Retour global à la version pre-25.06</li>
+        <li class="nerf">Armure par niveau légèrement réduite</li>
+        <li class="nerf">Jungle Gwen affaiblie</li>
+      </ul>
+    </div>
+    <div class="patch nerf">
+      <div class="patch-top"><span class="patch-name">Patch 25.9</span><div class="patch-right"><span class="patch-date">Avr 2025</span><span class="badge nerf">Nerf</span></div></div>
+      <p class="patch-summary">Gwen monte en priorité en Pro Play. Son impact early et en jungle était trop élevé avec trop peu de counterplay.</p>
+      <ul class="changes">
+        <li class="nerf">Jungle Gwen ciblée — counterplay réduit en early</li>
+        <li class="nerf">Follow-up des changements 25.06 et 25.08</li>
+      </ul>
+    </div>
+    <div class="patch nerf">
+      <div class="patch-top"><span class="patch-name">Patch 25.8</span><div class="patch-right"><span class="patch-date">Avr 2025</span><span class="badge nerf">Nerf</span></div></div>
+      <p class="patch-summary">Trop forte en early game post-rework. Riot ajuste les dégâts on-hit du E pour rééquilibrer.</p>
+      <ul class="changes">
+        <li class="nerf"><strong>E — Skip 'n Slash :</strong> Dégâts on-hit 12/14/16/18/20 → 8/11/14/17/20 (+25% AP)</li>
+      </ul>
+    </div>
+    <div class="patch buff">
+      <div class="patch-top"><span class="patch-name">Patch 25.6</span><div class="patch-right"><span class="patch-date">Mars 2025</span><span class="badge buff">Rework de courbe</span></div></div>
+      <p class="patch-summary">Grand changement — Riot veut que Gwen soit forte en early et en lane, pas uniquement une carry qui scale pour ulti.</p>
+      <ul class="changes">
+        <li class="buff">Nouveau mécanisme : passage en untargetable possible</li>
+        <li class="buff"><strong>Q :</strong> Dégâts early augmentés</li>
+        <li class="buff">HP de base 600→620 | HP growth 110→115 | Armure de base 33→39</li>
+        <li class="nerf">Attack speed growth légèrement réduit</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="runes-section">
+    <div class="section-head"><h2>Mes runes</h2><span class="snips">✂ ✂</span></div>
+    <div class="runes-grid">
+      <div class="rune-card">
+        <div class="rune-card-meta"><span class="rune-game-tag">Jungle · Page 1</span><span class="rune-result jng">GWEB FS</span></div>
+        <h4>Gwen — Jungle</h4>
+        <div class="rune-path"><div class="rune-path-label">Inspiration</div><div class="rune-row"><span class="rune-pill keystone">Premier Coup</span><span class="rune-pill">Remise Immédiate</span><span class="rune-pill">Triple Tonique</span><span class="rune-pill">Savoir Cosmique</span></div></div>
+        <div class="rune-path"><div class="rune-path-label">Précision (secondaire)</div><div class="rune-row"><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Coup de Grâce</span></div></div>
+        <div class="rune-path"><div class="rune-path-label">Statistiques</div><div class="rune-row"><span class="rune-pill">+Vitesse d'attaque</span><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+PV</span></div></div>
+      </div>
+      <div class="rune-card">
+        <div class="rune-card-meta"><span class="rune-game-tag">Jungle · Page 2</span><span class="rune-result jng">GWEN MF FS</span></div>
+        <h4>Gwen — Jungle (variante)</h4>
+        <div class="rune-path"><div class="rune-path-label">Sorcellerie</div><div class="rune-row"><span class="rune-pill keystone">Premier Coup</span><span class="rune-pill">Marche sur l'Eau</span><span class="rune-pill">Célérité</span><span class="rune-pill">Vitesse d'Approche</span></div></div>
+        <div class="rune-path"><div class="rune-path-label">Précision (secondaire)</div><div class="rune-row"><span class="rune-pill">Remise Immédiate</span><span class="rune-pill">Triple Tonique</span></div></div>
+        <div class="rune-path"><div class="rune-path-label">Statistiques</div><div class="rune-row"><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+PV</span></div></div>
+      </div>
+      <div class="rune-card">
+        <div class="rune-card-meta"><span class="rune-game-tag">Top Lane · Page 3</span><span class="rune-result win">Gwen Top</span></div>
+        <h4>Gwen — Top Lane</h4>
+        <div class="rune-path"><div class="rune-path-label">Précision</div><div class="rune-row"><span class="rune-pill keystone">Conquérant</span><span class="rune-pill">Présence d'Esprit</span><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Coup de Grâce</span></div></div>
+        <div class="rune-path"><div class="rune-path-label">Résolution (secondaire)</div><div class="rune-row"><span class="rune-pill">Démolition</span><span class="rune-pill">Inébranlable</span></div></div>
+        <div class="rune-path"><div class="rune-path-label">Statistiques</div><div class="rune-row"><span class="rune-pill">+Vitesse d'attaque</span><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+PV</span></div></div>
+      </div>
+    </div>
+    <div class="rune-hint"><span>✂</span> Mets à jour tes runes en remplaçant le texte dans les balises <code>&lt;span class="rune-pill"&gt;</code>.</div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-scissors">✂ ✂ ✂ ✂ ✂</div>
+  <p>GWENKING &nbsp;—&nbsp; LoL Patch Tracker &nbsp;—&nbsp; <a href="https://www.twitch.tv/gwenking_" target="_blank">twitch.tv/gwenking_</a></p>
+</footer>
+</div>
+
+<!-- ═══════════════════════════════
+     MINI GAME TAB
+═══════════════════════════════ -->
+<div id="game-tab">
+  <div id="game-panel">
+    <div id="g-ui"><span id="g-score">0</span><span id="g-best">Best: 0</span></div>
+    <canvas id="gc" width="296" height="420"></canvas>
+    <div id="g-ov">
+      <div class="gsc">✂</div>
+      <h3>Snip Jump</h3>
+      <p class="gsub">Grimpe le plus haut !</p>
+      <div class="gds" id="g-ds"></div>
+      <button id="g-btn">Jouer ✂</button>
+      <p style="margin-top:10px;font-size:9px;color:#b0a0cc;letter-spacing:1.5px;text-transform:uppercase;">← → bouger · évite les ciseaux rouges</p>
+    </div>
+  </div>
+  <button id="game-toggle"><span class="arr">▲</span>&nbsp;✂ Snip Jump</button>
+</div>
+
+<!-- SCISSORS CURSOR SVG -->
+<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="left: 874px; top: 422px;">
+  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(0deg);">
+    <line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line>
+    <circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle>
+    <line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line>
+  </g>
+  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(0deg);">
+    <line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line>
+    <circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle>
+    <line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line>
+  </g>
+  <circle cx="21" cy="21" r="3.8" fill="#7c5cbf"></circle>
+  <circle cx="21" cy="21" r="1.6" fill="white"></circle>
+</svg>
+
+<script>
+/* ══════════════════════════════════════
+   SCISSORS CURSOR
+══════════════════════════════════════ */
+(function(){
+  const cur=document.getElementById('sc-cursor');
+  const bt=document.getElementById('sc-top');
+  const bb=document.getElementById('sc-bot');
+  let ca=0,ta=0,snipping=false;
+
+  document.addEventListener('mousemove',e=>{
+    cur.style.left=e.clientX+'px';
+    cur.style.top=e.clientY+'px';
+  });
+
+  let stimer=null;
+  window.addEventListener('scroll',()=>{
+    const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+    const p=window.scrollY/max;
+    ta=Math.sin(p*Math.PI)*30;
+    clearTimeout(stimer);
+    stimer=setTimeout(()=>{ta=0;},600);
+  },{passive:true});
+
+  (function tick(){
+    ca+=(ta-ca)*0.1;
+    if(!snipping){
+      bt.style.transform=`rotate(${-ca}deg)`;
+      bb.style.transform=`rotate(${ca}deg)`;
+    }
+    requestAnimationFrame(tick);
+  })();
+
+  const STARS=['★','✦','✧','✩','⋆','✂'];
+  const COLS=['#7c5cbf','#a87dd4','#f4b8d8','#c4a8e8','#ffe8a0','#d4b8f0','#b0c8f4'];
+  const WORDS=['snip !','snip snip !','✂~','snip~'];
+
+  document.addEventListener('click',e=>{
+    // don't fire inside game canvas
+    if(e.target.id==='gc')return;
+    stars(e.clientX,e.clientY);
+    word(e.clientX,e.clientY);
+    doSnip();
+  });
+
+  function doSnip(){
+    if(snipping)return;
+    snipping=true;
+    const seq=[28,8,32,6,24,2,0];
+    let i=0;
+    (function s(){
+      if(i>=seq.length){snipping=false;return;}
+      bt.style.transform=`rotate(${-seq[i]}deg)`;
+      bb.style.transform=`rotate(${seq[i]}deg)`;
+      i++;setTimeout(s,50);
+    })();
+  }
+
+  function stars(x,y){
+    const n=8+Math.floor(Math.random()*6);
+    for(let i=0;i<n;i++){
+      const el=document.createElement('span');
+      el.className='snip-p';
+      const ang=(i/n)*360+Math.random()*25;
+      const dist=26+Math.random()*52;
+      const tx=Math.cos(ang*Math.PI/180)*dist;
+      const ty=Math.sin(ang*Math.PI/180)*dist-10;
+      const fs=(9+Math.random()*12)+'px';
+      const col=COLS[Math.floor(Math.random()*COLS.length)];
+      const dur=(0.4+Math.random()*0.5)+'s';
+      const tr=(Math.random()>.5?'':'-')+Math.floor(Math.random()*360)+'deg';
+      el.textContent=STARS[Math.floor(Math.random()*STARS.length)];
+      el.style.cssText=`left:${x}px;top:${y}px;--tx:${tx}px;--ty:${ty}px;--fs:${fs};--col:${col};--dur:${dur};--tr:${tr}`;
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),900);
+    }
+  }
+
+  function word(x,y){
+    const el=document.createElement('span');
+    el.className='snip-word';
+    el.textContent=WORDS[Math.floor(Math.random()*WORDS.length)];
+    el.style.left=(x-20+(Math.random()*16-8))+'px';
+    el.style.top=(y-12)+'px';
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),900);
+  }
+})();
+
+/* ══════════════════════════════════════
+   MINI GAME
+══════════════════════════════════════ */
+(function(){
+  const panel=document.getElementById('game-panel');
+  const toggle=document.getElementById('game-toggle');
+  const arr=toggle.querySelector('.arr');
+  let open=false;
+
+  toggle.addEventListener('click',()=>{
+    open=!open;
+    panel.classList.toggle('open',open);
+    arr.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+  });
+
+  const canvas=document.getElementById('gc');
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width, H=canvas.height;
+  const scoreEl=document.getElementById('g-score');
+  const bestEl=document.getElementById('g-best');
+  const ov=document.getElementById('g-ov');
+  const ds=document.getElementById('g-ds');
+  const btn=document.getElementById('g-btn');
+  const title=ov.querySelector('h3');
+  const sub=ov.querySelector('.gsub');
+
+  const GRAV=0.35, JV=-10.5, SPD=4.2, PW=58, PH=11;
+  let state='idle', score=0, best=0, scrollOff=0, frame=0;
+  let plats=[], enemies=[], parts=[];
+  let keys={};
+
+  const P={x:W/2,y:H-80,vx:0,vy:0,facing:1};
+
+  function genPlats(){
+    plats=[];
+    plats.push({x:W/2-35,y:H-55,w:70,h:PH,spring:false,mv:false,vx:0});
+    let yy=H-120;
+    while(yy>-H*25){
+      const x=8+Math.random()*(W-PW-16);
+      const sp=Math.random()<0.13;
+      const mv=!sp&&Math.random()<0.18&&yy<-200;
+      plats.push({x,y:yy,w:sp?PW+8:PW,h:PH,spring:sp,mv,vx:mv?(Math.random()<.5?1.3:-1.3):0});
+      yy-=52+Math.random()*42;
+    }
+  }
+
+  function init(){
+    score=0; scrollOff=0; frame=0; enemies=[]; parts=[];
+    P.x=W/2; P.y=H-80; P.vx=0; P.vy=0; P.facing=1;
+    genPlats();
+  }
+
+  function spawnEnemy(){
+    enemies.push({
+      x:Math.random()*(W-28)+14,
+      worldY: scrollOff - H - Math.random()*200,
+      vx:(Math.random()<.5?1:-1)*(0.9+Math.random()*1.1),
+      t:Math.random()*100
+    });
+  }
+
+  function update(){
+    if(state!=='playing')return;
+    frame++;
+
+    if(score>400 && frame%Math.max(55,190-Math.floor(score/8))===0) spawnEnemy();
+
+    // input
+    if(keys['ArrowLeft']||keys['a']){P.vx=-SPD;P.facing=-1;}
+    else if(keys['ArrowRight']||keys['d']){P.vx=SPD;P.facing=1;}
+    else P.vx*=0.75;
+
+    P.vy+=GRAV;
+    P.x+=P.vx;
+    P.y+=P.vy;
+
+    // wrap
+    if(P.x<-10)P.x=W+10;
+    if(P.x>W+10)P.x=-10;
+
+    // camera
+    const thresh=H*0.4;
+    if(P.y<thresh){
+      const dy=thresh-P.y;
+      scrollOff+=dy;
+      P.y=thresh;
+      score+=Math.round(dy*0.55);
+      scoreEl.textContent=score;
+      if(score>best){best=score;bestEl.textContent='Best: '+best;}
+    }
+
+    // platform collision (falling only)
+    if(P.vy>0){
+      for(const pl of plats){
+        const sy=pl.y+scrollOff;
+        if(P.x+10>pl.x && P.x-10<pl.x+pl.w &&
+           P.y+14>sy && P.y+14<sy+pl.h+P.vy+2){
+          P.vy=pl.spring?JV*1.5:JV;
+          P.y=sy-14;
+          spawnParts(P.x,sy,pl.spring?'#a87dd4':'#d4b8f0',pl.spring?10:5);
+        }
+      }
+    }
+
+    // move platforms
+    for(const pl of plats){
+      if(pl.mv){pl.x+=pl.vx;if(pl.x<4||pl.x+pl.w>W-4)pl.vx*=-1;}
+    }
+
+    // enemies — stored in world coords, displayed as worldY + scrollOff
+    for(let i=enemies.length-1;i>=0;i--){
+      const e=enemies[i];
+      e.x+=e.vx; e.t++;
+      if(e.x<10||e.x>W-10)e.vx*=-1;
+      const ey=e.worldY+scrollOff;
+      // player collision
+      if(Math.abs(P.x-e.x)<16&&Math.abs(P.y-ey)<16){die();return;}
+      // remove if far below
+      if(ey>H+60)enemies.splice(i,1);
+    }
+
+    // particles
+    for(let i=parts.length-1;i>=0;i--){
+      const p=parts[i];
+      p.x+=p.vx;p.y+=p.vy;p.vy+=0.1;p.life-=0.045;
+      if(p.life<=0)parts.splice(i,1);
+    }
+
+    // death: fell below
+    if(P.y>H+50)die();
+  }
+
+  function die(){
+    state='dead';
+    title.textContent='Game Over';
+    sub.textContent='Tu peux faire mieux !';
+    ds.style.display='block';
+    ds.textContent='Score : '+score;
+    btn.textContent='Rejouer ✂';
+    ov.classList.remove('hidden');
+  }
+
+  function spawnParts(x,y,col,n){
+    for(let i=0;i<n;i++){
+      const a=Math.random()*Math.PI*2;
+      const s=1.5+Math.random()*2.5;
+      parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-1.5,life:1,col});
+    }
+  }
+
+  // DRAW
+  function drawBg(){
+    const prog=Math.min(1,score/1800);
+    const g=ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,`hsl(270,${35+prog*25}%,${97-prog*8}%)`);
+    g.addColorStop(1,'#ffffff');
+    ctx.fillStyle=g;
+    ctx.fillRect(0,0,W,H);
+    // subtle dots
+    ctx.fillStyle='rgba(180,150,220,.04)';
+    for(let x=0;x<W;x+=24)for(let y=0;y<H;y+=24)ctx.fillRect(x,y,2,2);
+  }
+
+  function drawPlat(pl){
+    const sy=pl.y+scrollOff;
+    if(sy<-PH||sy>H+PH)return;
+    ctx.beginPath();
+    ctx.roundRect(pl.x,sy,pl.w,pl.h,5);
+    const g=ctx.createLinearGradient(pl.x,sy,pl.x,sy+pl.h);
+    if(pl.spring){g.addColorStop(0,'#a87dd4');g.addColorStop(1,'#7c5cbf');}
+    else{g.addColorStop(0,'#d4b8f0');g.addColorStop(1,'#c0a0e0');}
+    ctx.fillStyle=g;
+    ctx.fill();
+    // shine
+    ctx.beginPath();ctx.roundRect(pl.x+4,sy+2,pl.w-8,3,2);
+    ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();
+    if(pl.spring){
+      ctx.font='9px sans-serif';ctx.fillStyle='#fff';
+      ctx.textAlign='center';ctx.fillText('✂',pl.x+pl.w/2,sy+PH-1);
+    }
+  }
+
+  function drawPlayerSc(x,y,facing,vy){
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.scale(facing,1);
+    const open=Math.max(0,Math.min(32,vy>0?vy*2.2:6));
+    const r=open*Math.PI/180;
+    // top blade
+    ctx.save();ctx.rotate(-r);
+    ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(13,-11);
+    ctx.strokeStyle='#3d2566';ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(-5,7,6,0,Math.PI*2);
+    ctx.strokeStyle='#7c5cbf';ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='rgba(196,168,232,.25)';ctx.fill();
+    ctx.restore();
+    // bottom blade
+    ctx.save();ctx.rotate(r);
+    ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(13,11);
+    ctx.strokeStyle='#3d2566';ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(-5,-7,6,0,Math.PI*2);
+    ctx.strokeStyle='#7c5cbf';ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='rgba(196,168,232,.25)';ctx.fill();
+    ctx.restore();
+    // pivot
+    ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);
+    ctx.fillStyle='#7c5cbf';ctx.fill();
+    ctx.restore();
+  }
+
+  function drawEnemySc(e){
+    const ey=e.worldY+scrollOff;
+    if(ey<-30||ey>H+30)return;
+    ctx.save();ctx.translate(e.x,ey);
+    ctx.rotate(Math.sin(e.t*0.05)*0.5);
+    const open=18+Math.sin(e.t*0.09)*16;
+    const r=open*Math.PI/180;
+    ctx.save();ctx.rotate(-r);
+    ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(12,-10);
+    ctx.strokeStyle='#8a2040';ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(-4,7,5,0,Math.PI*2);
+    ctx.strokeStyle='#d4607a';ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='rgba(212,96,122,.2)';ctx.fill();
+    ctx.restore();
+    ctx.save();ctx.rotate(r);
+    ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(12,10);
+    ctx.strokeStyle='#8a2040';ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(-4,-7,5,0,Math.PI*2);
+    ctx.strokeStyle='#d4607a';ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='rgba(212,96,122,.2)';ctx.fill();
+    ctx.restore();
+    ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);
+    ctx.fillStyle='#d4607a';ctx.fill();
+    ctx.restore();
+  }
+
+  function drawParts(){
+    for(const p of parts){
+      ctx.save();ctx.globalAlpha=p.life;
+      ctx.fillStyle=p.col;
+      ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    drawBg();
+    for(const pl of plats)drawPlat(pl);
+    for(const e of enemies)drawEnemySc(e);
+    drawPlayerSc(P.x,P.y,P.facing,P.vy);
+    drawParts();
+  }
+
+  function loop(){
+    update();draw();
+    requestAnimationFrame(loop);
+  }
+
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    init();
+    state='playing';
+    ov.classList.add('hidden');
+    P.vy=JV;
+  });
+
+  // keys — only active when panel is open
+  window.addEventListener('keydown',e=>{if(open)keys[e.key]=true;});
+  window.addEventListener('keyup',e=>{keys[e.key]=false;});
+
+  // touch controls on canvas
+  let tx0=null;
+  canvas.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{passive:true});
+  canvas.addEventListener('touchmove',e=>{
+    if(tx0===null)return;
+    const dx=e.touches[0].clientX-tx0;
+    keys['ArrowLeft']=dx<-8;
+    keys['ArrowRight']=dx>8;
+  },{passive:true});
+  canvas.addEventListener('touchend',()=>{keys['ArrowLeft']=keys['ArrowRight']=false;tx0=null;});
+
+  loop();
+})();
+</script>
+
+
+</body></html>
