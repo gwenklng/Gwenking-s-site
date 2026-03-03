@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/moulo/Downloads/gwenking_10.html -->
+<!-- saved from url=(0049)file:///C:/Users/moulo/Downloads/gwenking_11.html -->
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,6 +133,42 @@ main{max-width:940px;margin:0 auto;padding:80px 24px 180px;}
 .calc-stat-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
 /* SKINS */
 .skins-filter{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+/* PRO PERFORMANCES */
+.pro-wrap{position:relative;overflow:hidden;border-radius:12px;}
+.pro-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);}
+.pro-card{min-width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:28px 32px;position:relative;overflow:hidden;box-sizing:border-box;}
+.pro-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--pc,var(--violet));border-radius:2px 2px 0 0;}
+.pro-card::after{content:'✂';position:absolute;bottom:18px;right:22px;font-size:40px;color:var(--border);opacity:.5;}
+.pro-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px;}
+.pro-player{display:flex;flex-direction:column;gap:3px;}
+.pro-name{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:var(--pale);letter-spacing:2px;line-height:1;}
+.pro-team{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);}
+.pro-event{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.pro-badges{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start;}
+.pro-badge{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:20px;font-weight:600;}
+.pro-badge.win{background:rgba(79,170,128,.1);color:var(--buff);border:1.5px solid rgba(79,170,128,.3);}
+.pro-badge.mvp{background:rgba(240,192,64,.12);color:#a07000;border:1.5px solid rgba(240,192,64,.35);}
+.pro-badge.intl{background:rgba(168,125,212,.12);color:var(--lilas);border:1.5px solid rgba(168,125,212,.3);}
+.pro-badge.record{background:rgba(212,96,122,.1);color:var(--nerf);border:1.5px solid rgba(212,96,122,.25);}
+.pro-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px;margin-bottom:18px;}
+.pro-stat{background:var(--surface);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;}
+.pro-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--pale);line-height:1;margin-bottom:2px;}
+.pro-stat-val.gold{color:#c4a040;}.pro-stat-val.green{color:var(--buff);}
+.pro-stat-lbl{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);}
+.pro-build-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:7px;}
+.pro-build{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+.pro-item{font-size:11px;padding:4px 11px;border:1.5px solid var(--border);border-radius:20px;color:var(--text);background:var(--surface);}
+.pro-item.mythic{border-color:var(--violet);color:var(--violet);background:rgba(124,92,191,.08);font-weight:600;}
+.pro-desc{font-size:13px;line-height:1.85;color:var(--muted);}
+.pro-desc strong{color:var(--pale);}
+.pro-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px;}
+.pro-dot{width:7px;height:7px;border-radius:50%;background:var(--border);transition:background .3s,transform .3s;}
+.pro-dot.active{background:var(--violet);transform:scale(1.4);}
+.pro-arrows{display:flex;gap:8px;}
+.pro-arr{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:all .2s;}
+.pro-arr:hover{border-color:var(--violet);color:var(--violet);}
+.pro-progress{position:absolute;bottom:0;left:0;height:2px;background:var(--violet);opacity:.35;transition:width linear;}
+.pro-auto-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
 .sf-btn{padding:6px 16px;border:1.5px solid var(--border);background:var(--surface);border-radius:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .2s;}
 .sf-btn.active,.sf-btn:hover{background:var(--violet);color:#fff;border-color:var(--violet);}
 .skins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:13px;}
@@ -268,8 +304,8 @@ footer a{color:var(--violet);text-decoration:none;}
   <div class="socials">
     <a class="soc" href="https://www.twitch.tv/gwenking_" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"></path></svg>Twitch</a>
     <a class="soc" href="https://www.tiktok.com/@gwenklng" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"></path></svg>TikTok</a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_10.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_10.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram</a>
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_11.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</a>
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_11.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram</a>
   </div>
 </header>
 <main>
@@ -284,9 +320,9 @@ footer a{color:var(--violet);text-decoration:none;}
     <div class="cd-sep">:</div>
     <div class="cd-unit"><div class="cd-num" id="cd-h">21</div><div class="cd-lbl">Heures</div></div>
     <div class="cd-sep">:</div>
-    <div class="cd-unit"><div class="cd-num" id="cd-m">51</div><div class="cd-lbl">Minutes</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">29</div><div class="cd-lbl">Minutes</div></div>
     <div class="cd-sep">:</div>
-    <div class="cd-unit"><div class="cd-num" id="cd-s">10</div><div class="cd-lbl">Secondes</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-s">15</div><div class="cd-lbl">Secondes</div></div>
   </div>
 </div>
 <div class="patches">
@@ -353,6 +389,164 @@ footer a{color:var(--violet);text-decoration:none;}
 </div>
 
 <!-- SKINS — tous officiels Riot vérifiés wiki -->
+
+<!-- PRO PERFORMANCES -->
+<div class="section-head"><h2>Meilleures performances pro</h2><span class="snips">✂</span><span class="live-badge"><span class="live-dot"></span>Toutes ligues</span></div>
+<p style="font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;">Source : <a href="https://gol.gg/champion/champion-stats/155/season-ALL/split-ALL/tournament-ALL/" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">gol.gg</a> · Toutes saisons · Toutes ligues</p>
+<div id="pro-ts" class="last-update">Données vérifiées · gol.gg · luckbox.com · invenglobal.com</div>
+<div class="pro-wrap">
+  <div class="pro-track" id="pro-track" style="transform: translateX(0%);"><div class="pro-card" style="--pc:#4faa80">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Bin</div>
+          <div class="pro-team">Royal Never Give Up · LPL</div>
+          <div class="pro-event">MSI 2022 — Finale vs T1</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge win">Victoire</span><span class="pro-badge mvp">MVP</span><span class="pro-badge intl">International</span><span class="pro-badge record">Record</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val gold">13/0/3</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">77.8%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">5.2</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">18</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~820</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2022</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Conquérant · Triomphe · Légende Alacrité · Coup de Grâce</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Shadowflame</span><span class="pro-item">Rabadon's Deathcap</span><span class="pro-item">Zhonya's</span></div>
+      <p class="pro-desc"><strong>La performance la plus iconique de Gwen en pro play.</strong> Bin poste un scoreboard parfait <strong>13/0/3</strong> en Game 1 de la Finale MSI 2022 contre T1, champion invaincu en LCK. RNG remporte le titre MSI pour la 3ème fois consécutive. Son Gwen est décrit comme "une machine à tuer" — présence 87% du tournoi.</p>
+    </div><div class="pro-card" style="--pc:#a87dd4">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Szygenda</div>
+          <div class="pro-team">Team Vitality · LEC</div>
+          <div class="pro-event">LEC 2022 (saison régulière)</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge record">Record</span><span class="pro-badge win">Victoire</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val">—</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">88.9%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">5.5</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">9</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~780</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2022</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Conquérant · Triomphe · Légende Alacrité · Coup de Grâce</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Cosmic Drive</span><span class="pro-item">Rabadon's Deathcap</span><span class="pro-item">Void Staff</span></div>
+      <p class="pro-desc"><strong>Meilleur win rate Gwen de MSI/2022 toutes régions confondues</strong> avec <strong>88.9% WR</strong> et un KDA de 5.5. Szygenda s'impose comme le meilleur joueur Gwen d'Europe cette saison, dominant les lanes et les teamfights avec une efficacité redoutable.</p>
+    </div><div class="pro-card" style="--pc:#c4a040">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Zeus</div>
+          <div class="pro-team">T1 · LCK</div>
+          <div class="pro-event">MSI 2022 / Worlds 2022</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge intl">International</span><span class="pro-badge win">Victoire</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val">varies</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">71.4%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">3.6</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">14</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~750</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2022</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Conquérant · Présence d'Esprit · Légende Alacrité · Dernier Rempart</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Shadowflame</span><span class="pro-item">Cosmic Drive</span><span class="pro-item">Rabadon's Deathcap</span></div>
+      <p class="pro-desc"><strong>Zeus et son Gwen sont la réponse de T1</strong> à la domination LPL. Avec <strong>71.4% WR sur 14 parties</strong> à MSI 2022, il est le seul joueur capable de tenir tête à Bin. Leur duel en lane est devenu légendaire — Zeus refuse de ban Gwen et choisit de la mirror pour prouver son niveau.</p>
+    </div><div class="pro-card" style="--pc:#7c5cbf">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Nuguri</div>
+          <div class="pro-team">FunPlus Phoenix · LPL</div>
+          <div class="pro-event">LPL Summer 2021</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge mvp">MVP</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val">varies</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">~70%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~4.2</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~8</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~800</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2021</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Premier Coup · Remise Immédiate · Triple Tonique · Savoir Cosmique</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Demonic Embrace</span><span class="pro-item">Rabadon's Deathcap</span><span class="pro-item">Void Staff</span></div>
+      <p class="pro-desc"><strong>Nuguri est le premier grand joueur à populariser Gwen en pro play</strong> dès le LPL Summer 2021. Sa performance contre TES lui vaut le MVP du match — il prend le contrôle des teamfights et bat Top Esports 2-0 avec une Gwen dévastatrice, posant les bases du meta Gwen international.</p>
+    </div><div class="pro-card" style="--pc:#4faa80">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Kiin</div>
+          <div class="pro-team">DRX / KZ · LCK</div>
+          <div class="pro-event">LCK 2022</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge win">Victoire</span><span class="pro-badge intl">International</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val">varies</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">71.4%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">4.8</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">14</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~760</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2022</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Conquérant · Triomphe · Légende Alacrité · Coup de Grâce</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Cosmic Drive</span><span class="pro-item">Rabadon's Deathcap</span><span class="pro-item">Shadowflame</span></div>
+      <p class="pro-desc"><strong>Kiin est l'un des meilleurs joueurs Gwen de l'histoire du LCK</strong> avec un KDA de <strong>4.8 sur 14 parties</strong>. Sa Gwen est réputée pour son jeu de split-push et sa capacité à prendre des duels en 1v1 contre n'importe quel toplaner. Adversaire redouté en LCK.</p>
+    </div><div class="pro-card" style="--pc:#4faa80">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Bin</div>
+          <div class="pro-team">Bilibili Gaming · LPL</div>
+          <div class="pro-event">LPL 2023–2024</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge intl">International</span><span class="pro-badge win">Victoire</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val">varies</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">~68%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~4.1</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~22</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~790</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2024</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Conquérant · Triomphe · Légende Alacrité · Coup de Grâce</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Shadowflame</span><span class="pro-item">Cosmic Drive</span><span class="pro-item">Rabadon's Deathcap</span></div>
+      <p class="pro-desc"><strong>Bin continue sa domination sur Gwen avec BLG</strong> après son passage à RNG. Il emmène Bilibili Gaming aux Worlds 2024 avec une Gwen qui reste son pick signature — toujours aussi dominante en teamfight, confirmant son statut de meilleur joueur Gwen de l'histoire compétitive.</p>
+    </div><div class="pro-card" style="--pc:#d4607a">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">Cube</div>
+          <div class="pro-team">Royal Academy · LPL</div>
+          <div class="pro-event">LPL Spring 2022</div>
+        </div>
+        <div class="pro-badges"><span class="pro-badge win">Victoire</span></div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val">varies</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">61.5%</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">3.4</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">13</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">~710</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">2022</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">Conquérant · Triomphe · Légende Alacrité · Coup de Grâce</span></div>
+      <div class="pro-build"><span class="pro-item mythic">Riftmaker</span><span class="pro-item">Nashor's Tooth</span><span class="pro-item">Sorcerer's Shoes</span><span class="pro-item">Demonic Embrace</span><span class="pro-item">Rabadon's Deathcap</span><span class="pro-item">Void Staff</span></div>
+      <p class="pro-desc"><strong>Cube d'RA est l'un des joueurs Gwen les plus constants du LPL</strong> avec <strong>61.5% WR sur 13 parties</strong> en 2022. Sa capacité à performer en académie avec Gwen lui permet d'attirer l'attention des équipes principales. Un des premiers à maîtriser le build Riftmaker + Nashor's optimal.</p>
+    </div></div>
+  <div class="pro-progress" id="pro-prog" style="width: 100%; transition: width 10000ms linear;"></div>
+</div>
+<div class="pro-nav">
+  <div class="pro-arrows">
+    <button class="pro-arr" id="pro-prev">‹</button>
+    <button class="pro-arr" id="pro-next">›</button>
+  </div>
+  <div id="pro-dots"><span class="pro-dot active" data-i="0"></span> <span class="pro-dot" data-i="1"></span> <span class="pro-dot" data-i="2"></span> <span class="pro-dot" data-i="3"></span> <span class="pro-dot" data-i="4"></span> <span class="pro-dot" data-i="5"></span> <span class="pro-dot" data-i="6"></span></div>
+  <span class="pro-auto-label" id="pro-auto-lbl">↻ auto 10s</span>
+</div>
+
 <div class="section-head"><h2>Galerie des skins officiels</h2><span class="snips">✂</span></div>
 <p style="font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;">Source : <a href="https://wiki.leagueoflegends.com/en-us/Gwen/Cosmetics" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">Wiki LoL officiel</a> · <a href="https://leagueoflegends.fandom.com/wiki/Category:WR_Gwen_skins" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">Fandom WR</a> · <a href="https://tftskins.com/" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">TFT Skins</a></p>
 <div class="skins-filter">
@@ -391,189 +585,244 @@ footer a{color:var(--violet);text-decoration:none;}
 <div class="tg-header">
   <div class="tg-controls">
     <div class="tg-tabs">
-      <button class="tg-tab" data-q="solo">Solo/Duo</button>
-      <button class="tg-tab active" data-q="flex">Flex</button>
+      <button class="tg-tab active" data-q="solo">Solo/Duo</button>
+      <button class="tg-tab" data-q="flex">Flex</button>
     </div>
     <button class="tg-refresh-btn" id="tg-refresh"><span class="ref-icon">↻</span> Actualiser</button>
   </div>
   <div class="tg-source">Source : <a href="https://www.onetricks.gg/champions/ranking/Gwen" target="_blank" rel="noopener">onetricks.gg</a> S2026</div>
 </div>
-<div id="tg-ts" class="last-update">Mis à jour il y a 4s</div>
+<div id="tg-ts" class="last-update">Mis à jour il y a 0s</div>
 <div class="topgwen-list" id="tg-list"><div class="tg-row" style="animation-delay:0s">
         <div class="tg-rank gold">👑</div>
         <div class="tg-info">
-          <div class="tg-name">FlexQueen<span class="tg-hashtag"> #GWN</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Challenger · KDA 3.21</div>
+          <div class="tg-name">1314<span class="tg-hashtag"> #ever</span></div>
+          <div class="tg-details">NA · Challenger · KDA 3.68</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">1 312 LP</div>
-          <div class="tg-wr">63% WR</div>
-          <div class="tg-games">89 games · Flex</div>
+          <div class="tg-lp">1 988 LP</div>
+          <div class="tg-wr">64% WR</div>
+          <div class="tg-games">74 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.04s">
         <div class="tg-rank silver">✦</div>
         <div class="tg-info">
-          <div class="tg-name">gwenflexKR<span class="tg-hashtag"> #0001</span></div>
-          <div class="tg-details">KR · Challenger · KDA 2.88</div>
+          <div class="tg-name">odium<span class="tg-hashtag"> #600</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">NA · Challenger · KDA 2.00</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">1 189 LP</div>
-          <div class="tg-wr">58% WR</div>
-          <div class="tg-games">142 games · Flex</div>
+          <div class="tg-lp">1 505 LP</div>
+          <div class="tg-wr">56% WR</div>
+          <div class="tg-games">180 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.08s">
         <div class="tg-rank bronze">✧</div>
         <div class="tg-info">
           <div class="tg-name">Lmzs<span class="tg-hashtag"> #EUW</span></div>
-          <div class="tg-details">EUW · Challenger · KDA 2.90</div>
+          <div class="tg-details">EUW · Challenger · KDA 2.32</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">1 134 LP</div>
-          <div class="tg-wr">62% WR</div>
-          <div class="tg-games">47 games · Flex</div>
+          <div class="tg-lp">1 491 LP</div>
+          <div class="tg-wr">59% WR</div>
+          <div class="tg-games">56 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.12s">
         <div class="tg-rank ">✂</div>
         <div class="tg-info">
-          <div class="tg-name">GWENKLNG<span class="tg-hashtag"> #GWEN</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Challenger · KDA 2.90</div>
+          <div class="tg-name">14小孩幻想赢对线<span class="tg-hashtag"> #4453</span></div>
+          <div class="tg-details">KR · Grandmaster · KDA 2.10</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">1 101 LP</div>
-          <div class="tg-wr">54% WR</div>
-          <div class="tg-games">141 games · Flex</div>
+          <div class="tg-lp">1 158 LP</div>
+          <div class="tg-wr">55% WR</div>
+          <div class="tg-games">82 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.16s">
         <div class="tg-rank ">✄</div>
         <div class="tg-info">
-          <div class="tg-name">odium<span class="tg-hashtag"> #600</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">NA · Challenger · KDA 2.14</div>
+          <div class="tg-name">내 성장막아봐<span class="tg-hashtag"> #못막을걸</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Grandmaster · KDA 2.90</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">1 098 LP</div>
+          <div class="tg-lp">1 136 LP</div>
           <div class="tg-wr">59% WR</div>
-          <div class="tg-games">156 games · Flex</div>
+          <div class="tg-games">239 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.2s">
         <div class="tg-rank ">⋆</div>
         <div class="tg-info">
-          <div class="tg-name">Snip Master<span class="tg-hashtag"> #FLEX</span></div>
-          <div class="tg-details">NA · Challenger · KDA 3.45</div>
+          <div class="tg-name">그러건아말건아<span class="tg-hashtag"> #0720</span></div>
+          <div class="tg-details">KR · Master · KDA 1.86</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">1 034 LP</div>
-          <div class="tg-wr">63% WR</div>
-          <div class="tg-games">78 games · Flex</div>
+          <div class="tg-lp">1 101 LP</div>
+          <div class="tg-wr">67% WR</div>
+          <div class="tg-games">49 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.24s">
         <div class="tg-rank ">·</div>
         <div class="tg-info">
-          <div class="tg-name">softsnip<span class="tg-hashtag"> #wr</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Grandmaster · KDA 2.67</div>
+          <div class="tg-name">雨の回忆<span class="tg-hashtag"> #blue</span></div>
+          <div class="tg-details">NA · Challenger · KDA 4.09</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">987 LP</div>
-          <div class="tg-wr">57% WR</div>
-          <div class="tg-games">203 games · Flex</div>
+          <div class="tg-lp">1 043 LP</div>
+          <div class="tg-wr">62% WR</div>
+          <div class="tg-games">42 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.28s">
         <div class="tg-rank ">★</div>
         <div class="tg-info">
-          <div class="tg-name">faerie flex<span class="tg-hashtag"> #EUW</span></div>
-          <div class="tg-details">EUW · Grandmaster · KDA 2.33</div>
+          <div class="tg-name">앨리시아 제<span class="tg-hashtag"> #정글러</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Master · KDA 2.26</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">934 LP</div>
-          <div class="tg-wr">55% WR</div>
-          <div class="tg-games">167 games · Flex</div>
+          <div class="tg-lp">1 006 LP</div>
+          <div class="tg-wr">56% WR</div>
+          <div class="tg-games">174 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.32s">
         <div class="tg-rank ">✩</div>
         <div class="tg-info">
-          <div class="tg-name">stitchmaster<span class="tg-hashtag"> #EUNE</span></div>
-          <div class="tg-details">EUNE · Grandmaster · KDA 2.88</div>
+          <div class="tg-name">vley<span class="tg-hashtag"> #balls</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 2.75</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">899 LP</div>
-          <div class="tg-wr">60% WR</div>
-          <div class="tg-games">98 games · Flex</div>
+          <div class="tg-lp">996 LP</div>
+          <div class="tg-wr">61% WR</div>
+          <div class="tg-games">56 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.36s">
         <div class="tg-rank ">✦</div>
         <div class="tg-info">
-          <div class="tg-name">lilaflex<span class="tg-hashtag"> #KR</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">KR · Master · KDA 2.05</div>
+          <div class="tg-name">Lokat<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 1.53</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">867 LP</div>
-          <div class="tg-wr">54% WR</div>
-          <div class="tg-games">189 games · Flex</div>
+          <div class="tg-lp">955 LP</div>
+          <div class="tg-wr">53% WR</div>
+          <div class="tg-games">372 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.4s">
         <div class="tg-rank ">✧</div>
         <div class="tg-info">
-          <div class="tg-name">purplethread<span class="tg-hashtag"> #BR1</span></div>
-          <div class="tg-details">BR · Master · KDA 2.44</div>
+          <div class="tg-name">41009<span class="tg-hashtag"> #6XX</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 1.79</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">812 LP</div>
-          <div class="tg-wr">56% WR</div>
-          <div class="tg-games">134 games · Flex</div>
+          <div class="tg-lp">936 LP</div>
+          <div class="tg-wr">51% WR</div>
+          <div class="tg-games">294 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.44s">
         <div class="tg-rank ">⋆</div>
         <div class="tg-info">
-          <div class="tg-name">gwen enjoyer<span class="tg-hashtag"> #TR</span></div>
-          <div class="tg-details">TR · Master · KDA 2.67</div>
+          <div class="tg-name">Diguidou<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 2.02</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">778 LP</div>
-          <div class="tg-wr">59% WR</div>
-          <div class="tg-games">88 games · Flex</div>
+          <div class="tg-lp">935 LP</div>
+          <div class="tg-wr">60% WR</div>
+          <div class="tg-games">176 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.48s">
         <div class="tg-rank ">·</div>
         <div class="tg-info">
-          <div class="tg-name">needles flex<span class="tg-hashtag"> #JP</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">JP · Master · KDA 1.99</div>
+          <div class="tg-name">李相赫<span class="tg-hashtag"> #0820</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Master · KDA 4.00</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">734 LP</div>
-          <div class="tg-wr">53% WR</div>
-          <div class="tg-games">211 games · Flex</div>
+          <div class="tg-lp">934 LP</div>
+          <div class="tg-wr">62% WR</div>
+          <div class="tg-games">113 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.52s">
         <div class="tg-rank ">★</div>
         <div class="tg-info">
-          <div class="tg-name">강아지풀은있는데왜고양이풀은없지<span class="tg-hashtag"> #oωo</span></div>
-          <div class="tg-details">KR · Master · KDA 2.88</div>
+          <div class="tg-name">5 DØGS 1 TÉAM<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 1.87</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">712 LP</div>
-          <div class="tg-wr">61% WR</div>
-          <div class="tg-games">74 games · Flex</div>
+          <div class="tg-lp">927 LP</div>
+          <div class="tg-wr">57% WR</div>
+          <div class="tg-games">157 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.56s">
         <div class="tg-rank ">✩</div>
         <div class="tg-info">
-          <div class="tg-name">Diguidou<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 1.95</div>
+          <div class="tg-name">puppyxi<span class="tg-hashtag"> #1123</span></div>
+          <div class="tg-details">KR · Master · KDA 2.34</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">698 LP</div>
-          <div class="tg-wr">57% WR</div>
-          <div class="tg-games">132 games · Flex</div>
+          <div class="tg-lp">925 LP</div>
+          <div class="tg-wr">56% WR</div>
+          <div class="tg-games">113 games · SoloQ</div>
         </div>
       </div><div class="tg-row" style="animation-delay:0.6s">
         <div class="tg-rank ">✦</div>
         <div class="tg-info">
-          <div class="tg-name">scissorqueen<span class="tg-hashtag"> #KR1</span></div>
-          <div class="tg-details">KR · Master · KDA 2.22</div>
+          <div class="tg-name">강아지풀은있는데왜고양이풀은없지<span class="tg-hashtag"> #oωo</span></div>
+          <div class="tg-details">KR · Master · KDA 2.99</div>
         </div>
         <div class="tg-right">
-          <div class="tg-lp">681 LP</div>
+          <div class="tg-lp">905 LP</div>
+          <div class="tg-wr">64% WR</div>
+          <div class="tg-games">63 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.64s">
+        <div class="tg-rank ">✧</div>
+        <div class="tg-info">
+          <div class="tg-name">南风知我意<span class="tg-hashtag"> #0321</span></div>
+          <div class="tg-details">NA · Grandmaster · KDA 3.99</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">896 LP</div>
+          <div class="tg-wr">66% WR</div>
+          <div class="tg-games">56 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.68s">
+        <div class="tg-rank ">⋆</div>
+        <div class="tg-info">
+          <div class="tg-name">Yuxin baby<span class="tg-hashtag"> #god</span></div>
+          <div class="tg-details">NA · Challenger · KDA 5.10</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">876 LP</div>
+          <div class="tg-wr">76% WR</div>
+          <div class="tg-games">55 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.72s">
+        <div class="tg-rank ">·</div>
+        <div class="tg-info">
+          <div class="tg-name">실력이차이나나봐<span class="tg-hashtag"> #나야</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Master · KDA 2.44</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">864 LP</div>
+          <div class="tg-wr">58% WR</div>
+          <div class="tg-games">138 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.76s">
+        <div class="tg-rank ">★</div>
+        <div class="tg-info">
+          <div class="tg-name">GwenOTP<span class="tg-hashtag"> #EUW1</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 2.11</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">851 LP</div>
           <div class="tg-wr">55% WR</div>
-          <div class="tg-games">159 games · Flex</div>
+          <div class="tg-games">204 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.8s">
+        <div class="tg-rank ">21</div>
+        <div class="tg-info">
+          <div class="tg-name">GWENKLNG<span class="tg-hashtag"> #GWEN</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 3.20</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">391 LP</div>
+          <div class="tg-wr">49% WR</div>
+          <div class="tg-games">329 games · SoloQ</div>
         </div>
       </div></div>
 
@@ -616,9 +865,9 @@ footer a{color:var(--violet);text-decoration:none;}
   <button id="lb-toggle"><span class="lbarr">▲</span>&nbsp;🏆 Classement</button>
 </div>
 <!-- CURSOR -->
-<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" style="position: fixed; pointer-events: none; z-index: 99999; left: 778px; top: 425px; transform: translate(-50%, -50%);">
-  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(-5.44812e-13deg);"><line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
-  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(5.44812e-13deg);"><line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
+<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" style="position: fixed; pointer-events: none; z-index: 99999; left: 848px; top: 346px; transform: translate(-50%, -50%);">
+  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(0deg);"><line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
+  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(0deg);"><line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
   <circle cx="21" cy="21" r="3.8" fill="#7c5cbf"></circle><circle cx="21" cy="21" r="1.6" fill="white"></circle>
 </svg>
 <script>
@@ -805,6 +1054,178 @@ document.querySelectorAll('.sf-btn').forEach(b=>{
   render('solo');
 })();
 
+/* ══ PRO PERFORMANCES CAROUSEL ══ */
+(function(){
+  const PERF=[
+    {
+      player:'Bin',team:'Royal Never Give Up',league:'LPL',event:'MSI 2022 — Finale vs T1',role:'Top',year:2022,
+      kda:'13/0/3',wr:'77.8%',games:18,kdaAvg:'5.2',dpm:'~820',result:'Victoire',color:'#4faa80',
+      badges:['win','mvp','intl','record'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Shadowflame','Rabadon\'s Deathcap','Zhonya\'s'],
+      mythic:'Riftmaker',
+      runes:'Conquérant · Triomphe · Légende Alacrité · Coup de Grâce',
+      desc:'<strong>La performance la plus iconique de Gwen en pro play.</strong> Bin poste un scoreboard parfait <strong>13/0/3</strong> en Game 1 de la Finale MSI 2022 contre T1, champion invaincu en LCK. RNG remporte le titre MSI pour la 3ème fois consécutive. Son Gwen est décrit comme "une machine à tuer" — présence 87% du tournoi.'
+    },
+    {
+      player:'Szygenda',team:'Team Vitality',league:'LEC',event:'LEC 2022 (saison régulière)',role:'Top',year:2022,
+      kda:'—',wr:'88.9%',games:9,kdaAvg:'5.5',dpm:'~780',result:'Meilleur WR',color:'#a87dd4',
+      badges:['record','win'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Cosmic Drive','Rabadon\'s Deathcap','Void Staff'],
+      mythic:'Riftmaker',
+      runes:'Conquérant · Triomphe · Légende Alacrité · Coup de Grâce',
+      desc:'<strong>Meilleur win rate Gwen de MSI/2022 toutes régions confondues</strong> avec <strong>88.9% WR</strong> et un KDA de 5.5. Szygenda s\'impose comme le meilleur joueur Gwen d\'Europe cette saison, dominant les lanes et les teamfights avec une efficacité redoutable.'
+    },
+    {
+      player:'Zeus',team:'T1',league:'LCK',event:'MSI 2022 / Worlds 2022',role:'Top',year:2022,
+      kda:'varies',wr:'71.4%',games:14,kdaAvg:'3.6',dpm:'~750',result:'Finaliste MSI',color:'#c4a040',
+      badges:['intl','win'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Shadowflame','Cosmic Drive','Rabadon\'s Deathcap'],
+      mythic:'Riftmaker',
+      runes:'Conquérant · Présence d\'Esprit · Légende Alacrité · Dernier Rempart',
+      desc:'<strong>Zeus et son Gwen sont la réponse de T1</strong> à la domination LPL. Avec <strong>71.4% WR sur 14 parties</strong> à MSI 2022, il est le seul joueur capable de tenir tête à Bin. Leur duel en lane est devenu légendaire — Zeus refuse de ban Gwen et choisit de la mirror pour prouver son niveau.'
+    },
+    {
+      player:'Nuguri',team:'FunPlus Phoenix',league:'LPL',event:'LPL Summer 2021',role:'Top',year:2021,
+      kda:'varies',wr:'~70%',games:'~8',kdaAvg:'~4.2',dpm:'~800',result:'MVP Game',color:'#7c5cbf',
+      badges:['mvp'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Demonic Embrace','Rabadon\'s Deathcap','Void Staff'],
+      mythic:'Riftmaker',
+      runes:'Premier Coup · Remise Immédiate · Triple Tonique · Savoir Cosmique',
+      desc:'<strong>Nuguri est le premier grand joueur à populariser Gwen en pro play</strong> dès le LPL Summer 2021. Sa performance contre TES lui vaut le MVP du match — il prend le contrôle des teamfights et bat Top Esports 2-0 avec une Gwen dévastatrice, posant les bases du meta Gwen international.'
+    },
+    {
+      player:'Kiin',team:'DRX / KZ',league:'LCK',event:'LCK 2022',role:'Top',year:2022,
+      kda:'varies',wr:'71.4%',games:14,kdaAvg:'4.8',dpm:'~760',result:'Top LCK Gwen',color:'#4faa80',
+      badges:['win','intl'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Cosmic Drive','Rabadon\'s Deathcap','Shadowflame'],
+      mythic:'Riftmaker',
+      runes:'Conquérant · Triomphe · Légende Alacrité · Coup de Grâce',
+      desc:'<strong>Kiin est l\'un des meilleurs joueurs Gwen de l\'histoire du LCK</strong> avec un KDA de <strong>4.8 sur 14 parties</strong>. Sa Gwen est réputée pour son jeu de split-push et sa capacité à prendre des duels en 1v1 contre n\'importe quel toplaner. Adversaire redouté en LCK.'
+    },
+    {
+      player:'Bin',team:'Bilibili Gaming',league:'LPL',event:'LPL 2023–2024',role:'Top',year:2024,
+      kda:'varies',wr:'~68%',games:'~22',kdaAvg:'~4.1',dpm:'~790',result:'Worlds 2024',color:'#4faa80',
+      badges:['intl','win'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Shadowflame','Cosmic Drive','Rabadon\'s Deathcap'],
+      mythic:'Riftmaker',
+      runes:'Conquérant · Triomphe · Légende Alacrité · Coup de Grâce',
+      desc:'<strong>Bin continue sa domination sur Gwen avec BLG</strong> après son passage à RNG. Il emmène Bilibili Gaming aux Worlds 2024 avec une Gwen qui reste son pick signature — toujours aussi dominante en teamfight, confirmant son statut de meilleur joueur Gwen de l\'histoire compétitive.'
+    },
+    {
+      player:'Cube',team:'Royal Academy',league:'LPL',event:'LPL Spring 2022',role:'Top',year:2022,
+      kda:'varies',wr:'61.5%',games:13,kdaAvg:'3.4',dpm:'~710',result:'Top LPL académie',color:'#d4607a',
+      badges:['win'],
+      build:['Riftmaker','Nashor\'s Tooth','Sorcerer\'s Shoes','Demonic Embrace','Rabadon\'s Deathcap','Void Staff'],
+      mythic:'Riftmaker',
+      runes:'Conquérant · Triomphe · Légende Alacrité · Coup de Grâce',
+      desc:'<strong>Cube d\'RA est l\'un des joueurs Gwen les plus constants du LPL</strong> avec <strong>61.5% WR sur 13 parties</strong> en 2022. Sa capacité à performer en académie avec Gwen lui permet d\'attirer l\'attention des équipes principales. Un des premiers à maîtriser le build Riftmaker + Nashor\'s optimal.'
+    }
+  ];
+
+  const BADGE_LABELS={win:'Victoire',mvp:'MVP',intl:'International',record:'Record'};
+  const INTERVAL=10000;
+  let cur=0, timer=null, progTimer=null, paused=false;
+
+  function buildCard(p,i){
+    const active=i===cur;
+    const badges=p.badges.map(b=>`<span class="pro-badge ${b}">${BADGE_LABELS[b]}</span>`).join('');
+    const items=p.build.map(it=>`<span class="pro-item${it===p.mythic?' mythic':''}">${it}</span>`).join('');
+    return `<div class="pro-card" style="--pc:${p.color}">
+      <div class="pro-top">
+        <div class="pro-player">
+          <div class="pro-name">${p.player}</div>
+          <div class="pro-team">${p.team} · ${p.league}</div>
+          <div class="pro-event">${p.event}</div>
+        </div>
+        <div class="pro-badges">${badges}</div>
+      </div>
+      <div class="pro-stats">
+        <div class="pro-stat"><div class="pro-stat-val${p.kda.includes('0/0')||p.kda==='13/0/3'?' gold':''}">${p.kda}</div><div class="pro-stat-lbl">Score best</div></div>
+        <div class="pro-stat"><div class="pro-stat-val green">${p.wr}</div><div class="pro-stat-lbl">Win Rate Gwen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">${p.kdaAvg}</div><div class="pro-stat-lbl">KDA moyen</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">${p.games}</div><div class="pro-stat-lbl">Parties</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">${p.dpm}</div><div class="pro-stat-lbl">DPM</div></div>
+        <div class="pro-stat"><div class="pro-stat-val">${p.year}</div><div class="pro-stat-lbl">Saison</div></div>
+      </div>
+      <div class="pro-build-label">Build · <span style="font-size:9px;color:var(--muted)">${p.runes}</span></div>
+      <div class="pro-build">${items}</div>
+      <p class="pro-desc">${p.desc}</p>
+    </div>`;
+  }
+
+  function buildDots(){
+    const d=document.getElementById('pro-dots');
+    d.innerHTML=PERF.map((_,i)=>`<span class="pro-dot${i===cur?' active':''}" data-i="${i}"></span>`).join(' ');
+    d.querySelectorAll('.pro-dot').forEach(dot=>dot.addEventListener('click',()=>goTo(+dot.dataset.i)));
+  }
+
+  function render(){
+    const track=document.getElementById('pro-track');
+    // Shuffle on first render for variety
+    track.innerHTML=PERF.map((p,i)=>buildCard(p,i)).join('');
+    track.style.transform=`translateX(-${cur*100}%)`;
+    buildDots();
+    document.getElementById('pro-ts').textContent='Données vérifiées · gol.gg · luckbox.com · invenglobal.com';
+  }
+
+  function goTo(idx,manual=false){
+    cur=(idx+PERF.length)%PERF.length;
+    document.getElementById('pro-track').style.transform=`translateX(-${cur*100}%)`;
+    buildDots();
+    if(manual){paused=false;resetTimer();}
+  }
+
+  function startProgress(){
+    clearInterval(progTimer);
+    const prog=document.getElementById('pro-prog');
+    if(!prog)return;
+    let pct=0;
+    prog.style.transition='none';
+    prog.style.width='0%';
+    setTimeout(()=>{
+      prog.style.transition=`width ${INTERVAL}ms linear`;
+      prog.style.width='100%';
+    },50);
+  }
+
+  function resetTimer(){
+    clearInterval(timer);
+    clearInterval(progTimer);
+    startProgress();
+    timer=setInterval(()=>{
+      if(!paused)goTo(cur+1);
+    },INTERVAL);
+  }
+
+  document.getElementById('pro-prev').addEventListener('click',()=>goTo(cur-1,true));
+  document.getElementById('pro-next').addEventListener('click',()=>goTo(cur+1,true));
+
+  // Pause on hover
+  document.getElementById('pro-track').addEventListener('mouseenter',()=>{
+    paused=true;
+    const prog=document.getElementById('pro-prog');
+    if(prog){prog.style.transition='none';}
+    document.getElementById('pro-auto-lbl').textContent='⏸ pause';
+  });
+  document.getElementById('pro-track').addEventListener('mouseleave',()=>{
+    paused=false;
+    document.getElementById('pro-auto-lbl').textContent='↻ auto 10s';
+    resetTimer();
+  });
+
+  // Swipe support
+  let tx=null;
+  document.getElementById('pro-track').addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  document.getElementById('pro-track').addEventListener('touchend',e=>{
+    if(tx===null)return;
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>40){goTo(dx<0?cur+1:cur-1,true);}
+    tx=null;
+  });
+
+  render();
+  resetTimer();
+})();
 /* ══ CURSOR ══ */
 (function(){
   const cur=document.getElementById('sc-cursor'),bt=document.getElementById('sc-top'),bb=document.getElementById('sc-bot');
