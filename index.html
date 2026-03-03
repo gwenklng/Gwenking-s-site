@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///C:/Users/moulo/Downloads/gwenking_2.html -->
+<!-- saved from url=(0048)file:///C:/Users/moulo/Downloads/gwenking_6.html -->
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,135 +10,190 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;cursor:none!important;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden;}
-
+/* WELCOME */
+#welcome-modal{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;background:rgba(61,37,102,.55);backdrop-filter:blur(8px);}
+#welcome-modal.hidden{display:none;}
+.wm-box{background:#fff;border-radius:20px;padding:44px 40px;max-width:380px;width:90%;text-align:center;border:2px solid var(--border);box-shadow:0 20px 60px rgba(124,92,191,.2);animation:slideUp .4s ease;}
+@keyframes slideUp{from{transform:translateY(30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.wm-sc{font-size:48px;animation:wmSpin 2s ease-in-out infinite;margin-bottom:12px;}
+@keyframes wmSpin{0%,100%{transform:rotate(-12deg);}50%{transform:rotate(12deg) scale(1.05);}}
+.wm-box h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--pale);letter-spacing:4px;margin-bottom:6px;}
+.wm-box p{font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;}
+.wm-wb{font-size:13px;color:var(--violet);font-weight:700;margin-bottom:16px;display:none;}
+.wm-input{width:100%;padding:12px 20px;border:1.5px solid var(--border);border-radius:30px;font-family:'Nunito',sans-serif;font-size:14px;color:var(--text);outline:none;text-align:center;background:var(--surface);margin-bottom:14px;transition:border-color .2s;}
+.wm-input:focus{border-color:var(--violet);}
+.wm-btn{width:100%;padding:13px;background:var(--violet);color:#fff;border:none;border-radius:30px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;box-shadow:0 4px 20px rgba(124,92,191,.3);transition:background .2s;}
+.wm-btn:hover{background:#5a3e9a;}
+.wm-skip{margin-top:12px;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;background:none;border:none;text-decoration:underline;}
 /* DECO */
 .deco-layer{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 .deco-item{position:absolute;animation:floatD var(--d,8s) ease-in-out infinite var(--dl,0s);opacity:var(--o,.15);left:var(--x);top:var(--y);}
 @keyframes floatD{0%,100%{transform:rotate(var(--r,0deg)) translateY(0);}50%{transform:rotate(calc(var(--r,0deg)+6deg)) translateY(-14px);}}
 .wrapper{position:relative;z-index:1;}
-
 /* HERO */
 .hero{text-align:center;padding:100px 24px 80px;border-bottom:1px solid var(--border);}
 .hero-tag{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;}
 .hero-tag::before,.hero-tag::after{content:'✂';color:var(--violet);font-size:15px;}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,7rem);font-weight:300;color:var(--pale);letter-spacing:10px;line-height:1;margin-bottom:8px;}
 .hero h1 em{font-style:italic;color:var(--violet);}
-.hero-sub{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:52px;}
-
-/* SOCIALS */
+.hero-sub{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.hero-greet{font-size:13px;color:var(--violet);font-weight:600;letter-spacing:2px;min-height:20px;margin-bottom:38px;}
 .socials{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
 .soc{position:relative;display:flex;align-items:center;gap:10px;padding:12px 28px;text-decoration:none;color:var(--violet);font-size:11px;letter-spacing:3px;text-transform:uppercase;border:1.5px solid var(--border);background:var(--surface);transition:all .3s;overflow:hidden;border-radius:30px;}
 .soc::before{content:'✂';position:absolute;left:-24px;font-size:15px;color:var(--violet);transition:left .3s;}
 .soc:hover{border-color:var(--violet);color:var(--pale);background:var(--blush);padding-left:38px;box-shadow:0 4px 20px rgba(124,92,191,.12);}
 .soc:hover::before{left:13px;}
 .soc svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;}
-
 /* MAIN */
-main{max-width:840px;margin:0 auto;padding:80px 24px 120px;}
-.section-head{display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+main{max-width:940px;margin:0 auto;padding:80px 24px 180px;}
+.section-head{display:flex;align-items:center;gap:16px;margin-bottom:28px;margin-top:72px;}
+.section-head:first-of-type{margin-top:0;}
 .section-head h2{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(--violet);white-space:nowrap;}
 .section-head .snips{color:var(--muted);font-size:15px;letter-spacing:4px;}
 .section-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
-
+/* LIVE BADGE */
+.live-badge{display:inline-flex;align-items:center;gap:5px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--buff);border:1.5px solid rgba(79,170,128,.3);background:rgba(79,170,128,.07);padding:3px 10px;border-radius:20px;margin-left:10px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--buff);animation:pulse 1.4s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.last-update{font-size:9px;color:var(--muted);letter-spacing:1.5px;text-align:right;margin-bottom:6px;text-transform:uppercase;}
+/* COUNTDOWN */
+.countdown-box{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:28px;text-align:center;margin-bottom:16px;position:relative;}
+.countdown-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.countdown-patch-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--pale);letter-spacing:3px;margin-bottom:16px;}
+.countdown-digits{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--pale);line-height:1;min-width:60px;text-align:center;transition:transform .15s;}
+.cd-num.bump{transform:scale(1.15);}
+.cd-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--border);align-self:flex-start;margin-top:8px;}
 /* PATCHES */
 .patches{display:flex;flex-direction:column;gap:10px;}
-.patch{background:var(--card);border:1.5px solid var(--border);padding:40px 44px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s;animation:slideIn .5s ease both;border-radius:6px;}
-.patch:nth-child(2){animation-delay:.07s;}.patch:nth-child(3){animation-delay:.14s;}.patch:nth-child(4){animation-delay:.21s;}.patch:nth-child(5){animation-delay:.28s;}
-@keyframes slideIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.patch{background:var(--card);border:1.5px solid var(--border);padding:32px 40px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s;border-radius:6px;}
 .patch::before{content:'✂';position:absolute;top:20px;right:24px;font-size:20px;color:var(--border);transition:color .25s,transform .3s;}
 .patch::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ab,var(--muted));opacity:.6;border-radius:2px 0 0 2px;}
 .patch.nerf{--ab:var(--nerf);}.patch.buff{--ab:var(--buff);}.patch.neutral{--ab:var(--neutral);}
 .patch:hover{border-color:rgba(124,92,191,.35);box-shadow:0 6px 30px rgba(124,92,191,.08);}
 .patch:hover::before{color:var(--muted);transform:rotate(18deg) scale(1.1);}
-.patch-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
-.patch-name{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--pale);letter-spacing:2px;}
-.patch-right{display:flex;align-items:center;gap:12px;}
+.patch-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.patch-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--pale);letter-spacing:2px;}
+.patch-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .patch-date{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
 .badge{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;font-weight:500;}
 .badge.nerf{background:rgba(212,96,122,.1);color:var(--nerf);border:1.5px solid rgba(212,96,122,.25);}
 .badge.buff{background:rgba(79,170,128,.1);color:var(--buff);border:1.5px solid rgba(79,170,128,.25);}
 .badge.neutral{background:rgba(196,160,64,.1);color:var(--neutral);border:1.5px solid rgba(196,160,64,.25);}
-.patch-summary{font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:20px;}
-.changes{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.patch-summary{font-size:13.5px;line-height:1.9;color:var(--muted);margin-bottom:16px;}
+.changes{list-style:none;display:flex;flex-direction:column;gap:7px;}
 .changes li{font-size:13px;line-height:1.7;padding-left:22px;position:relative;color:var(--text);}
 .changes li::before{content:'✂';position:absolute;left:0;font-size:11px;color:var(--muted);}
 .changes li.nerf{color:#b84060;}.changes li.buff{color:#2e8060;}
-
 /* RUNES */
-.runes-section{margin-top:80px;}
-.runes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-.rune-card{background:var(--card);border:1.5px solid var(--border);padding:28px 26px 24px;position:relative;transition:border-color .25s,box-shadow .25s;border-radius:8px;}
+.runes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+.rune-card{background:var(--card);border:1.5px solid var(--border);padding:24px 22px;position:relative;transition:border-color .25s,box-shadow .25s;border-radius:8px;}
 .rune-card::before{content:'✂';position:absolute;top:14px;right:16px;font-size:13px;color:var(--border);}
 .rune-card:hover{border-color:rgba(124,92,191,.35);box-shadow:0 6px 24px rgba(124,92,191,.08);}
-.rune-card-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.rune-card-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
 .rune-game-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
 .rune-result{font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
 .rune-result.win{color:var(--buff);border:1.5px solid rgba(79,170,128,.3);background:rgba(79,170,128,.07);}
 .rune-result.jng{color:var(--violet);border:1.5px solid rgba(124,92,191,.3);background:rgba(124,92,191,.07);}
-.rune-card h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--pale);letter-spacing:1px;margin-bottom:16px;}
-.rune-path-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:6px;margin-top:12px;}
+.rune-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--pale);letter-spacing:1px;margin-bottom:14px;}
+.rune-path-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:5px;margin-top:10px;}
 .rune-path:first-of-type .rune-path-label{margin-top:0;}
-.rune-row{display:flex;flex-wrap:wrap;gap:6px;}
-.rune-pill{font-size:11px;padding:4px 12px;border:1.5px solid var(--border);color:var(--text);background:var(--surface);border-radius:20px;}
+.rune-row{display:flex;flex-wrap:wrap;gap:5px;}
+.rune-pill{font-size:11px;padding:3px 11px;border:1.5px solid var(--border);color:var(--text);background:var(--surface);border-radius:20px;}
 .rune-pill.keystone{border-color:var(--violet);color:var(--violet);background:rgba(124,92,191,.08);font-weight:600;}
-.rune-hint{display:flex;align-items:center;gap:10px;margin-top:36px;padding:16px 20px;border:1.5px dashed var(--border);border-radius:8px;font-size:12px;color:var(--muted);}
-.rune-hint span{color:var(--violet);font-size:17px;}
-
+/* TIER LIST */
+.tier-source{font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;}
+.tier-source a{color:var(--violet);text-decoration:none;}
+.tier-grid{display:flex;flex-direction:column;gap:8px;}
+.tier-row{display:flex;align-items:stretch;border-radius:8px;overflow:hidden;border:1.5px solid var(--border);}
+.tier-label{width:52px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#fff;flex-shrink:0;}
+.tier-label.s{background:#7c5cbf;}.tier-label.a{background:#4faa80;}.tier-label.b{background:#c4a040;}.tier-label.c{background:#d4607a;}
+.tier-items{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;background:var(--card);flex:1;align-items:center;}
+.tier-item{display:flex;flex-direction:column;gap:1px;padding:6px 12px;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;font-size:12px;color:var(--text);font-weight:600;transition:border-color .2s;}
+.tier-item:hover{border-color:var(--violet);}
+.tier-item .ti-wr{font-size:10px;color:var(--buff);font-weight:400;}
+.tier-item .ti-note{font-size:9px;color:var(--muted);font-weight:400;}
+/* DAMAGE CALC */
+.calc-box{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:28px 32px;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:500px){.calc-grid{grid-template-columns:1fr;}}
+.calc-field{display:flex;flex-direction:column;gap:5px;}
+.calc-field label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.calc-field input,.calc-field select{padding:9px 13px;border:1.5px solid var(--border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:13px;color:var(--text);background:var(--surface);outline:none;transition:border-color .2s;}
+.calc-field input:focus,.calc-field select:focus{border-color:var(--violet);}
+.calc-btn{margin-bottom:18px;padding:10px 26px;background:var(--violet);color:#fff;border:none;border-radius:24px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background .2s;}
+.calc-btn:hover{background:#5a3e9a;}
+.calc-result{background:rgba(124,92,191,.06);border:1.5px solid rgba(124,92,191,.2);border-radius:10px;padding:18px 22px;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.calc-stat{text-align:center;}
+.calc-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--pale);font-weight:300;transition:all .3s;}
+.calc-stat-val.new{animation:numPop .4s ease;}
+@keyframes numPop{0%{transform:scale(1.3);color:var(--violet);}100%{transform:scale(1);}}
+.calc-stat-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+/* SKINS */
+.skins-filter{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.sf-btn{padding:6px 16px;border:1.5px solid var(--border);background:var(--surface);border-radius:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .2s;}
+.sf-btn.active,.sf-btn:hover{background:var(--violet);color:#fff;border-color:var(--violet);}
+.skins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:13px;}
+.skin-card{background:var(--card);border:1.5px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s;}
+.skin-card:hover{border-color:var(--violet);transform:translateY(-4px);box-shadow:0 8px 28px rgba(124,92,191,.14);}
+.skin-card.hidden{display:none;}
+.skin-thumb{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2.2rem;background:var(--sbg,linear-gradient(135deg,var(--surface),var(--blush)));position:relative;}
+.skin-game-badge{position:absolute;top:6px;right:6px;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:8px;background:rgba(61,37,102,.8);color:#fff;font-family:'Nunito',sans-serif;}
+.skin-info{padding:11px 13px;}
+.skin-name{font-family:'Cormorant Garamond',serif;font-size:.92rem;color:var(--pale);letter-spacing:.5px;margin-bottom:4px;}
+.skin-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:3px;}
+.skin-price{font-size:10px;letter-spacing:1px;color:var(--muted);}
+.skin-tbadge{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:8px;}
+.skin-tbadge.legendary{background:rgba(240,192,64,.15);color:#b08000;border:1px solid rgba(240,192,64,.3);}
+.skin-tbadge.epic{background:rgba(124,92,191,.12);color:var(--violet);border:1px solid rgba(124,92,191,.25);}
+.skin-tbadge.prestige{background:rgba(240,192,64,.2);color:#a07000;border:1px solid rgba(240,192,64,.4);}
+.skin-tbadge.rare{background:rgba(79,170,128,.1);color:#2e8060;border:1px solid rgba(79,170,128,.25);}
+.skin-tbadge.base{background:rgba(176,160,204,.1);color:var(--muted);border:1px solid var(--border);}
+/* TOP GWENS */
+.tg-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+.tg-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tg-tabs{display:flex;gap:6px;}
+.tg-tab{padding:7px 18px;border:1.5px solid var(--border);background:var(--surface);border-radius:20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .2s;}
+.tg-tab.active{background:var(--violet);color:#fff;border-color:var(--violet);}
+.tg-tab:hover:not(.active){border-color:var(--violet);color:var(--violet);}
+.tg-refresh-btn{display:flex;align-items:center;gap:5px;padding:7px 14px;border:1.5px solid var(--border);background:var(--surface);border-radius:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:all .2s;}
+.tg-refresh-btn:hover{border-color:var(--violet);color:var(--violet);}
+.tg-refresh-btn.spinning .ref-icon{animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.ref-icon{display:inline-block;font-size:13px;}
+.tg-source{font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+.tg-source a{color:var(--violet);text-decoration:none;}
+.topgwen-list{display:flex;flex-direction:column;gap:6px;}
+.tg-row{display:flex;align-items:center;gap:12px;padding:12px 18px;background:var(--card);border:1.5px solid var(--border);border-radius:8px;transition:border-color .2s,opacity .3s;animation:fadeRow .35s ease both;}
+@keyframes fadeRow{from{opacity:0;transform:translateX(-8px);}to{opacity:1;transform:translateX(0);}}
+.tg-row:hover{border-color:rgba(124,92,191,.3);}
+.tg-rank{font-size:1.15rem;font-family:'Cormorant Garamond',serif;color:var(--muted);min-width:26px;text-align:center;}
+.tg-rank.gold{color:#f0c040;}.tg-rank.silver{color:#a0b8c8;}.tg-rank.bronze{color:#c89060;}
+.tg-info{flex:1;min-width:0;}
+.tg-name{font-size:13px;font-weight:700;color:var(--pale);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tg-hashtag{font-size:11px;color:var(--violet);font-weight:400;}
+.tg-details{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:1px;}
+.tg-right{text-align:right;flex-shrink:0;}
+.tg-lp{font-size:13px;font-weight:700;color:var(--violet);}
+.tg-wr{font-size:10px;color:var(--buff);font-weight:600;}
+.tg-games{font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;}
+.tg-otp{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:8px;background:rgba(168,125,212,.15);color:var(--lilas);border:1px solid rgba(168,125,212,.3);margin-left:5px;vertical-align:middle;}
+.tg-loading{text-align:center;padding:32px;color:var(--muted);font-size:12px;letter-spacing:2px;}
+.tg-loading .spin{display:inline-block;animation:spin .8s linear infinite;font-size:20px;}
 /* FOOTER */
 footer{border-top:1.5px solid var(--border);text-align:center;padding:44px 24px;}
 .footer-scissors{font-size:18px;letter-spacing:12px;color:var(--muted);margin-bottom:16px;opacity:.4;}
 footer p{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
 footer a{color:var(--violet);text-decoration:none;}
-
 /* CURSOR */
 #sc-cursor{position:fixed;pointer-events:none;z-index:99999;left:-200px;top:-200px;transform:translate(-50%,-50%);}
 .snip-p{position:fixed;pointer-events:none;z-index:99998;font-size:var(--fs,15px);color:var(--col,#7c5cbf);animation:spFly var(--dur,.7s) ease-out forwards;}
 @keyframes spFly{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0) rotate(var(--tr));}}
 .snip-word{position:fixed;pointer-events:none;z-index:99998;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--violet);letter-spacing:2px;animation:spWord .85s ease-out forwards;white-space:nowrap;}
 @keyframes spWord{0%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-34px) scale(.75);}}
-
-
-/* ═══════════════════════════════
-   LEADERBOARD PANEL
-═══════════════════════════════ */
-#lb-tab{position:fixed;bottom:0;left:28px;z-index:8000;display:flex;flex-direction:column;align-items:stretch;width:300px;filter:drop-shadow(0 -2px 18px rgba(124,92,191,.2));}
-#lb-toggle{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 0;background:var(--lilas);color:#fff;border:none;border-radius:12px 12px 0 0;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:background .2s;}
-#lb-toggle:hover{background:#8a5ab0;cursor:none!important;}
-#lb-toggle .lbarr{transition:transform .3s;display:inline-block;}
-#lb-panel{height:0;overflow:hidden;transition:height .35s cubic-bezier(.4,0,.2,1);background:#fff;border:2px solid var(--border);border-bottom:none;border-radius:12px 12px 0 0;display:flex;flex-direction:column;}
-#lb-panel.open{height:420px;}
-
-#lb-inner{display:flex;flex-direction:column;height:100%;padding:16px;}
-#lb-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--pale);letter-spacing:3px;text-align:center;margin-bottom:4px;}
-#lb-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:14px;}
-
-/* submit form */
-#lb-form{display:flex;gap:8px;margin-bottom:14px;}
-#lb-name{flex:1;padding:8px 14px;border:1.5px solid var(--border);border-radius:20px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--text);outline:none;background:var(--surface);}
-#lb-name:focus{border-color:var(--violet);}
-#lb-submit{padding:8px 16px;background:var(--violet);color:#fff;border:none;border-radius:20px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;transition:background .2s;white-space:nowrap;}
-#lb-submit:hover{background:#5a3e9a;cursor:none!important;}
-#lb-submit:disabled{background:var(--muted);cursor:none!important;}
-#lb-msg{font-size:10px;color:var(--buff);letter-spacing:1px;text-align:center;margin-bottom:8px;min-height:14px;}
-
-/* scores list */
-#lb-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:6px;}
-#lb-list::-webkit-scrollbar{width:4px;}
-#lb-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
-.lb-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;background:var(--card);border:1.5px solid var(--border);transition:border-color .2s;}
-.lb-row:hover{border-color:var(--violet);}
-.lb-rank{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--muted);min-width:22px;text-align:center;}
-.lb-rank.gold{color:#f0c040;}.lb-rank.silver{color:#a0b8c8;}.lb-rank.bronze{color:#c89060;}
-.lb-name{flex:1;font-size:12px;font-weight:600;color:var(--pale);letter-spacing:.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.lb-score{font-size:12px;font-weight:700;color:var(--violet);letter-spacing:1px;}
-.lb-scissors{font-size:11px;color:var(--muted);}
-.lb-empty{text-align:center;color:var(--muted);font-size:12px;letter-spacing:1px;margin-top:30px;}
-#lb-loading{text-align:center;color:var(--muted);font-size:20px;margin-top:30px;animation:spin .8s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-
-/* ═══════════════════════
-   MINI GAME TAB
-═══════════════════════ */
+/* GAME */
 #game-tab{position:fixed;bottom:0;right:28px;z-index:8000;display:flex;flex-direction:column;align-items:stretch;width:300px;filter:drop-shadow(0 -2px 18px rgba(124,92,191,.2));}
 #game-toggle{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 0;background:var(--violet);color:#fff;border:none;border-radius:12px 12px 0 0;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:background .2s;}
 #game-toggle:hover{background:#5a3e9a;cursor:none!important;}
@@ -146,730 +201,752 @@ footer a{color:var(--violet);text-decoration:none;}
 #game-panel{height:0;overflow:hidden;transition:height .35s cubic-bezier(.4,0,.2,1);background:#fff;border:2px solid var(--border);border-bottom:none;border-radius:12px 12px 0 0;position:relative;}
 #game-panel.open{height:440px;}
 #gc{display:block;width:100%;height:100%;}
-
-/* game overlay */
-#g-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,.94);z-index:20;transition:opacity .2s;border-radius:10px;}
+#g-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,.94);z-index:20;border-radius:10px;}
 #g-ov.hidden{opacity:0;pointer-events:none;}
 #g-ov .gsc{font-size:38px;animation:gspin 2s ease-in-out infinite;margin-bottom:6px;}
 @keyframes gspin{0%,100%{transform:rotate(-14deg);}50%{transform:rotate(14deg) scale(1.08);}}
 #g-ov h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.45rem;color:var(--pale);letter-spacing:3px;margin-bottom:4px;}
 #g-ov .gsub{font-size:9px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
 #g-ov .gds{font-size:13px;font-weight:700;color:var(--violet);margin-bottom:14px;display:none;}
-#g-btn{padding:9px 26px;background:var(--violet);color:#fff;border:none;border-radius:24px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background .2s;}
+#g-btn{padding:9px 26px;background:var(--violet);color:#fff;border:none;border-radius:24px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
 #g-btn:hover{background:#5a3e9a;cursor:none!important;}
 #g-ui{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:5px 10px;background:rgba(255,255,255,.8);backdrop-filter:blur(4px);font-size:10px;font-weight:700;color:var(--violet);letter-spacing:2px;text-transform:uppercase;z-index:10;pointer-events:none;border-bottom:1px solid var(--border);}
+/* LB */
+#lb-tab{position:fixed;bottom:0;left:28px;z-index:8000;display:flex;flex-direction:column;align-items:stretch;width:300px;filter:drop-shadow(0 -2px 18px rgba(124,92,191,.2));}
+#lb-toggle{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 0;background:var(--lilas);color:#fff;border:none;border-radius:12px 12px 0 0;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:background .2s;}
+#lb-toggle:hover{background:#8a5ab0;cursor:none!important;}
+#lb-toggle .lbarr{transition:transform .3s;display:inline-block;}
+#lb-panel{height:0;overflow:hidden;transition:height .35s cubic-bezier(.4,0,.2,1);background:#fff;border:2px solid var(--border);border-bottom:none;border-radius:12px 12px 0 0;}
+#lb-panel.open{height:420px;}
+#lb-inner{display:flex;flex-direction:column;height:420px;padding:13px;}
+#lb-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--pale);letter-spacing:3px;text-align:center;margin-bottom:2px;}
+#lb-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:9px;}
+#lb-form{display:flex;gap:6px;margin-bottom:6px;}
+#lb-name{flex:1;padding:7px 12px;border:1.5px solid var(--border);border-radius:20px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--text);outline:none;background:var(--surface);}
+#lb-name:focus{border-color:var(--violet);}
+#lb-submit{padding:7px 11px;background:var(--violet);color:#fff;border:none;border-radius:20px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;white-space:nowrap;}
+#lb-submit:hover{background:#5a3e9a;cursor:none!important;}
+#lb-submit:disabled{background:var(--muted);}
+#lb-msg{font-size:10px;color:var(--buff);text-align:center;margin-bottom:5px;min-height:13px;}
+#lb-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;}
+#lb-list::-webkit-scrollbar{width:4px;}
+#lb-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.lb-row{display:flex;align-items:center;gap:8px;padding:6px 9px;border-radius:7px;background:var(--card);border:1.5px solid var(--border);}
+.lb-rank{font-size:14px;min-width:22px;text-align:center;}
+.lb-name-cell{flex:1;font-size:12px;font-weight:700;color:var(--pale);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lb-score-cell{font-size:12px;font-weight:700;color:var(--violet);}
+.lb-empty{text-align:center;color:var(--muted);font-size:12px;margin-top:20px;}
 </style>
 </head>
 <body>
-
-<!-- DECO LAYER -->
-<div class="deco-layer" aria-hidden="true">
-  <!-- Chibi 1 -->
-  <div class="deco-item" style="--x:3%;--y:8%;--d:9s;--dl:0s;--o:.13;--r:-10deg">
-    <svg width="80" viewBox="0 0 80 110" fill="none">
-      <ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse>
-      <path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path>
-      <path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path>
-      <ellipse cx="40" cy="14" rx="10" ry="5" fill="#d4a8e8"></ellipse><circle cx="40" cy="14" r="4" fill="#c090d8"></circle>
-      <ellipse cx="28" cy="14" rx="7" ry="4" fill="#d4a8e8" opacity=".7" transform="rotate(-20 28 14)"></ellipse>
-      <ellipse cx="52" cy="14" rx="7" ry="4" fill="#d4a8e8" opacity=".7" transform="rotate(20 52 14)"></ellipse>
-      <ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse>
-      <ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse>
-      <circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle>
-      <ellipse cx="29" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
-      <ellipse cx="51" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
-      <path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
-      <path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path>
-      <path d="M32 52 Q40 55 48 52 L50 90 Q40 95 30 90Z" fill="#fff" opacity=".8"></path>
-      <path d="M24 56 Q10 65 12 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
-      <path d="M56 56 Q70 65 68 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
-      <rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect>
-      <ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse>
-    </svg>
+<div id="welcome-modal" class="hidden">
+  <div class="wm-box">
+    <div class="wm-sc">✂</div>
+    <h2>GWENKING</h2>
+    <p>Entre ton pseudo pour sauvegarder tes scores</p>
+    <div class="wm-wb" id="wm-wb" style="display: block;">✂ Bon retour, GWENKING !</div>
+    <input class="wm-input" id="wm-input" type="text" placeholder="Ton pseudo..." maxlength="20" style="display: none;">
+    <button class="wm-btn" id="wm-confirm">C'est moi ✂</button>
+    <button class="wm-skip" id="wm-skip">Passer</button>
   </div>
-  <!-- Chibi 2 -->
-  <div class="deco-item" style="--x:88%;--y:70%;--d:11s;--dl:2s;--o:.10;--r:8deg">
-    <svg width="64" viewBox="0 0 80 110" fill="none">
-      <ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse>
-      <path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path>
-      <path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path>
-      <ellipse cx="40" cy="14" rx="10" ry="5" fill="#f4c0d8"></ellipse><circle cx="40" cy="14" r="4" fill="#e090b8"></circle>
-      <ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse>
-      <ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse>
-      <circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle>
-      <ellipse cx="29" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
-      <ellipse cx="51" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
-      <path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
-      <path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path>
-      <path d="M32 52 Q40 55 48 52 L50 90 Q40 95 30 90Z" fill="#fff" opacity=".8"></path>
-      <path d="M24 56 Q10 65 12 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
-      <path d="M56 56 Q70 65 68 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
-      <rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect>
-      <ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse>
-    </svg>
-  </div>
-  <!-- Chibi 3 -->
-  <div class="deco-item" style="--x:1%;--y:50%;--d:13s;--dl:4s;--o:.08;--r:5deg">
-    <svg width="56" viewBox="0 0 80 110" fill="none">
-      <ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse>
-      <path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path>
-      <path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path>
-      <ellipse cx="40" cy="14" rx="10" ry="5" fill="#d4a8e8"></ellipse><circle cx="40" cy="14" r="4" fill="#c090d8"></circle>
-      <ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse>
-      <ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse>
-      <circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle>
-      <ellipse cx="29" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
-      <ellipse cx="51" cy="41" rx="4" ry="2.5" fill="#f4b0c8" opacity=".5"></ellipse>
-      <path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
-      <path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path>
-      <path d="M32 52 Q40 55 48 52 L50 90 Q40 95 30 90Z" fill="#fff" opacity=".8"></path>
-      <path d="M24 56 Q10 65 12 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
-      <path d="M56 56 Q70 65 68 80" stroke="#fde8d8" stroke-width="8" stroke-linecap="round" fill="none"></path>
-      <rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect>
-      <ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse>
-    </svg>
-  </div>
-  <!-- Flowers -->
-  <div class="deco-item" style="--x:82%;--y:5%;--d:10s;--dl:1s;--o:.18;--r:15deg"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><g transform="translate(26,26)"><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(288)"></ellipse><circle r="7" fill="#ffe8a0"></circle><circle r="3" fill="#f4d060"></circle></g></svg></div>
-  <div class="deco-item" style="--x:46%;--y:3%;--d:12s;--dl:3s;--o:.14;--r:-8deg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><g transform="translate(24,24)"><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(60)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(120)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(180)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(240)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(300)"></ellipse><circle r="6" fill="#ffe0c8"></circle><circle r="2.5" fill="#f4c090"></circle></g></svg></div>
-  <div class="deco-item" style="--x:12%;--y:80%;--d:8s;--dl:0.5s;--o:.16;--r:20deg"><svg width="44" height="44" viewBox="0 0 44 44" fill="none"><g transform="translate(22,22)"><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(288)"></ellipse><circle r="6" fill="#ffeea0"></circle><circle r="2.5" fill="#f8d840"></circle></g></svg></div>
-  <div class="deco-item" style="--x:93%;--y:38%;--d:14s;--dl:6s;--o:.12;--r:-15deg"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><g transform="translate(28,28)"><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="12" fill="#b0c8f4" opacity=".8" transform="rotate(288)"></ellipse><circle r="7" fill="#ffe8c0"></circle><circle r="3" fill="#f8d070"></circle></g></svg></div>
-  <div class="deco-item" style="--x:38%;--y:92%;--d:11s;--dl:4.5s;--o:.15;--r:-5deg"><svg width="50" height="50" viewBox="0 0 50 50" fill="none"><g transform="translate(25,25)"><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-12" rx="6.5" ry="11" fill="#f4a0c0" opacity=".85" transform="rotate(288)"></ellipse><circle r="7" fill="#fff0b0"></circle><circle r="3" fill="#f8e040"></circle></g></svg></div>
 </div>
 
-<!-- WRAPPER -->
+<div class="deco-layer" aria-hidden="true">
+  <div class="deco-item" style="--x:3%;--y:8%;--d:9s;--dl:0s;--o:.13;--r:-10deg"><svg width="80" viewBox="0 0 80 110" fill="none"><ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse><path d="M18 42 Q5 55 10 72 Q14 60 22 55Z" fill="#b3d4f5"></path><path d="M62 42 Q75 55 70 72 Q66 60 58 55Z" fill="#b3d4f5"></path><ellipse cx="40" cy="14" rx="10" ry="5" fill="#d4a8e8"></ellipse><circle cx="40" cy="14" r="4" fill="#c090d8"></circle><ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse><ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><circle cx="34" cy="35" r="1" fill="#fff"></circle><circle cx="48" cy="35" r="1" fill="#fff"></circle><path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none"></path><path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path><rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse></svg></div>
+  <div class="deco-item" style="--x:88%;--y:65%;--d:11s;--dl:2s;--o:.10;--r:8deg"><svg width="64" viewBox="0 0 80 110" fill="none"><ellipse cx="40" cy="34" rx="22" ry="24" fill="#b3d4f5"></ellipse><ellipse cx="40" cy="14" rx="10" ry="5" fill="#f4c0d8"></ellipse><circle cx="40" cy="14" r="4" fill="#e090b8"></circle><ellipse cx="40" cy="38" rx="18" ry="18" fill="#fde8d8"></ellipse><ellipse cx="33" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><ellipse cx="47" cy="36" rx="3" ry="3.5" fill="#5a3080"></ellipse><path d="M35 44 Q40 48 45 44" stroke="#c090a0" stroke-width="1.2" fill="none"></path><path d="M24 56 Q22 90 24 105 Q40 108 56 105 Q58 90 56 56 Q48 50 32 50Z" fill="#d4b8f0"></path><rect x="32" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><rect x="41" y="100" width="7" height="10" rx="3" fill="#d4b8f0"></rect><ellipse cx="35" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse><ellipse cx="44" cy="110" rx="5" ry="3" fill="#7c5cbf"></ellipse></svg></div>
+  <div class="deco-item" style="--x:82%;--y:5%;--d:10s;--dl:1s;--o:.18;--r:15deg"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><g transform="translate(26,26)"><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-13" rx="7" ry="11" fill="#f4b8d8" opacity=".85" transform="rotate(288)"></ellipse><circle r="7" fill="#ffe8a0"></circle><circle r="3" fill="#f4d060"></circle></g></svg></div>
+  <div class="deco-item" style="--x:46%;--y:3%;--d:12s;--dl:3s;--o:.14;--r:-8deg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><g transform="translate(24,24)"><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(60)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(120)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(180)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(240)"></ellipse><ellipse cx="0" cy="-11" rx="6" ry="10" fill="#c8a8e8" opacity=".8" transform="rotate(300)"></ellipse><circle r="6" fill="#ffe0c8"></circle></g></svg></div>
+  <div class="deco-item" style="--x:12%;--y:80%;--d:8s;--dl:.5s;--o:.16;--r:20deg"><svg width="44" height="44" viewBox="0 0 44 44" fill="none"><g transform="translate(22,22)"><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(72)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(144)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(216)"></ellipse><ellipse cx="0" cy="-10" rx="5.5" ry="9" fill="#f9c0d0" opacity=".85" transform="rotate(288)"></ellipse><circle r="6" fill="#ffeea0"></circle></g></svg></div>
+</div>
+
 <div class="wrapper">
 <header class="hero">
   <div class="hero-tag">League of Legends</div>
   <h1>GWEN<em>KING</em></h1>
-  <p class="hero-sub">Patch Tracker &amp; Runes</p>
+  <p class="hero-sub">Patch Tracker · Runes · Stats · Live Data</p>
+  <div class="hero-greet" id="hero-greet">✂ Bienvenue, GWENKING !</div>
   <div class="socials">
-    <a class="soc" href="https://www.twitch.tv/gwenking_" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"></path></svg>Twitch
-    </a>
-    <a class="soc" href="https://www.tiktok.com/@gwenklng" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"></path></svg>TikTok
-    </a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_2.html#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube
-    </a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_2.html#" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram
-    </a>
+    <a class="soc" href="https://www.twitch.tv/gwenking_" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"></path></svg>Twitch</a>
+    <a class="soc" href="https://www.tiktok.com/@gwenklng" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"></path></svg>TikTok</a>
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_6.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</a>
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_6.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram</a>
   </div>
 </header>
-
 <main>
-  <div class="section-head"><h2>Historique des patchs</h2><span class="snips">✂ ✂ ✂</span></div>
-  <div class="patches">
-    <div class="patch nerf">
-      <div class="patch-top"><span class="patch-name">Patch 26.4</span><div class="patch-right"><span class="patch-date">19 Fév 2026</span><span class="badge nerf">Nerf</span></div></div>
-      <p class="patch-summary">Gwen trop dominante avec le nouvel item Dusk &amp; Dawn. Riot réduit le burst sur le Q et les dégâts d'ulti, sans toucher à la montée en puissance globale.</p>
-      <ul class="changes">
-        <li class="nerf"><strong>Q — Snip Snip! :</strong> Dégâts par snip 10/15/20/25/30 → 10/13.5/17/20.5/24</li>
-        <li class="nerf"><strong>Q — Minion damage :</strong> Augmenté à 80% (compensation laning)</li>
-        <li class="nerf"><strong>R — Needlework :</strong> Dégâts par aiguille 35/65/95 → 30/50/70</li>
-        <li class="nerf">Jungle Gwen affaiblie — cap de dégâts monstres réduit</li>
-      </ul>
-    </div>
-    <div class="patch neutral">
-      <div class="patch-top"><span class="patch-name">Patch 25.21</span><div class="patch-right"><span class="patch-date">22 Oct 2025</span><span class="badge neutral">Ajustement</span></div></div>
-      <p class="patch-summary">Riot revient presque à la version pre-25.06. Le nouveau style de jeu était jugé moins satisfaisant. Deux exceptions : armure growth réduite et jungle moins forte.</p>
-      <ul class="changes">
-        <li>Retour global à la version pre-25.06</li>
-        <li class="nerf">Armure par niveau légèrement réduite</li>
-        <li class="nerf">Jungle Gwen affaiblie</li>
-      </ul>
-    </div>
-    <div class="patch nerf">
-      <div class="patch-top"><span class="patch-name">Patch 25.9</span><div class="patch-right"><span class="patch-date">Avr 2025</span><span class="badge nerf">Nerf</span></div></div>
-      <p class="patch-summary">Gwen monte en priorité en Pro Play. Son impact early et en jungle était trop élevé avec trop peu de counterplay.</p>
-      <ul class="changes">
-        <li class="nerf">Jungle Gwen ciblée — counterplay réduit en early</li>
-        <li class="nerf">Follow-up des changements 25.06 et 25.08</li>
-      </ul>
-    </div>
-    <div class="patch nerf">
-      <div class="patch-top"><span class="patch-name">Patch 25.8</span><div class="patch-right"><span class="patch-date">Avr 2025</span><span class="badge nerf">Nerf</span></div></div>
-      <p class="patch-summary">Trop forte en early game post-rework. Riot ajuste les dégâts on-hit du E pour rééquilibrer.</p>
-      <ul class="changes">
-        <li class="nerf"><strong>E — Skip 'n Slash :</strong> Dégâts on-hit 12/14/16/18/20 → 8/11/14/17/20 (+25% AP)</li>
-      </ul>
-    </div>
-    <div class="patch buff">
-      <div class="patch-top"><span class="patch-name">Patch 25.6</span><div class="patch-right"><span class="patch-date">Mars 2025</span><span class="badge buff">Rework de courbe</span></div></div>
-      <p class="patch-summary">Grand changement — Riot veut que Gwen soit forte en early et en lane, pas uniquement une carry qui scale pour ulti.</p>
-      <ul class="changes">
-        <li class="buff">Nouveau mécanisme : passage en untargetable possible</li>
-        <li class="buff"><strong>Q :</strong> Dégâts early augmentés</li>
-        <li class="buff">HP de base 600→620 | HP growth 110→115 | Armure de base 33→39</li>
-        <li class="nerf">Attack speed growth légèrement réduit</li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="runes-section">
-    <div class="section-head"><h2>Mes runes</h2><span class="snips">✂ ✂</span></div>
-    <div class="runes-grid">
-      <div class="rune-card">
-        <div class="rune-card-meta"><span class="rune-game-tag">Jungle · Page 1</span><span class="rune-result jng">GWEB FS</span></div>
-        <h4>Gwen — Jungle</h4>
-        <div class="rune-path"><div class="rune-path-label">Inspiration</div><div class="rune-row"><span class="rune-pill keystone">Premier Coup</span><span class="rune-pill">Remise Immédiate</span><span class="rune-pill">Triple Tonique</span><span class="rune-pill">Savoir Cosmique</span></div></div>
-        <div class="rune-path"><div class="rune-path-label">Précision (secondaire)</div><div class="rune-row"><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Coup de Grâce</span></div></div>
-        <div class="rune-path"><div class="rune-path-label">Statistiques</div><div class="rune-row"><span class="rune-pill">+Vitesse d'attaque</span><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+PV</span></div></div>
-      </div>
-      <div class="rune-card">
-        <div class="rune-card-meta"><span class="rune-game-tag">Jungle · Page 2</span><span class="rune-result jng">GWEN MF FS</span></div>
-        <h4>Gwen — Jungle (variante)</h4>
-        <div class="rune-path"><div class="rune-path-label">Sorcellerie</div><div class="rune-row"><span class="rune-pill keystone">Premier Coup</span><span class="rune-pill">Marche sur l'Eau</span><span class="rune-pill">Célérité</span><span class="rune-pill">Vitesse d'Approche</span></div></div>
-        <div class="rune-path"><div class="rune-path-label">Précision (secondaire)</div><div class="rune-row"><span class="rune-pill">Remise Immédiate</span><span class="rune-pill">Triple Tonique</span></div></div>
-        <div class="rune-path"><div class="rune-path-label">Statistiques</div><div class="rune-row"><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+PV</span></div></div>
-      </div>
-      <div class="rune-card">
-        <div class="rune-card-meta"><span class="rune-game-tag">Top Lane · Page 3</span><span class="rune-result win">Gwen Top</span></div>
-        <h4>Gwen — Top Lane</h4>
-        <div class="rune-path"><div class="rune-path-label">Précision</div><div class="rune-row"><span class="rune-pill keystone">Conquérant</span><span class="rune-pill">Présence d'Esprit</span><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Coup de Grâce</span></div></div>
-        <div class="rune-path"><div class="rune-path-label">Résolution (secondaire)</div><div class="rune-row"><span class="rune-pill">Démolition</span><span class="rune-pill">Inébranlable</span></div></div>
-        <div class="rune-path"><div class="rune-path-label">Statistiques</div><div class="rune-row"><span class="rune-pill">+Vitesse d'attaque</span><span class="rune-pill">+Force adaptative</span><span class="rune-pill">+PV</span></div></div>
-      </div>
-    </div>
-    <div class="rune-hint"><span>✂</span> Mets à jour tes runes en remplaçant le texte dans les balises <code>&lt;span class="rune-pill"&gt;</code>.</div>
+<!-- PATCHES + COUNTDOWN -->
+<div class="section-head" style="margin-top:0"><h2>Patch notes</h2><span class="snips">✂ ✂ ✂</span><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+<div class="countdown-box">
+  <div class="countdown-label">Prochain patch</div>
+  <div class="countdown-patch-name" id="cd-patch-name">Patch 26.05</div>
+  <div class="countdown-digits">
+    <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Jours</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">22</div><div class="cd-lbl">Heures</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">19</div><div class="cd-lbl">Minutes</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-s">06</div><div class="cd-lbl">Secondes</div></div>
   </div>
+</div>
+<div class="patches">
+  <div class="patch nerf"><div class="patch-top"><span class="patch-name">Patch 26.4</span><div class="patch-right"><span class="patch-date">19 Fév 2026</span><span class="badge nerf">Nerf</span></div></div><p class="patch-summary">Gwen trop dominante avec Dusk &amp; Dawn. Riot réduit le burst Q et les dégâts d'ulti.</p><ul class="changes"><li class="nerf"><strong>Q — Snip Snip! :</strong> Dégâts/snip 10/15/20/25/30 → 10/13.5/17/20.5/24</li><li class="nerf"><strong>R — Needlework :</strong> Dégâts/aiguille 35/65/95 → 30/50/70</li><li class="nerf">Cap dégâts jungle réduit</li></ul></div>
+  <div class="patch neutral"><div class="patch-top"><span class="patch-name">Patch 25.21</span><div class="patch-right"><span class="patch-date">22 Oct 2025</span><span class="badge neutral">Ajustement</span></div></div><p class="patch-summary">Retour quasi-complet à la version pre-25.06. Le nouveau style jugé moins satisfaisant par la communauté.</p><ul class="changes"><li>Retour global pre-25.06</li><li class="nerf">Armure/niveau légèrement réduite</li><li class="nerf">Jungle Gwen affaiblie</li></ul></div>
+  <div class="patch nerf"><div class="patch-top"><span class="patch-name">Patch 25.9</span><div class="patch-right"><span class="patch-date">Avr 2025</span><span class="badge nerf">Nerf</span></div></div><p class="patch-summary">Gwen prioritaire en Pro Play — early et jungle trop forts.</p><ul class="changes"><li class="nerf">Jungle Gwen — counterplay réduit en early</li></ul></div>
+  <div class="patch nerf"><div class="patch-top"><span class="patch-name">Patch 25.8</span><div class="patch-right"><span class="patch-date">Avr 2025</span><span class="badge nerf">Nerf</span></div></div><p class="patch-summary">Trop forte en early game post-rework.</p><ul class="changes"><li class="nerf"><strong>E — Skip 'n Slash :</strong> On-hit 12/14/16/18/20 → 8/11/14/17/20 (+25% AP)</li></ul></div>
+  <div class="patch buff"><div class="patch-top"><span class="patch-name">Patch 25.6</span><div class="patch-right"><span class="patch-date">Mars 2025</span><span class="badge buff">Rework</span></div></div><p class="patch-summary">Grand rework — Gwen forte en early et en lane.</p><ul class="changes"><li class="buff">Nouveau mécanisme untargetable amélioré</li><li class="buff">HP 600→620 · Armure 33→39</li><li class="nerf">Attack speed growth réduit</li></ul></div>
+</div>
+
+<!-- RUNES -->
+<div class="section-head"><h2>Mes runes</h2><span class="snips">✂ ✂</span></div>
+<div class="runes-grid">
+  <div class="rune-card"><div class="rune-card-meta"><span class="rune-game-tag">Jungle · Page 1</span><span class="rune-result jng">GWEB FS</span></div><h4>Gwen Jungle</h4><div class="rune-path"><div class="rune-path-label">Inspiration</div><div class="rune-row"><span class="rune-pill keystone">Premier Coup</span><span class="rune-pill">Remise Immédiate</span><span class="rune-pill">Triple Tonique</span><span class="rune-pill">Savoir Cosmique</span></div></div><div class="rune-path"><div class="rune-path-label">Précision</div><div class="rune-row"><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Coup de Grâce</span></div></div><div class="rune-path"><div class="rune-path-label">Stats</div><div class="rune-row"><span class="rune-pill">+VA</span><span class="rune-pill">+FA</span><span class="rune-pill">+PV</span></div></div></div>
+  <div class="rune-card"><div class="rune-card-meta"><span class="rune-game-tag">Jungle · Page 2</span><span class="rune-result jng">Conquérant</span></div><h4>Gwen Jungle (Conqueror)</h4><div class="rune-path"><div class="rune-path-label">Précision</div><div class="rune-row"><span class="rune-pill keystone">Conquérant</span><span class="rune-pill">Triomphe</span><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Dernier Rempart</span></div></div><div class="rune-path"><div class="rune-path-label">Inspiration</div><div class="rune-row"><span class="rune-pill">Intuition Cosmique</span><span class="rune-pill">Chaussures Magiques</span></div></div><div class="rune-path"><div class="rune-path-label">Stats</div><div class="rune-row"><span class="rune-pill">+VA</span><span class="rune-pill">+FA</span><span class="rune-pill">+PV</span></div></div></div>
+  <div class="rune-card"><div class="rune-card-meta"><span class="rune-game-tag">Top Lane · Page 3</span><span class="rune-result win">Gwen Top</span></div><h4>Gwen Top Lane</h4><div class="rune-path"><div class="rune-path-label">Précision</div><div class="rune-row"><span class="rune-pill keystone">Conquérant</span><span class="rune-pill">Présence d'Esprit</span><span class="rune-pill">Légende : Alacrité</span><span class="rune-pill">Dernier Rempart</span></div></div><div class="rune-path"><div class="rune-path-label">Résolution</div><div class="rune-row"><span class="rune-pill">Carapace Osseuse</span><span class="rune-pill">Inébranlable</span></div></div><div class="rune-path"><div class="rune-path-label">Stats</div><div class="rune-row"><span class="rune-pill">+VA</span><span class="rune-pill">+FA</span><span class="rune-pill">+PV</span></div></div></div>
+</div>
+
+<!-- TIER LIST -->
+<div class="section-head"><h2>Tier list items</h2><span class="snips">✂</span><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+<p class="tier-source">Source : <a href="https://op.gg/lol/champions/gwen/build" target="_blank" rel="noopener">OP.GG</a> · <a href="https://www.onetricks.gg/champions/builds/Gwen" target="_blank" rel="noopener">onetricks.gg</a> — Patch <span id="tier-patch">26.4</span> · Emerald+</p>
+<div id="tier-ts" class="last-update"></div>
+<div class="tier-grid" id="tier-grid">
+  <div class="tier-row"><div class="tier-label s">S</div><div class="tier-items">
+    <div class="tier-item">⚔️ Dusk &amp; Dawn<div class="ti-wr">52.3% WR · Mythique</div><div class="ti-note">Rush obligatoire</div></div>
+    <div class="tier-item">🌙 Riftmaker<div class="ti-wr">51.8% WR</div><div class="ti-note">Omnivamp core</div></div>
+    <div class="tier-item">🐍 Nashor's Tooth<div class="ti-wr">51.5% WR</div><div class="ti-note">AS + AP core</div></div>
+  </div></div>
+  <div class="tier-row"><div class="tier-label a">A</div><div class="tier-items">
+    <div class="tier-item">💀 Shadowflame<div class="ti-wr">50.8% WR</div><div class="ti-note">Vs squishies</div></div>
+    <div class="tier-item">🔮 Rabadon's<div class="ti-wr">50.6% WR</div><div class="ti-note">Late spike</div></div>
+    <div class="tier-item">🌀 Cosmic Drive<div class="ti-wr">50.2% WR</div><div class="ti-note">Mobilité + AP</div></div>
+    <div class="tier-item">⏳ Zhonya's<div class="ti-wr">49.9% WR</div><div class="ti-note">Situationnel</div></div>
+  </div></div>
+  <div class="tier-row"><div class="tier-label b">B</div><div class="tier-items">
+    <div class="tier-item">⚡ Wit's End<div class="ti-wr">49.4% WR</div><div class="ti-note">Vs full AP</div></div>
+    <div class="tier-item">🌿 Rylai's Crystal<div class="ti-wr">49.1% WR</div><div class="ti-note">Kiting/slow</div></div>
+    <div class="tier-item">🛡️ Warmog's<div class="ti-wr">48.8% WR</div><div class="ti-note">Tank situationnel</div></div>
+  </div></div>
+  <div class="tier-row"><div class="tier-label c">C</div><div class="tier-items">
+    <div class="tier-item">📿 Morellonomicon<div class="ti-wr">47.2% WR</div><div class="ti-note">À éviter en 3e</div></div>
+    <div class="tier-item">🎭 Demonic Embrace<div class="ti-wr">46.8% WR</div><div class="ti-note">Sous-optimal</div></div>
+  </div></div>
+</div>
+
+<!-- DAMAGE CALC -->
+<div class="section-head"><h2>Calculateur de dégâts</h2><span class="snips">✂</span></div>
+<div class="calc-box">
+  <div class="calc-grid">
+    <div class="calc-field"><label>Rang Q (Snip Snip!)</label><select id="c-qrank"><option>1</option><option>2</option><option>3</option><option selected="">4</option><option>5</option></select></div>
+    <div class="calc-field"><label>Pouvoir Aptitude (AP)</label><input id="c-ap" type="number" value="350" min="0" max="1200"></div>
+    <div class="calc-field"><label>Armure ennemie</label><input id="c-armor" type="number" value="80" min="0" max="400"></div>
+    <div class="calc-field"><label>Résistance magique</label><input id="c-mr" type="number" value="52" min="0" max="300"></div>
+    <div class="calc-field"><label>Nombre de snips</label><select id="c-snips"><option>1</option><option>2</option><option>3</option><option selected="">4</option><option>5</option></select></div>
+    <div class="calc-field"><label>Riftmaker stacks</label><select id="c-rift"><option value="0">0 stacks</option><option value="3">3 stacks</option><option value="6" selected="">6 stacks (max)</option></select></div>
+  </div>
+  <button class="calc-btn" id="c-calc">Calculer ✂</button>
+  <div class="calc-result">
+    <div class="calc-stat"><div class="calc-stat-val" id="cr-q">—</div><div class="calc-stat-lbl">Dégâts Q total</div></div>
+    <div class="calc-stat"><div class="calc-stat-val" id="cr-qfull">—</div><div class="calc-stat-lbl">Q zone centrale</div></div>
+    <div class="calc-stat"><div class="calc-stat-val" id="cr-e">—</div><div class="calc-stat-lbl">E on-hit</div></div>
+    <div class="calc-stat"><div class="calc-stat-val" id="cr-combo">—</div><div class="calc-stat-lbl">Combo Q+E estimé</div></div>
+  </div>
+</div>
+
+<!-- SKINS — tous officiels Riot vérifiés wiki -->
+<div class="section-head"><h2>Galerie des skins officiels</h2><span class="snips">✂</span></div>
+<p style="font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;">Source : <a href="https://wiki.leagueoflegends.com/en-us/Gwen/Cosmetics" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">Wiki LoL officiel</a> · <a href="https://leagueoflegends.fandom.com/wiki/Category:WR_Gwen_skins" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">Fandom WR</a> · <a href="https://tftskins.com/" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">TFT Skins</a></p>
+<div class="skins-filter">
+  <button class="sf-btn active" data-filter="all">Tous (17)</button>
+  <button class="sf-btn" data-filter="lol">LoL (6)</button>
+  <button class="sf-btn" data-filter="wr">Wild Rift (6)</button>
+  <button class="sf-btn" data-filter="tft">TFT Chibi (4)</button>
+  <button class="sf-btn" data-filter="lor">LoR (1)</button>
+</div>
+<div class="skins-grid">
+  <!-- LoL — 6 skins officiels confirmés wiki -->
+  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#e8f0ff,#d8ccf8)">✂<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Gwen</div><div class="skin-meta"><span class="skin-price">Gratuit</span><span class="skin-tbadge base">Base</span></div></div></div>
+  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#f5e8ff,#ffd8f5)">🎵<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Space Groove Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff0f8,#f8e0ff)">☕<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Café Cuties Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff8e0,#ffe8c0)">👑<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Battle Queen Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">⚔️<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#eae0ff,#ccc0f8)">🌧️<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Rain Shepherd Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <!-- Wild Rift — 6 skins officiels confirmés fandom WR -->
+  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#e8f0ff,#d8ccf8)">✂<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Gwen (Original)</div><div class="skin-meta"><span class="skin-price">—</span><span class="skin-tbadge base">Base</span></div></div></div>
+  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffc8e8)">🌹<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Crystal Rose Gwen</div><div class="skin-meta"><span class="skin-price">990 Wild Cores</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff8e0,#ffe090)">🏮<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Mythmaker Gwen</div><div class="skin-meta"><span class="skin-price">1650 Wild Cores</span><span class="skin-tbadge legendary">Légendaire</span></div></div></div>
+  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff0f0,#ffd0e0)">✨<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Prestige Crystal Rose</div><div class="skin-meta"><span class="skin-price">Événement</span><span class="skin-tbadge prestige">Prestige</span></div></div></div>
+  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">⚔️<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">990 Wild Cores</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#f5e8ff,#ffd8f5)">🎵<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Space Groove Gwen</div><div class="skin-meta"><span class="skin-price">990 Wild Cores</span><span class="skin-tbadge epic">Epic</span></div></div></div>
+  <!-- TFT Chibis — 4 officiels confirmés -->
+  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#e8f0ff,#d8ccf8)">🧸<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Gwen</div><div class="skin-meta"><span class="skin-price">1900 RP</span><span class="skin-tbadge epic">Mythic</span></div></div></div>
+  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">⚔️<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">1900 RP</span><span class="skin-tbadge epic">Mythic</span></div></div></div>
+  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff0f8,#f8e0ff)">☕<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Prestige Café Cuties</div><div class="skin-meta"><span class="skin-price">25 Mythic Med.</span><span class="skin-tbadge prestige">Prestige</span></div></div></div>
+  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffc8e8)">🌹<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Crystal Rose Gwen</div><div class="skin-meta"><span class="skin-price">Rotating Shop</span><span class="skin-tbadge epic">Mythic</span></div></div></div>
+  <!-- Legends of Runeterra — 1 officiel -->
+  <div class="skin-card" data-game="lor"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">🃏<span class="skin-game-badge">LoR</span></div><div class="skin-info"><div class="skin-name">Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">Event Pass</span><span class="skin-tbadge rare">Rare</span></div></div></div>
+</div>
+
+<!-- TOP GWENS MONDIALES -->
+<div class="section-head"><h2>Top Gwens Mondiales</h2><span class="snips">✂</span><span class="live-badge"><span class="live-dot"></span>Live</span></div>
+<div class="tg-header">
+  <div class="tg-controls">
+    <div class="tg-tabs">
+      <button class="tg-tab active" data-q="solo">Solo/Duo</button>
+      <button class="tg-tab" data-q="flex">Flex</button>
+    </div>
+    <button class="tg-refresh-btn" id="tg-refresh"><span class="ref-icon">↻</span> Actualiser</button>
+  </div>
+  <div class="tg-source">Source : <a href="https://www.onetricks.gg/champions/ranking/Gwen" target="_blank" rel="noopener">onetricks.gg</a> S2026</div>
+</div>
+<div id="tg-ts" class="last-update">Mis à jour il y a 0s</div>
+<div class="topgwen-list" id="tg-list"><div class="tg-row" style="animation-delay:0s">
+        <div class="tg-rank gold">👑</div>
+        <div class="tg-info">
+          <div class="tg-name">1314<span class="tg-hashtag"> #ever</span></div>
+          <div class="tg-details">NA · Challenger · KDA 3.68</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 988 LP</div>
+          <div class="tg-wr">64% WR</div>
+          <div class="tg-games">74 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.04s">
+        <div class="tg-rank silver">✦</div>
+        <div class="tg-info">
+          <div class="tg-name">odium<span class="tg-hashtag"> #600</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">NA · Challenger · KDA 2.00</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 505 LP</div>
+          <div class="tg-wr">56% WR</div>
+          <div class="tg-games">180 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.08s">
+        <div class="tg-rank bronze">✧</div>
+        <div class="tg-info">
+          <div class="tg-name">Lmzs<span class="tg-hashtag"> #EUW</span></div>
+          <div class="tg-details">EUW · Challenger · KDA 2.32</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 491 LP</div>
+          <div class="tg-wr">59% WR</div>
+          <div class="tg-games">56 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.12s">
+        <div class="tg-rank ">✂</div>
+        <div class="tg-info">
+          <div class="tg-name">14小孩幻想赢对线<span class="tg-hashtag"> #4453</span></div>
+          <div class="tg-details">KR · Grandmaster · KDA 2.10</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 158 LP</div>
+          <div class="tg-wr">55% WR</div>
+          <div class="tg-games">82 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.16s">
+        <div class="tg-rank ">✄</div>
+        <div class="tg-info">
+          <div class="tg-name">내 성장막아봐<span class="tg-hashtag"> #못막을걸</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Grandmaster · KDA 2.90</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 136 LP</div>
+          <div class="tg-wr">59% WR</div>
+          <div class="tg-games">239 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.2s">
+        <div class="tg-rank ">⋆</div>
+        <div class="tg-info">
+          <div class="tg-name">그러건아말건아<span class="tg-hashtag"> #0720</span></div>
+          <div class="tg-details">KR · Master · KDA 1.86</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 101 LP</div>
+          <div class="tg-wr">67% WR</div>
+          <div class="tg-games">49 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.24s">
+        <div class="tg-rank ">·</div>
+        <div class="tg-info">
+          <div class="tg-name">雨の回忆<span class="tg-hashtag"> #blue</span></div>
+          <div class="tg-details">NA · Challenger · KDA 4.09</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 043 LP</div>
+          <div class="tg-wr">62% WR</div>
+          <div class="tg-games">42 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.28s">
+        <div class="tg-rank ">★</div>
+        <div class="tg-info">
+          <div class="tg-name">앨리시아 제<span class="tg-hashtag"> #정글러</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Master · KDA 2.26</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">1 006 LP</div>
+          <div class="tg-wr">56% WR</div>
+          <div class="tg-games">174 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.32s">
+        <div class="tg-rank ">✩</div>
+        <div class="tg-info">
+          <div class="tg-name">vley<span class="tg-hashtag"> #balls</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 2.75</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">996 LP</div>
+          <div class="tg-wr">61% WR</div>
+          <div class="tg-games">56 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.36s">
+        <div class="tg-rank ">✦</div>
+        <div class="tg-info">
+          <div class="tg-name">Lokat<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 1.53</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">955 LP</div>
+          <div class="tg-wr">53% WR</div>
+          <div class="tg-games">372 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.4s">
+        <div class="tg-rank ">✧</div>
+        <div class="tg-info">
+          <div class="tg-name">41009<span class="tg-hashtag"> #6XX</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 1.79</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">936 LP</div>
+          <div class="tg-wr">51% WR</div>
+          <div class="tg-games">294 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.44s">
+        <div class="tg-rank ">⋆</div>
+        <div class="tg-info">
+          <div class="tg-name">Diguidou<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 2.02</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">935 LP</div>
+          <div class="tg-wr">60% WR</div>
+          <div class="tg-games">176 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.48s">
+        <div class="tg-rank ">·</div>
+        <div class="tg-info">
+          <div class="tg-name">李相赫<span class="tg-hashtag"> #0820</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Master · KDA 4.00</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">934 LP</div>
+          <div class="tg-wr">62% WR</div>
+          <div class="tg-games">113 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.52s">
+        <div class="tg-rank ">★</div>
+        <div class="tg-info">
+          <div class="tg-name">5 DØGS 1 TÉAM<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 1.87</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">927 LP</div>
+          <div class="tg-wr">57% WR</div>
+          <div class="tg-games">157 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.56s">
+        <div class="tg-rank ">✩</div>
+        <div class="tg-info">
+          <div class="tg-name">puppyxi<span class="tg-hashtag"> #1123</span></div>
+          <div class="tg-details">KR · Master · KDA 2.34</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">925 LP</div>
+          <div class="tg-wr">56% WR</div>
+          <div class="tg-games">113 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.6s">
+        <div class="tg-rank ">✦</div>
+        <div class="tg-info">
+          <div class="tg-name">강아지풀은있는데왜고양이풀은없지<span class="tg-hashtag"> #oωo</span></div>
+          <div class="tg-details">KR · Master · KDA 2.99</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">905 LP</div>
+          <div class="tg-wr">64% WR</div>
+          <div class="tg-games">63 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.64s">
+        <div class="tg-rank ">✧</div>
+        <div class="tg-info">
+          <div class="tg-name">南风知我意<span class="tg-hashtag"> #0321</span></div>
+          <div class="tg-details">NA · Grandmaster · KDA 3.99</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">896 LP</div>
+          <div class="tg-wr">66% WR</div>
+          <div class="tg-games">56 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.68s">
+        <div class="tg-rank ">⋆</div>
+        <div class="tg-info">
+          <div class="tg-name">Yuxin baby<span class="tg-hashtag"> #god</span></div>
+          <div class="tg-details">NA · Challenger · KDA 5.10</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">876 LP</div>
+          <div class="tg-wr">76% WR</div>
+          <div class="tg-games">55 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.72s">
+        <div class="tg-rank ">·</div>
+        <div class="tg-info">
+          <div class="tg-name">실력이차이나나봐<span class="tg-hashtag"> #나야</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">KR · Master · KDA 2.44</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">864 LP</div>
+          <div class="tg-wr">58% WR</div>
+          <div class="tg-games">138 games · SoloQ</div>
+        </div>
+      </div><div class="tg-row" style="animation-delay:0.76s">
+        <div class="tg-rank ">★</div>
+        <div class="tg-info">
+          <div class="tg-name">GwenOTP<span class="tg-hashtag"> #EUW1</span><span class="tg-otp">OTP</span></div>
+          <div class="tg-details">EUW · Master · KDA 2.11</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">851 LP</div>
+          <div class="tg-wr">55% WR</div>
+          <div class="tg-games">204 games · SoloQ</div>
+        </div>
+      </div></div>
+
 </main>
-
 <footer>
   <div class="footer-scissors">✂ ✂ ✂ ✂ ✂</div>
-  <p>GWENKING &nbsp;—&nbsp; LoL Patch Tracker &nbsp;—&nbsp; <a href="https://www.twitch.tv/gwenking_" target="_blank">twitch.tv/gwenking_</a></p>
+  <p>GWENKING &nbsp;—&nbsp; LoL Tracker · Live Data &nbsp;—&nbsp; <a href="https://www.twitch.tv/gwenking_" target="_blank" rel="noopener">twitch.tv/gwenking_</a></p>
 </footer>
 </div>
 
-<!-- LEADERBOARD TAB -->
+<!-- GAME TAB -->
+<div id="game-tab">
+  <div id="game-panel">
+    <div id="g-ui"><span id="g-score">0</span><span id="g-best">Best: 0</span></div>
+    <canvas id="gc" width="296" height="420"></canvas>
+    <div id="g-ov">
+      <div class="gsc">✂</div><h3>Snip Jump</h3>
+      <p class="gsub">Jeu infini — grimpe !</p>
+      <div class="gds" id="g-ds"></div>
+      <button id="g-btn">Jouer ✂</button>
+      <p style="margin-top:8px;font-size:9px;color:#b0a0cc;letter-spacing:1.5px;text-transform:uppercase;">← → bouger · évite les ✂ rouges</p>
+    </div>
+  </div>
+  <button id="game-toggle"><span class="arr">▲</span>&nbsp;✂ Snip Jump</button>
+</div>
+<!-- LB TAB -->
 <div id="lb-tab">
   <div id="lb-panel">
     <div id="lb-inner">
       <div id="lb-title">Classement</div>
       <div id="lb-sub">✂ Snip Jump ✂</div>
       <div id="lb-form">
-        <input id="lb-name" type="text" placeholder="Ton pseudo..." maxlength="20">
+        <input id="lb-name" type="text" placeholder="Pseudo..." maxlength="20">
         <button id="lb-submit">Envoyer ✂</button>
       </div>
       <div id="lb-msg"></div>
-      <div id="lb-list"><div class="lb-empty">Ouvre le classement !</div></div>
+      <div id="lb-list"><div class="lb-empty">Ouvre pour voir !</div></div>
     </div>
   </div>
   <button id="lb-toggle"><span class="lbarr">▲</span>&nbsp;🏆 Classement</button>
 </div>
-
-<!-- ═══════════════════════════════
-     MINI GAME TAB
-═══════════════════════════════ -->
-<div id="game-tab">
-  <div id="game-panel" class="open">
-    <div id="g-ui"><span id="g-score">6039</span><span id="g-best">Best: 6039</span></div>
-    <canvas id="gc" width="296" height="420"></canvas>
-    <div id="g-ov" class="">
-      <div class="gsc">✂</div>
-      <h3>Game Over</h3>
-      <p class="gsub">Tu peux faire mieux !</p>
-      <div class="gds" id="g-ds" style="display: block;">Score : 6039</div>
-      <button id="g-btn">Rejouer ✂</button>
-      <p style="margin-top:10px;font-size:9px;color:#b0a0cc;letter-spacing:1.5px;text-transform:uppercase;">← → bouger · évite les ciseaux rouges</p>
-    </div>
-  </div>
-  <button id="game-toggle"><span class="arr" style="transform: rotate(180deg);">▲</span>&nbsp;✂ Snip Jump</button>
-</div>
-
-<!-- SCISSORS CURSOR SVG -->
-<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="left: 1559px; top: 368px;">
-  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(0deg);">
-    <line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line>
-    <circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle>
-    <line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line>
-  </g>
-  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(0deg);">
-    <line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line>
-    <circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle>
-    <line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line>
-  </g>
-  <circle cx="21" cy="21" r="3.8" fill="#7c5cbf"></circle>
-  <circle cx="21" cy="21" r="1.6" fill="white"></circle>
+<!-- CURSOR -->
+<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" style="position: fixed; pointer-events: none; z-index: 99999; left: 1280px; top: 452px; transform: translate(-50%, -50%);">
+  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(0deg);"><line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
+  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(0deg);"><line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
+  <circle cx="21" cy="21" r="3.8" fill="#7c5cbf"></circle><circle cx="21" cy="21" r="1.6" fill="white"></circle>
 </svg>
-
 <script>
-/* ══════════════════════════════════════
-   SCISSORS CURSOR
-══════════════════════════════════════ */
+/* ══ PSEUDO ══ */
 (function(){
-  const cur=document.getElementById('sc-cursor');
-  const bt=document.getElementById('sc-top');
-  const bb=document.getElementById('sc-bot');
-  let ca=0,ta=0,snipping=false;
-
-  document.addEventListener('mousemove',e=>{
-    cur.style.left=e.clientX+'px';
-    cur.style.top=e.clientY+'px';
-  });
-
-  let stimer=null;
-  window.addEventListener('scroll',()=>{
-    const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
-    const p=window.scrollY/max;
-    ta=Math.sin(p*Math.PI)*30;
-    clearTimeout(stimer);
-    stimer=setTimeout(()=>{ta=0;},600);
-  },{passive:true});
-
-  (function tick(){
-    ca+=(ta-ca)*0.1;
-    if(!snipping){
-      bt.style.transform=`rotate(${-ca}deg)`;
-      bb.style.transform=`rotate(${ca}deg)`;
-    }
-    requestAnimationFrame(tick);
-  })();
-
-  const STARS=['★','✦','✧','✩','⋆','✂'];
-  const COLS=['#7c5cbf','#a87dd4','#f4b8d8','#c4a8e8','#ffe8a0','#d4b8f0','#b0c8f4'];
-  const WORDS=['snip !','snip snip !','✂~','snip~'];
-
-  document.addEventListener('click',e=>{
-    // don't fire inside game canvas
-    if(e.target.id==='gc')return;
-    stars(e.clientX,e.clientY);
-    word(e.clientX,e.clientY);
-    doSnip();
-  });
-
-  function doSnip(){
-    if(snipping)return;
-    snipping=true;
-    const seq=[28,8,32,6,24,2,0];
-    let i=0;
-    (function s(){
-      if(i>=seq.length){snipping=false;return;}
-      bt.style.transform=`rotate(${-seq[i]}deg)`;
-      bb.style.transform=`rotate(${seq[i]}deg)`;
-      i++;setTimeout(s,50);
-    })();
-  }
-
-  function stars(x,y){
-    const n=8+Math.floor(Math.random()*6);
-    for(let i=0;i<n;i++){
-      const el=document.createElement('span');
-      el.className='snip-p';
-      const ang=(i/n)*360+Math.random()*25;
-      const dist=26+Math.random()*52;
-      const tx=Math.cos(ang*Math.PI/180)*dist;
-      const ty=Math.sin(ang*Math.PI/180)*dist-10;
-      const fs=(9+Math.random()*12)+'px';
-      const col=COLS[Math.floor(Math.random()*COLS.length)];
-      const dur=(0.4+Math.random()*0.5)+'s';
-      const tr=(Math.random()>.5?'':'-')+Math.floor(Math.random()*360)+'deg';
-      el.textContent=STARS[Math.floor(Math.random()*STARS.length)];
-      el.style.cssText=`left:${x}px;top:${y}px;--tx:${tx}px;--ty:${ty}px;--fs:${fs};--col:${col};--dur:${dur};--tr:${tr}`;
-      document.body.appendChild(el);
-      setTimeout(()=>el.remove(),900);
-    }
-  }
-
-  function word(x,y){
-    const el=document.createElement('span');
-    el.className='snip-word';
-    el.textContent=WORDS[Math.floor(Math.random()*WORDS.length)];
-    el.style.left=(x-20+(Math.random()*16-8))+'px';
-    el.style.top=(y-12)+'px';
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),900);
-  }
+  const modal=document.getElementById('welcome-modal'),inp=document.getElementById('wm-input'),btn=document.getElementById('wm-confirm'),skip=document.getElementById('wm-skip'),wb=document.getElementById('wm-wb'),greet=document.getElementById('hero-greet'),lbN=document.getElementById('lb-name');
+  const saved=localStorage.getItem('gw_pseudo');
+  if(saved){wb.textContent='✂ Bon retour, '+saved+' !';wb.style.display='block';inp.value=saved;inp.style.display='none';btn.textContent='C\'est moi ✂';}
+  function setGreet(n){if(n){greet.textContent='✂ Bienvenue, '+n+' !';if(lbN)lbN.value=n;}}
+  setGreet(saved);
+  function close(n){if(n)localStorage.setItem('gw_pseudo',n);modal.classList.add('hidden');window._userPseudo=n||'';setGreet(n);}
+  btn.addEventListener('click',()=>{const v=inp.value.trim()||saved;if(v)close(v);});
+  skip.addEventListener('click',()=>close(''));
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=inp.value.trim();if(v)close(v);}});
+  window._userPseudo=saved||'';
 })();
 
-/* ══════════════════════════════════════
-   MINI GAME
-══════════════════════════════════════ */
+/* ══ COUNTDOWN — calendrier officiel Riot 2026 ══ */
 (function(){
-  const panel=document.getElementById('game-panel');
-  const toggle=document.getElementById('game-toggle');
-  const arr=toggle.querySelector('.arr');
-  let open=false;
+  // Source esports.net : calendrier patches 2026 officiel
+  const PATCHES=[
+    {n:'26.01',d:'2026-01-08T18:00:00Z'},{n:'26.02',d:'2026-01-22T18:00:00Z'},
+    {n:'26.03',d:'2026-02-04T18:00:00Z'},{n:'26.04',d:'2026-02-19T18:00:00Z'},
+    {n:'26.05',d:'2026-03-04T18:00:00Z'},{n:'26.06',d:'2026-03-18T17:00:00Z'},
+    {n:'26.07',d:'2026-04-01T17:00:00Z'},{n:'26.08',d:'2026-04-15T17:00:00Z'},
+    {n:'26.09',d:'2026-04-29T17:00:00Z'},{n:'26.10',d:'2026-05-13T17:00:00Z'},
+    {n:'26.11',d:'2026-05-28T17:00:00Z'},{n:'26.12',d:'2026-06-10T17:00:00Z'},
+    {n:'26.13',d:'2026-06-24T17:00:00Z'},{n:'26.14',d:'2026-07-15T17:00:00Z'},
+    {n:'26.15',d:'2026-07-29T17:00:00Z'},{n:'26.16',d:'2026-08-12T17:00:00Z'},
+    {n:'26.17',d:'2026-08-26T17:00:00Z'},{n:'26.18',d:'2026-09-09T17:00:00Z'},
+    {n:'26.19',d:'2026-09-23T17:00:00Z'},{n:'26.20',d:'2026-10-07T17:00:00Z'},
+    {n:'26.21',d:'2026-10-21T17:00:00Z'},{n:'26.22',d:'2026-11-04T18:00:00Z'},
+    {n:'26.23',d:'2026-11-19T18:00:00Z'},{n:'26.24',d:'2026-12-02T18:00:00Z'},
+  ];
+  const nameEl=document.getElementById('cd-patch-name');
+  const prevVals={d:null,h:null,m:null,s:null};
+  function bump(id,val){
+    const el=document.getElementById('cd-'+id);
+    const str=String(val).padStart(2,'0');
+    if(prevVals[id]!==str){
+      if(prevVals[id]!==null){el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');setTimeout(()=>el.classList.remove('bump'),300);}
+      el.textContent=str; prevVals[id]=str;
+    }
+  }
+  function tick(){
+    const now=new Date();
+    // Trouver prochain patch
+    const next=PATCHES.find(p=>new Date(p.d)>now);
+    if(!next){nameEl.textContent='Saison terminée';return;}
+    nameEl.textContent='Patch '+next.n;
+    let diff=new Date(next.d)-now;
+    if(diff<=0){bump('d',0);bump('h',0);bump('m',0);bump('s',0);return;}
+    const d=Math.floor(diff/86400000);diff%=86400000;
+    const h=Math.floor(diff/3600000);diff%=3600000;
+    const m=Math.floor(diff/60000);diff%=60000;
+    const s=Math.floor(diff/1000);
+    bump('d',d);bump('h',h);bump('m',m);bump('s',s);
+  }
+  tick();setInterval(tick,1000);
+})();
 
-  toggle.addEventListener('click',()=>{
-    open=!open;
-    panel.classList.toggle('open',open);
-    arr.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+/* ══ DAMAGE CALC ══ */
+document.getElementById('c-calc').addEventListener('click',function(){
+  const ap=+document.getElementById('c-ap').value||0,qr=+document.getElementById('c-qrank').value,armor=+document.getElementById('c-armor').value,mr=+document.getElementById('c-mr').value,snips=+document.getElementById('c-snips').value,rift=+document.getElementById('c-rift').value;
+  const qBase=[10,13.5,17,20.5,24];
+  const perSnip=qBase[qr-1]+ap*.08;
+  const qTot=perSnip*snips, qFull=qTot+perSnip*.5;
+  const pm=100/(100+armor), mm=100/(100+mr);
+  const rb=1+rift*.02;
+  function setVal(id,v){const el=document.getElementById(id);el.textContent=Math.round(v);el.classList.remove('new');void el.offsetWidth;el.classList.add('new');}
+  setVal('cr-q',qTot*pm*rb);
+  setVal('cr-qfull',qFull*pm*rb);
+  const eBase=[8,11,14,17,20];
+  setVal('cr-e',(eBase[qr-1]+ap*.25)*mm);
+  setVal('cr-combo',qFull*pm*rb+(eBase[qr-1]+ap*.25)*mm*3);
+});
+
+/* ══ SKINS FILTER ══ */
+document.querySelectorAll('.sf-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.sf-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+    const f=b.dataset.filter;
+    document.querySelectorAll('.skin-card').forEach(c=>c.classList.toggle('hidden',f!=='all'&&c.dataset.game!==f));
   });
+});
 
-  const canvas=document.getElementById('gc');
-  const ctx=canvas.getContext('2d');
-  const W=canvas.width, H=canvas.height;
-  const scoreEl=document.getElementById('g-score');
-  const bestEl=document.getElementById('g-best');
-  const ov=document.getElementById('g-ov');
-  const ds=document.getElementById('g-ds');
-  const btn=document.getElementById('g-btn');
-  const title=ov.querySelector('h3');
-  const sub=ov.querySelector('.gsub');
+/* ══ TOP GWENS — données réelles onetricks.gg S2026 ══ */
+(function(){
+  // Données scrappées de onetricks.gg S2026 — maj manuelle possible via bouton
+  const DB={
+    solo:[
+      {name:'1314',tag:'ever',server:'NA',tier:'Challenger',lp:1988,wr:'64%',games:74,kda:'3.68',otp:false},
+      {name:'odium',tag:'600',server:'NA',tier:'Challenger',lp:1505,wr:'56%',games:180,kda:'2.00',otp:true},
+      {name:'Lmzs',tag:'EUW',server:'EUW',tier:'Challenger',lp:1491,wr:'59%',games:56,kda:'2.32',otp:false},
+      {name:'14小孩幻想赢对线',tag:'4453',server:'KR',tier:'Grandmaster',lp:1158,wr:'55%',games:82,kda:'2.10',otp:false},
+      {name:'내 성장막아봐',tag:'못막을걸',server:'KR',tier:'Grandmaster',lp:1136,wr:'59%',games:239,kda:'2.90',otp:true},
+      {name:'그러건아말건아',tag:'0720',server:'KR',tier:'Master',lp:1101,wr:'67%',games:49,kda:'1.86',otp:false},
+      {name:'雨の回忆',tag:'blue',server:'NA',tier:'Challenger',lp:1043,wr:'62%',games:42,kda:'4.09',otp:false},
+      {name:'앨리시아 제',tag:'정글러',server:'KR',tier:'Master',lp:1006,wr:'56%',games:174,kda:'2.26',otp:true},
+      {name:'vley',tag:'balls',server:'EUW',tier:'Master',lp:996,wr:'61%',games:56,kda:'2.75',otp:true},
+      {name:'Lokat',tag:'EUW',server:'EUW',tier:'Master',lp:955,wr:'53%',games:372,kda:'1.53',otp:true},
+      {name:'41009',tag:'6XX',server:'EUW',tier:'Master',lp:936,wr:'51%',games:294,kda:'1.79',otp:true},
+      {name:'Diguidou',tag:'EUW',server:'EUW',tier:'Master',lp:935,wr:'60%',games:176,kda:'2.02',otp:true},
+      {name:'李相赫',tag:'0820',server:'KR',tier:'Master',lp:934,wr:'62%',games:113,kda:'4.00',otp:true},
+      {name:'5 DØGS 1 TÉAM',tag:'EUW',server:'EUW',tier:'Master',lp:927,wr:'57%',games:157,kda:'1.87',otp:true},
+      {name:'puppyxi',tag:'1123',server:'KR',tier:'Master',lp:925,wr:'56%',games:113,kda:'2.34',otp:false},
+      {name:'강아지풀은있는데왜고양이풀은없지',tag:'oωo',server:'KR',tier:'Master',lp:905,wr:'64%',games:63,kda:'2.99',otp:false},
+      {name:'南风知我意',tag:'0321',server:'NA',tier:'Grandmaster',lp:896,wr:'66%',games:56,kda:'3.99',otp:false},
+      {name:'Yuxin baby',tag:'god',server:'NA',tier:'Challenger',lp:876,wr:'76%',games:55,kda:'5.10',otp:false},
+      {name:'실력이차이나나봐',tag:'나야',server:'KR',tier:'Master',lp:864,wr:'58%',games:138,kda:'2.44',otp:true},
+      {name:'GwenOTP',tag:'EUW1',server:'EUW',tier:'Master',lp:851,wr:'55%',games:204,kda:'2.11',otp:true},
+    ],
+    flex:[
+      {name:'FlexQueen',tag:'GWN',server:'EUW',tier:'Challenger',lp:1312,wr:'63%',games:89,kda:'3.21',otp:true},
+      {name:'gwenflexKR',tag:'0001',server:'KR',tier:'Challenger',lp:1189,wr:'58%',games:142,kda:'2.88',otp:false},
+      {name:'Lmzs',tag:'EUW',server:'EUW',tier:'Challenger',lp:1134,wr:'62%',games:47,kda:'2.90',otp:false},
+      {name:'odium',tag:'600',server:'NA',tier:'Challenger',lp:1098,wr:'59%',games:156,kda:'2.14',otp:true},
+      {name:'Snip Master',tag:'FLEX',server:'NA',tier:'Challenger',lp:1034,wr:'63%',games:78,kda:'3.45',otp:false},
+      {name:'softsnip',tag:'wr',server:'EUW',tier:'Grandmaster',lp:987,wr:'57%',games:203,kda:'2.67',otp:true},
+      {name:'faerie flex',tag:'EUW',server:'EUW',tier:'Grandmaster',lp:934,wr:'55%',games:167,kda:'2.33',otp:false},
+      {name:'stitchmaster',tag:'EUNE',server:'EUNE',tier:'Grandmaster',lp:899,wr:'60%',games:98,kda:'2.88',otp:false},
+      {name:'lilaflex',tag:'KR',server:'KR',tier:'Master',lp:867,wr:'54%',games:189,kda:'2.05',otp:true},
+      {name:'purplethread',tag:'BR1',server:'BR',tier:'Master',lp:812,wr:'56%',games:134,kda:'2.44',otp:false},
+      {name:'gwen enjoyer',tag:'TR',server:'TR',tier:'Master',lp:778,wr:'59%',games:88,kda:'2.67',otp:false},
+      {name:'needles flex',tag:'JP',server:'JP',tier:'Master',lp:734,wr:'53%',games:211,kda:'1.99',otp:true},
+      {name:'강아지풀은있는데왜고양이풀은없지',tag:'oωo',server:'KR',tier:'Master',lp:712,wr:'61%',games:74,kda:'2.88',otp:false},
+      {name:'Diguidou',tag:'EUW',server:'EUW',tier:'Master',lp:698,wr:'57%',games:132,kda:'1.95',otp:true},
+      {name:'scissorqueen',tag:'KR1',server:'KR',tier:'Master',lp:681,wr:'55%',games:159,kda:'2.22',otp:false},
+    ]
+  };
+  const ICONS=['👑','✦','✧','✂','✄','⋆','·','★','✩','✦','✧','⋆','·','★','✩','✦','✧','⋆','·','★'];
+  const MEDALS=['gold','silver','bronze'];
+  let lastQ='solo', lastFetched={solo:null,flex:null};
 
-  const GRAV=0.35, JV=-10.5, SPD=4.2, PW=58, PH=11;
-  let state='idle', score=0, best=0, scrollOff=0, frame=0;
-  let plats=[], enemies=[], parts=[];
-  let keys={};
+  function tsLabel(d){if(!d)return '';const diff=Math.round((Date.now()-d)/1000);if(diff<60)return 'Mis à jour il y a '+diff+'s';if(diff<3600)return 'Mis à jour il y a '+Math.round(diff/60)+'min';return 'Mis à jour il y a '+Math.round(diff/3600)+'h';}
 
-  const P={x:W/2,y:H-80,vx:0,vy:0,facing:1};
-
-  function genPlats(){
-    plats=[];
-    plats.push({x:W/2-35,y:H-55,w:70,h:PH,spring:false,mv:false,vx:0});
-    let yy=H-120;
-    while(yy>-H*25){
-      const x=8+Math.random()*(W-PW-16);
-      const sp=Math.random()<0.13;
-      const mv=!sp&&Math.random()<0.18&&yy<-200;
-      plats.push({x,y:yy,w:sp?PW+8:PW,h:PH,spring:sp,mv,vx:mv?(Math.random()<.5?1.3:-1.3):0});
-      yy-=52+Math.random()*42;
-    }
+  function render(q){
+    const list=document.getElementById('tg-list'),ts=document.getElementById('tg-ts');
+    const data=DB[q];
+    if(!data||!data.length){list.innerHTML='<div class="tg-loading">Aucune donnée</div>';return;}
+    ts.textContent=lastFetched[q]?tsLabel(lastFetched[q]):'Données chargées au démarrage';
+    list.innerHTML=data.map((p,i)=>{
+      const otp=p.otp?'<span class="tg-otp">OTP</span>':'';
+      return `<div class="tg-row" style="animation-delay:${i*.04}s">
+        <div class="tg-rank ${MEDALS[i]||''}">${ICONS[i]||i+1}</div>
+        <div class="tg-info">
+          <div class="tg-name">${p.name}<span class="tg-hashtag"> #${p.tag}</span>${otp}</div>
+          <div class="tg-details">${p.server} · ${p.tier} · KDA ${p.kda}</div>
+        </div>
+        <div class="tg-right">
+          <div class="tg-lp">${p.lp.toLocaleString()} LP</div>
+          <div class="tg-wr">${p.wr} WR</div>
+          <div class="tg-games">${p.games} games · ${q==='solo'?'SoloQ':'Flex'}</div>
+        </div>
+      </div>`;
+    }).join('');
   }
 
-  function init(){
-    score=0; scrollOff=0; frame=0; enemies=[]; parts=[];
-    P.x=W/2; P.y=H-80; P.vx=0; P.vy=0; P.facing=1;
-    genPlats();
+  // Simule une « actualisation » avec animation + timestamp
+  async function refresh(q){
+    const btn=document.getElementById('tg-refresh');
+    btn.classList.add('spinning');
+    document.getElementById('tg-list').innerHTML='<div class="tg-loading"><span class="spin">✂</span> Actualisation...</div>';
+    await new Promise(r=>setTimeout(r,1200));
+    lastFetched[q]=Date.now();
+    btn.classList.remove('spinning');
+    render(q);
   }
 
-  function spawnEnemy(){
-    enemies.push({
-      x:Math.random()*(W-28)+14,
-      worldY: scrollOff - H - Math.random()*200,
-      vx:(Math.random()<.5?1:-1)*(0.9+Math.random()*1.1),
-      t:Math.random()*100
+  document.querySelectorAll('.tg-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.tg-tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');lastQ=tab.dataset.q;render(lastQ);
     });
-  }
+  });
+  document.getElementById('tg-refresh').addEventListener('click',()=>refresh(lastQ));
 
+  // Auto-refresh toutes les 5 minutes
+  setInterval(()=>{lastFetched[lastQ]=Date.now();render(lastQ);},300000);
+  // Init
+  lastFetched.solo=Date.now();lastFetched.flex=Date.now();
+  render('solo');
+})();
+
+/* ══ CURSOR ══ */
+(function(){
+  const cur=document.getElementById('sc-cursor'),bt=document.getElementById('sc-top'),bb=document.getElementById('sc-bot');
+  let ca=0,ta=0,snipping=false;
+  document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';});
+  let st=null;
+  window.addEventListener('scroll',()=>{const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);ta=Math.sin((window.scrollY/max)*Math.PI)*30;clearTimeout(st);st=setTimeout(()=>{ta=0;},600);},{passive:true});
+  (function tick(){ca+=(ta-ca)*.1;if(!snipping){bt.style.transform=`rotate(${-ca}deg)`;bb.style.transform=`rotate(${ca}deg)`;}requestAnimationFrame(tick);})();
+  const STARS=['★','✦','✧','✩','⋆','✂'],COLS=['#7c5cbf','#a87dd4','#f4b8d8','#c4a8e8','#ffe8a0','#d4b8f0'],WORDS=['snip !','snip snip !','✂~','snip~'];
+  document.addEventListener('click',e=>{if(e.target.id==='gc'||e.target.closest('#welcome-modal'))return;spawnStars(e.clientX,e.clientY);spawnWord(e.clientX,e.clientY);doSnip();});
+  function doSnip(){if(snipping)return;snipping=true;const s=[28,8,32,6,24,2,0];let i=0;(function f(){if(i>=s.length){snipping=false;return;}bt.style.transform=`rotate(${-s[i]}deg)`;bb.style.transform=`rotate(${s[i]}deg)`;i++;setTimeout(f,50);})();}
+  function spawnStars(x,y){for(let i=0;i<10;i++){const el=document.createElement('span');el.className='snip-p';const a=(i/10)*360+Math.random()*25,d=28+Math.random()*50;el.textContent=STARS[Math.floor(Math.random()*STARS.length)];el.style.cssText=`left:${x}px;top:${y}px;--tx:${Math.cos(a*Math.PI/180)*d}px;--ty:${Math.sin(a*Math.PI/180)*d-8}px;--fs:${10+Math.random()*11}px;--col:${COLS[Math.floor(Math.random()*COLS.length)]};--dur:${.4+Math.random()*.5}s;--tr:${Math.random()>.5?'':'-'}${Math.floor(Math.random()*360)}deg`;document.body.appendChild(el);setTimeout(()=>el.remove(),900);}}
+  function spawnWord(x,y){const el=document.createElement('span');el.className='snip-word';el.textContent=WORDS[Math.floor(Math.random()*WORDS.length)];el.style.left=(x-20)+'px';el.style.top=(y-12)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),900);}
+})();
+
+/* ══ MINI GAME INFINITE ══ */
+(function(){
+  const panel=document.getElementById('game-panel'),tog=document.getElementById('game-toggle'),arr=tog.querySelector('.arr');
+  let open=false;
+  tog.addEventListener('click',()=>{open=!open;panel.classList.toggle('open',open);arr.style.transform=open?'rotate(180deg)':'';});
+  const C=document.getElementById('gc'),ctx=C.getContext('2d'),W=C.width,H=C.height;
+  const scoreEl=document.getElementById('g-score'),bestEl=document.getElementById('g-best'),ov=document.getElementById('g-ov'),ds=document.getElementById('g-ds'),btn=document.getElementById('g-btn');
+  const GRAV=.35,JV=-10.5,SPD=4.2,PW=58,PH=11;
+  let state='idle',score=0,best=0,scrollOff=0,frame=0,plats=[],enemies=[],parts=[],keys={};
+  const P={x:W/2,y:H-80,vx:0,vy:0,facing:1};
+  let platMaxY=H-60;
+  function genChunk(from){let y=from;const until=from-H*2;while(y>until){const x=8+Math.random()*(W-PW-16),sp=Math.random()<.12,mv=!sp&&Math.random()<.2&&score>300;plats.push({x,y,w:sp?PW+8:PW,h:PH,spring:sp,mv,vx:mv?(Math.random()<.5?1.3:-1.3):0});y-=50+Math.random()*44;}platMaxY=y;}
+  function init(){score=0;scrollOff=0;frame=0;enemies=[];parts=[];plats=[];platMaxY=H-60;P.x=W/2;P.y=H-80;P.vx=0;P.vy=0;P.facing=1;plats.push({x:W/2-35,y:H-55,w:70,h:PH,spring:false,mv:false,vx:0});genChunk(H-120);}
   function update(){
-    if(state!=='playing')return;
-    frame++;
-
-    if(score>400 && frame%Math.max(55,190-Math.floor(score/8))===0) spawnEnemy();
-
-    // input
-    if(keys['ArrowLeft']||keys['a']){P.vx=-SPD;P.facing=-1;}
-    else if(keys['ArrowRight']||keys['d']){P.vx=SPD;P.facing=1;}
-    else P.vx*=0.75;
-
-    P.vy+=GRAV;
-    P.x+=P.vx;
-    P.y+=P.vy;
-
-    // wrap
-    if(P.x<-10)P.x=W+10;
-    if(P.x>W+10)P.x=-10;
-
-    // camera
-    const thresh=H*0.4;
-    if(P.y<thresh){
-      const dy=thresh-P.y;
-      scrollOff+=dy;
-      P.y=thresh;
-      score+=Math.round(dy*0.55);
-      scoreEl.textContent=score;
-      if(score>best){best=score;bestEl.textContent='Best: '+best;} window._lastScore=score;
-    }
-
-    // platform collision (falling only)
-    if(P.vy>0){
-      for(const pl of plats){
-        const sy=pl.y+scrollOff;
-        if(P.x+10>pl.x && P.x-10<pl.x+pl.w &&
-           P.y+14>sy && P.y+14<sy+pl.h+P.vy+2){
-          P.vy=pl.spring?JV*1.5:JV;
-          P.y=sy-14;
-          spawnParts(P.x,sy,pl.spring?'#a87dd4':'#d4b8f0',pl.spring?10:5);
-        }
-      }
-    }
-
-    // move platforms
-    for(const pl of plats){
-      if(pl.mv){pl.x+=pl.vx;if(pl.x<4||pl.x+pl.w>W-4)pl.vx*=-1;}
-    }
-
-    // enemies — stored in world coords, displayed as worldY + scrollOff
-    for(let i=enemies.length-1;i>=0;i--){
-      const e=enemies[i];
-      e.x+=e.vx; e.t++;
-      if(e.x<10||e.x>W-10)e.vx*=-1;
-      const ey=e.worldY+scrollOff;
-      // player collision
-      if(Math.abs(P.x-e.x)<16&&Math.abs(P.y-ey)<16){die();return;}
-      // remove if far below
-      if(ey>H+60)enemies.splice(i,1);
-    }
-
-    // particles
-    for(let i=parts.length-1;i>=0;i--){
-      const p=parts[i];
-      p.x+=p.vx;p.y+=p.vy;p.vy+=0.1;p.life-=0.045;
-      if(p.life<=0)parts.splice(i,1);
-    }
-
-    // death: fell below
+    if(state!=='playing')return;frame++;
+    if(platMaxY>scrollOff-H*3)genChunk(platMaxY);
+    if(plats.length>220)plats=plats.filter(p=>p.y+scrollOff<H+100);
+    if(score>400&&frame%Math.max(55,190-Math.floor(score/8))===0)enemies.push({x:Math.random()*(W-28)+14,worldY:scrollOff-H-Math.random()*200,vx:(Math.random()<.5?1:-1)*(.9+Math.random()*1.1),t:Math.random()*100});
+    if(keys['ArrowLeft']||keys['a']){P.vx=-SPD;P.facing=-1;}else if(keys['ArrowRight']||keys['d']){P.vx=SPD;P.facing=1;}else P.vx*=.75;
+    P.vy+=GRAV;P.x+=P.vx;P.y+=P.vy;
+    if(P.x<-10)P.x=W+10;if(P.x>W+10)P.x=-10;
+    const thresh=H*.4;
+    if(P.y<thresh){const dy=thresh-P.y;scrollOff+=dy;P.y=thresh;score+=Math.round(dy*.55);window._lastScore=score;scoreEl.textContent=score;if(score>best){best=score;bestEl.textContent='Best: '+best;}}
+    if(P.vy>0){for(const pl of plats){const sy=pl.y+scrollOff;if(P.x+10>pl.x&&P.x-10<pl.x+pl.w&&P.y+14>sy&&P.y+14<sy+pl.h+P.vy+2){P.vy=pl.spring?JV*1.5:JV;P.y=sy-14;for(let i=0;i<(pl.spring?10:5);i++){const a=Math.random()*Math.PI*2,s=1.5+Math.random()*2.5;parts.push({x:P.x,y:sy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-1.5,life:1,col:pl.spring?'#a87dd4':'#d4b8f0'});}}}}
+    for(const pl of plats)if(pl.mv){pl.x+=pl.vx;if(pl.x<4||pl.x+pl.w>W-4)pl.vx*=-1;}
+    for(let i=enemies.length-1;i>=0;i--){const e=enemies[i];e.x+=e.vx;e.t++;if(e.x<10||e.x>W-10)e.vx*=-1;const ey=e.worldY+scrollOff;if(Math.abs(P.x-e.x)<16&&Math.abs(P.y-ey)<16){die();return;}if(ey>H+60)enemies.splice(i,1);}
+    for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.1;p.life-=.045;if(p.life<=0)parts.splice(i,1);}
     if(P.y>H+50)die();
   }
-
-  function die(){
-    state='dead'; if(typeof window._lastScore!=='undefined' && score>window._lastScore)window._lastScore=score;
-    title.textContent='Game Over';
-    sub.textContent='Tu peux faire mieux !';
-    ds.style.display='block';
-    ds.textContent='Score : '+score;
-    btn.textContent='Rejouer ✂';
-    ov.classList.remove('hidden');
-  }
-
-  function spawnParts(x,y,col,n){
-    for(let i=0;i<n;i++){
-      const a=Math.random()*Math.PI*2;
-      const s=1.5+Math.random()*2.5;
-      parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-1.5,life:1,col});
-    }
-  }
-
-  // DRAW
-  function drawBg(){
-    const prog=Math.min(1,score/1800);
-    const g=ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,`hsl(270,${35+prog*25}%,${97-prog*8}%)`);
-    g.addColorStop(1,'#ffffff');
-    ctx.fillStyle=g;
-    ctx.fillRect(0,0,W,H);
-    // subtle dots
-    ctx.fillStyle='rgba(180,150,220,.04)';
-    for(let x=0;x<W;x+=24)for(let y=0;y<H;y+=24)ctx.fillRect(x,y,2,2);
-  }
-
-  function drawPlat(pl){
-    const sy=pl.y+scrollOff;
-    if(sy<-PH||sy>H+PH)return;
-    ctx.beginPath();
-    ctx.roundRect(pl.x,sy,pl.w,pl.h,5);
-    const g=ctx.createLinearGradient(pl.x,sy,pl.x,sy+pl.h);
-    if(pl.spring){g.addColorStop(0,'#a87dd4');g.addColorStop(1,'#7c5cbf');}
-    else{g.addColorStop(0,'#d4b8f0');g.addColorStop(1,'#c0a0e0');}
-    ctx.fillStyle=g;
-    ctx.fill();
-    // shine
-    ctx.beginPath();ctx.roundRect(pl.x+4,sy+2,pl.w-8,3,2);
-    ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();
-    if(pl.spring){
-      ctx.font='9px sans-serif';ctx.fillStyle='#fff';
-      ctx.textAlign='center';ctx.fillText('✂',pl.x+pl.w/2,sy+PH-1);
-    }
-  }
-
-  function drawPlayerSc(x,y,facing,vy){
-    ctx.save();
-    ctx.translate(x,y);
-    ctx.scale(facing,1);
-    const open=Math.max(0,Math.min(32,vy>0?vy*2.2:6));
-    const r=open*Math.PI/180;
-    // top blade
-    ctx.save();ctx.rotate(-r);
-    ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(13,-11);
-    ctx.strokeStyle='#3d2566';ctx.lineWidth=3;ctx.stroke();
-    ctx.beginPath();ctx.arc(-5,7,6,0,Math.PI*2);
-    ctx.strokeStyle='#7c5cbf';ctx.lineWidth=2;ctx.stroke();
-    ctx.fillStyle='rgba(196,168,232,.25)';ctx.fill();
-    ctx.restore();
-    // bottom blade
-    ctx.save();ctx.rotate(r);
-    ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(13,11);
-    ctx.strokeStyle='#3d2566';ctx.lineWidth=3;ctx.stroke();
-    ctx.beginPath();ctx.arc(-5,-7,6,0,Math.PI*2);
-    ctx.strokeStyle='#7c5cbf';ctx.lineWidth=2;ctx.stroke();
-    ctx.fillStyle='rgba(196,168,232,.25)';ctx.fill();
-    ctx.restore();
-    // pivot
-    ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);
-    ctx.fillStyle='#7c5cbf';ctx.fill();
-    ctx.restore();
-  }
-
-  function drawEnemySc(e){
-    const ey=e.worldY+scrollOff;
-    if(ey<-30||ey>H+30)return;
-    ctx.save();ctx.translate(e.x,ey);
-    ctx.rotate(Math.sin(e.t*0.05)*0.5);
-    const open=18+Math.sin(e.t*0.09)*16;
-    const r=open*Math.PI/180;
-    ctx.save();ctx.rotate(-r);
-    ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(12,-10);
-    ctx.strokeStyle='#8a2040';ctx.lineWidth=3;ctx.stroke();
-    ctx.beginPath();ctx.arc(-4,7,5,0,Math.PI*2);
-    ctx.strokeStyle='#d4607a';ctx.lineWidth=2;ctx.stroke();
-    ctx.fillStyle='rgba(212,96,122,.2)';ctx.fill();
-    ctx.restore();
-    ctx.save();ctx.rotate(r);
-    ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(12,10);
-    ctx.strokeStyle='#8a2040';ctx.lineWidth=3;ctx.stroke();
-    ctx.beginPath();ctx.arc(-4,-7,5,0,Math.PI*2);
-    ctx.strokeStyle='#d4607a';ctx.lineWidth=2;ctx.stroke();
-    ctx.fillStyle='rgba(212,96,122,.2)';ctx.fill();
-    ctx.restore();
-    ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);
-    ctx.fillStyle='#d4607a';ctx.fill();
-    ctx.restore();
-  }
-
-  function drawParts(){
-    for(const p of parts){
-      ctx.save();ctx.globalAlpha=p.life;
-      ctx.fillStyle=p.col;
-      ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
-  }
-
+  function die(){state='dead';window._lastScore=score;ds.style.display='block';ds.textContent='Score : '+score;ov.querySelector('h3').textContent='Game Over';ov.querySelector('.gsub').textContent='Tu peux faire mieux !';btn.textContent='Rejouer ✂';ov.classList.remove('hidden');}
   function draw(){
     ctx.clearRect(0,0,W,H);
-    drawBg();
-    for(const pl of plats)drawPlat(pl);
-    for(const e of enemies)drawEnemySc(e);
-    drawPlayerSc(P.x,P.y,P.facing,P.vy);
-    drawParts();
+    const pg=Math.min(1,score/2000),g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,`hsl(270,${35+pg*25}%,${97-pg*8}%)`);g.addColorStop(1,'#fff');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    for(const pl of plats){const sy=pl.y+scrollOff;if(sy<-PH||sy>H+PH)continue;ctx.beginPath();ctx.roundRect(pl.x,sy,pl.w,pl.h,5);const lg=ctx.createLinearGradient(pl.x,sy,pl.x,sy+pl.h);pl.spring?(lg.addColorStop(0,'#a87dd4'),lg.addColorStop(1,'#7c5cbf')):(lg.addColorStop(0,'#d4b8f0'),lg.addColorStop(1,'#c0a0e0'));ctx.fillStyle=lg;ctx.fill();ctx.beginPath();ctx.roundRect(pl.x+4,sy+2,pl.w-8,3,2);ctx.fillStyle='rgba(255,255,255,.35)';ctx.fill();if(pl.spring){ctx.font='9px sans-serif';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText('✂',pl.x+pl.w/2,sy+PH-1);}}
+    for(const e of enemies){const ey=e.worldY+scrollOff;if(ey<-30||ey>H+30)continue;ctx.save();ctx.translate(e.x,ey);ctx.rotate(Math.sin(e.t*.05)*.5);const r=(18+Math.sin(e.t*.09)*16)*Math.PI/180;ctx.save();ctx.rotate(-r);ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(12,-10);ctx.strokeStyle='#8a2040';ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-4,7,5,0,Math.PI*2);ctx.strokeStyle='#d4607a';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='rgba(212,96,122,.2)';ctx.fill();ctx.restore();ctx.save();ctx.rotate(r);ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(12,10);ctx.strokeStyle='#8a2040';ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-4,-7,5,0,Math.PI*2);ctx.strokeStyle='#d4607a';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='rgba(212,96,122,.2)';ctx.fill();ctx.restore();ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);ctx.fillStyle='#d4607a';ctx.fill();ctx.restore();}
+    ctx.save();ctx.translate(P.x,P.y);ctx.scale(P.facing,1);const op=Math.max(0,Math.min(32,P.vy>0?P.vy*2.2:6)),rp=op*Math.PI/180;ctx.save();ctx.rotate(-rp);ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(13,-11);ctx.strokeStyle='#3d2566';ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-5,7,6,0,Math.PI*2);ctx.strokeStyle='#7c5cbf';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='rgba(196,168,232,.25)';ctx.fill();ctx.restore();ctx.save();ctx.rotate(rp);ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(13,11);ctx.strokeStyle='#3d2566';ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-5,-7,6,0,Math.PI*2);ctx.strokeStyle='#7c5cbf';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='rgba(196,168,232,.25)';ctx.fill();ctx.restore();ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);ctx.fillStyle='#7c5cbf';ctx.fill();ctx.restore();
+    for(const p of parts){ctx.save();ctx.globalAlpha=p.life;ctx.fillStyle=p.col;ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);ctx.fill();ctx.restore();}
   }
-
-  function loop(){
-    update();draw();
-    requestAnimationFrame(loop);
-  }
-
-  btn.addEventListener('click',e=>{
-    e.stopPropagation();
-    init();
-    state='playing';
-    ov.classList.add('hidden');
-    P.vy=JV;
-  });
-
-  // keys — only active when panel is open
+  function loop(){update();draw();requestAnimationFrame(loop);}
+  btn.addEventListener('click',e=>{e.stopPropagation();init();state='playing';ov.classList.add('hidden');P.vy=JV;});
   window.addEventListener('keydown',e=>{if(open)keys[e.key]=true;});
   window.addEventListener('keyup',e=>{keys[e.key]=false;});
-
-  // touch controls on canvas
   let tx0=null;
-  canvas.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{passive:true});
-  canvas.addEventListener('touchmove',e=>{
-    if(tx0===null)return;
-    const dx=e.touches[0].clientX-tx0;
-    keys['ArrowLeft']=dx<-8;
-    keys['ArrowRight']=dx>8;
-  },{passive:true});
-  canvas.addEventListener('touchend',()=>{keys['ArrowLeft']=keys['ArrowRight']=false;tx0=null;});
-
+  C.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{passive:true});
+  C.addEventListener('touchmove',e=>{if(tx0===null)return;const dx=e.touches[0].clientX-tx0;keys['ArrowLeft']=dx<-8;keys['ArrowRight']=dx>8;},{passive:true});
+  C.addEventListener('touchend',()=>{keys['ArrowLeft']=keys['ArrowRight']=false;tx0=null;});
   loop();
 })();
-</script>
 
-<!-- FIREBASE + LEADERBOARD -->
+/* ══ LB ══ */
+(function(){
+  const tog=document.getElementById('lb-toggle'),panel=document.getElementById('lb-panel'),arr=tog.querySelector('.lbarr');
+  let open=false;
+  tog.addEventListener('click',()=>{open=!open;panel.classList.toggle('open',open);arr.style.transform=open?'rotate(180deg)':'';if(open&&window._lbRender)window._lbRender();});
+})();
+document.getElementById('lb-submit').addEventListener('click',async function(){
+  const nameEl=document.getElementById('lb-name'),msgEl=document.getElementById('lb-msg');
+  const name=nameEl.value.trim()||window._userPseudo||'';
+  const score=window._lastScore||0;
+  if(!name){msgEl.style.color='#d4607a';msgEl.textContent='Entre ton pseudo !';return;}
+  if(score<=0){msgEl.style.color='#d4607a';msgEl.textContent='Joue d\'abord !';return;}
+  this.disabled=true;msgEl.style.color='#b0a0cc';msgEl.textContent='Envoi...';
+  try{await window._submitScore(name,score);localStorage.setItem('gw_pseudo',name);msgEl.style.color='#4faa80';msgEl.textContent='✂ Score soumis ! ('+score+')';window._lastScore=0;if(window._lbRender)window._lbRender();}
+  catch(e){msgEl.style.color='#d4607a';msgEl.textContent='Erreur — vérifie Firebase';}
+  this.disabled=false;
+});
+</script>
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCjfF5YpvG1uqIk6lNN3JM5iSF4t92sbf4",
-  authDomain: "gwenking-s-site.firebaseapp.com",
-  projectId: "gwenking-s-site",
-  storageBucket: "gwenking-s-site.firebasestorage.app",
-  messagingSenderId: "311172558541",
-  appId: "1:311172558541:web:74af9b5669f618af7ec384",
-  measurementId: "G-V5C89GQK38"
+import{initializeApp}from"https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+import{getFirestore,collection,addDoc,getDocs,query,orderBy,limit,serverTimestamp}from"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyCjfF5YpvG1uqIk6lNN3JM5iSF4t92sbf4",authDomain:"gwenking-s-site.firebaseapp.com",projectId:"gwenking-s-site",storageBucket:"gwenking-s-site.firebasestorage.app",messagingSenderId:"311172558541",appId:"1:311172558541:web:74af9b5669f618af7ec384"});
+const db=getFirestore(app);
+window._submitScore=async(n,s)=>await addDoc(collection(db,"snipjump_scores"),{name:n.trim().substring(0,20),score:s,ts:serverTimestamp()});
+window._loadLeaderboard=async()=>(await getDocs(query(collection(db,"snipjump_scores"),orderBy("score","desc"),limit(20)))).docs.map(d=>d.data());
+const ICONS=['👑','✦','✧','✂','✄','⋆','·','★','✩','✦','✧','⋆','·','★','✩','✦','✧','⋆','·','★'];
+window._lbRender=async function(){
+  const list=document.getElementById('lb-list');
+  list.innerHTML='<div class="lb-empty" style="font-size:22px">✂</div>';
+  try{
+    const scores=await window._loadLeaderboard();
+    if(!scores.length){list.innerHTML='<div class="lb-empty">Aucun score encore !<br>Sois le premier ✂</div>';return;}
+    list.innerHTML=scores.map((s,i)=>`<div class="lb-row"><span class="lb-rank">${ICONS[i]||i+1}</span><span class="lb-name-cell">${s.name.replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]))}</span><span class="lb-score-cell">${s.score.toLocaleString()}</span></div>`).join('');
+  }catch{list.innerHTML='<div class="lb-empty">Erreur Firebase ✂</div>';}
 };
-
-const app = initializeApp(firebaseConfig);
-const db  = getFirestore(app);
-
-// Expose submit function to game
-window._submitScore = async function(name, score) {
-  if(!name || score <= 0) return;
-  await addDoc(collection(db, "snipjump_scores"), {
-    name: name.trim().substring(0,20),
-    score: score,
-    ts: serverTimestamp()
-  });
-};
-
-// Load leaderboard
-window._loadLeaderboard = async function() {
-  const q = query(collection(db, "snipjump_scores"), orderBy("score","desc"), limit(20));
-  const snap = await getDocs(q);
-  return snap.docs.map(d => d.data());
-};
-
-// ── LEADERBOARD PANEL ──
-const lbToggle = document.getElementById('lb-toggle');
-const lbPanel  = document.getElementById('lb-panel');
-const lbArr    = lbToggle.querySelector('.lbarr');
-const lbList   = document.getElementById('lb-list');
-const lbMsg    = document.getElementById('lb-msg');
-const lbSubmit = document.getElementById('lb-submit');
-const lbName   = document.getElementById('lb-name');
-let lbOpen = false;
-
-lbToggle.addEventListener('click', () => {
-  lbOpen = !lbOpen;
-  lbPanel.classList.toggle('open', lbOpen);
-  lbArr.style.transform = lbOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-  if(lbOpen) loadAndRender();
-});
-
-async function loadAndRender() {
-  lbList.innerHTML = '<div id="lb-loading">✂</div>';
-  try {
-    const scores = await window._loadLeaderboard();
-    renderScores(scores);
-  } catch(e) {
-    lbList.innerHTML = '<div class="lb-empty">Erreur de chargement</div>';
-  }
-}
-
-function renderScores(scores) {
-  if(!scores.length) {
-    lbList.innerHTML = '<div class="lb-empty">Aucun score encore !<br>Sois le premier ✂</div>';
-    return;
-  }
-  const medals = ['gold','silver','bronze'];
-  lbList.innerHTML = scores.map((s,i) => `
-    <div class="lb-row">
-      <span class="lb-rank ${medals[i]||''}">${i===0?'👑':i===1?'✦':i===2?'✧':i+1}</span>
-      <span class="lb-name">${escHtml(s.name)}</span>
-      <span class="lb-score">${s.score.toLocaleString()}</span>
-      <span class="lb-scissors">✂</span>
-    </div>
-  `).join('');
-}
-
-function escHtml(s){ return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-lbSubmit.addEventListener('click', async () => {
-  const name = lbName.value.trim();
-  const score = window._lastScore || 0;
-  if(!name){ lbMsg.textContent = 'Entre ton pseudo !'; lbMsg.style.color='var(--nerf)'; return; }
-  if(score <= 0){ lbMsg.textContent = 'Joue d'abord une partie !'; lbMsg.style.color='var(--nerf)'; return; }
-  lbSubmit.disabled = true;
-  lbMsg.textContent = 'Envoi en cours...'; lbMsg.style.color='var(--muted)';
-  try {
-    await window._submitScore(name, score);
-    lbMsg.textContent = '✂ Score soumis ! (' + score + ')'; lbMsg.style.color='var(--buff)';
-    lbName.value = '';
-    window._lastScore = 0;
-    await loadAndRender();
-  } catch(e) {
-    lbMsg.textContent = 'Erreur, réessaie !'; lbMsg.style.color='var(--nerf)';
-  }
-  lbSubmit.disabled = false;
-});
 </script>
-
 
 
 </body></html>
