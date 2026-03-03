@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///C:/Users/moulo/Downloads/gwenking_1.html -->
+<!-- saved from url=(0048)file:///C:/Users/moulo/Downloads/gwenking_2.html -->
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,6 +96,45 @@ footer a{color:var(--violet);text-decoration:none;}
 @keyframes spFly{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0) rotate(var(--tr));}}
 .snip-word{position:fixed;pointer-events:none;z-index:99998;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--violet);letter-spacing:2px;animation:spWord .85s ease-out forwards;white-space:nowrap;}
 @keyframes spWord{0%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-34px) scale(.75);}}
+
+
+/* ═══════════════════════════════
+   LEADERBOARD PANEL
+═══════════════════════════════ */
+#lb-tab{position:fixed;bottom:0;left:28px;z-index:8000;display:flex;flex-direction:column;align-items:stretch;width:300px;filter:drop-shadow(0 -2px 18px rgba(124,92,191,.2));}
+#lb-toggle{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 0;background:var(--lilas);color:#fff;border:none;border-radius:12px 12px 0 0;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;transition:background .2s;}
+#lb-toggle:hover{background:#8a5ab0;cursor:none!important;}
+#lb-toggle .lbarr{transition:transform .3s;display:inline-block;}
+#lb-panel{height:0;overflow:hidden;transition:height .35s cubic-bezier(.4,0,.2,1);background:#fff;border:2px solid var(--border);border-bottom:none;border-radius:12px 12px 0 0;display:flex;flex-direction:column;}
+#lb-panel.open{height:420px;}
+
+#lb-inner{display:flex;flex-direction:column;height:100%;padding:16px;}
+#lb-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--pale);letter-spacing:3px;text-align:center;margin-bottom:4px;}
+#lb-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:14px;}
+
+/* submit form */
+#lb-form{display:flex;gap:8px;margin-bottom:14px;}
+#lb-name{flex:1;padding:8px 14px;border:1.5px solid var(--border);border-radius:20px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--text);outline:none;background:var(--surface);}
+#lb-name:focus{border-color:var(--violet);}
+#lb-submit{padding:8px 16px;background:var(--violet);color:#fff;border:none;border-radius:20px;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;transition:background .2s;white-space:nowrap;}
+#lb-submit:hover{background:#5a3e9a;cursor:none!important;}
+#lb-submit:disabled{background:var(--muted);cursor:none!important;}
+#lb-msg{font-size:10px;color:var(--buff);letter-spacing:1px;text-align:center;margin-bottom:8px;min-height:14px;}
+
+/* scores list */
+#lb-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:6px;}
+#lb-list::-webkit-scrollbar{width:4px;}
+#lb-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.lb-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;background:var(--card);border:1.5px solid var(--border);transition:border-color .2s;}
+.lb-row:hover{border-color:var(--violet);}
+.lb-rank{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--muted);min-width:22px;text-align:center;}
+.lb-rank.gold{color:#f0c040;}.lb-rank.silver{color:#a0b8c8;}.lb-rank.bronze{color:#c89060;}
+.lb-name{flex:1;font-size:12px;font-weight:600;color:var(--pale);letter-spacing:.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lb-score{font-size:12px;font-weight:700;color:var(--violet);letter-spacing:1px;}
+.lb-scissors{font-size:11px;color:var(--muted);}
+.lb-empty{text-align:center;color:var(--muted);font-size:12px;letter-spacing:1px;margin-top:30px;}
+#lb-loading{text-align:center;color:var(--muted);font-size:20px;margin-top:30px;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
 
 /* ═══════════════════════
    MINI GAME TAB
@@ -211,10 +250,10 @@ footer a{color:var(--violet);text-decoration:none;}
     <a class="soc" href="https://www.tiktok.com/@gwenklng" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"></path></svg>TikTok
     </a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_1.html#" target="_blank" rel="noopener">
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_2.html#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube
     </a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_1.html#" target="_blank" rel="noopener">
+    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_2.html#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram
     </a>
   </div>
@@ -304,27 +343,44 @@ footer a{color:var(--violet);text-decoration:none;}
 </footer>
 </div>
 
+<!-- LEADERBOARD TAB -->
+<div id="lb-tab">
+  <div id="lb-panel">
+    <div id="lb-inner">
+      <div id="lb-title">Classement</div>
+      <div id="lb-sub">✂ Snip Jump ✂</div>
+      <div id="lb-form">
+        <input id="lb-name" type="text" placeholder="Ton pseudo..." maxlength="20">
+        <button id="lb-submit">Envoyer ✂</button>
+      </div>
+      <div id="lb-msg"></div>
+      <div id="lb-list"><div class="lb-empty">Ouvre le classement !</div></div>
+    </div>
+  </div>
+  <button id="lb-toggle"><span class="lbarr">▲</span>&nbsp;🏆 Classement</button>
+</div>
+
 <!-- ═══════════════════════════════
      MINI GAME TAB
 ═══════════════════════════════ -->
 <div id="game-tab">
-  <div id="game-panel">
-    <div id="g-ui"><span id="g-score">0</span><span id="g-best">Best: 0</span></div>
+  <div id="game-panel" class="open">
+    <div id="g-ui"><span id="g-score">6039</span><span id="g-best">Best: 6039</span></div>
     <canvas id="gc" width="296" height="420"></canvas>
-    <div id="g-ov">
+    <div id="g-ov" class="">
       <div class="gsc">✂</div>
-      <h3>Snip Jump</h3>
-      <p class="gsub">Grimpe le plus haut !</p>
-      <div class="gds" id="g-ds"></div>
-      <button id="g-btn">Jouer ✂</button>
+      <h3>Game Over</h3>
+      <p class="gsub">Tu peux faire mieux !</p>
+      <div class="gds" id="g-ds" style="display: block;">Score : 6039</div>
+      <button id="g-btn">Rejouer ✂</button>
       <p style="margin-top:10px;font-size:9px;color:#b0a0cc;letter-spacing:1.5px;text-transform:uppercase;">← → bouger · évite les ciseaux rouges</p>
     </div>
   </div>
-  <button id="game-toggle"><span class="arr">▲</span>&nbsp;✂ Snip Jump</button>
+  <button id="game-toggle"><span class="arr" style="transform: rotate(180deg);">▲</span>&nbsp;✂ Snip Jump</button>
 </div>
 
 <!-- SCISSORS CURSOR SVG -->
-<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="left: 874px; top: 422px;">
+<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="left: 1559px; top: 368px;">
   <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(0deg);">
     <line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line>
     <circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle>
@@ -516,7 +572,7 @@ footer a{color:var(--violet);text-decoration:none;}
       P.y=thresh;
       score+=Math.round(dy*0.55);
       scoreEl.textContent=score;
-      if(score>best){best=score;bestEl.textContent='Best: '+best;}
+      if(score>best){best=score;bestEl.textContent='Best: '+best;} window._lastScore=score;
     }
 
     // platform collision (falling only)
@@ -561,7 +617,7 @@ footer a{color:var(--violet);text-decoration:none;}
   }
 
   function die(){
-    state='dead';
+    state='dead'; if(typeof window._lastScore!=='undefined' && score>window._lastScore)window._lastScore=score;
     title.textContent='Game Over';
     sub.textContent='Tu peux faire mieux !';
     ds.style.display='block';
@@ -713,6 +769,107 @@ footer a{color:var(--violet);text-decoration:none;}
   loop();
 })();
 </script>
+
+<!-- FIREBASE + LEADERBOARD -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCjfF5YpvG1uqIk6lNN3JM5iSF4t92sbf4",
+  authDomain: "gwenking-s-site.firebaseapp.com",
+  projectId: "gwenking-s-site",
+  storageBucket: "gwenking-s-site.firebasestorage.app",
+  messagingSenderId: "311172558541",
+  appId: "1:311172558541:web:74af9b5669f618af7ec384",
+  measurementId: "G-V5C89GQK38"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getFirestore(app);
+
+// Expose submit function to game
+window._submitScore = async function(name, score) {
+  if(!name || score <= 0) return;
+  await addDoc(collection(db, "snipjump_scores"), {
+    name: name.trim().substring(0,20),
+    score: score,
+    ts: serverTimestamp()
+  });
+};
+
+// Load leaderboard
+window._loadLeaderboard = async function() {
+  const q = query(collection(db, "snipjump_scores"), orderBy("score","desc"), limit(20));
+  const snap = await getDocs(q);
+  return snap.docs.map(d => d.data());
+};
+
+// ── LEADERBOARD PANEL ──
+const lbToggle = document.getElementById('lb-toggle');
+const lbPanel  = document.getElementById('lb-panel');
+const lbArr    = lbToggle.querySelector('.lbarr');
+const lbList   = document.getElementById('lb-list');
+const lbMsg    = document.getElementById('lb-msg');
+const lbSubmit = document.getElementById('lb-submit');
+const lbName   = document.getElementById('lb-name');
+let lbOpen = false;
+
+lbToggle.addEventListener('click', () => {
+  lbOpen = !lbOpen;
+  lbPanel.classList.toggle('open', lbOpen);
+  lbArr.style.transform = lbOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+  if(lbOpen) loadAndRender();
+});
+
+async function loadAndRender() {
+  lbList.innerHTML = '<div id="lb-loading">✂</div>';
+  try {
+    const scores = await window._loadLeaderboard();
+    renderScores(scores);
+  } catch(e) {
+    lbList.innerHTML = '<div class="lb-empty">Erreur de chargement</div>';
+  }
+}
+
+function renderScores(scores) {
+  if(!scores.length) {
+    lbList.innerHTML = '<div class="lb-empty">Aucun score encore !<br>Sois le premier ✂</div>';
+    return;
+  }
+  const medals = ['gold','silver','bronze'];
+  lbList.innerHTML = scores.map((s,i) => `
+    <div class="lb-row">
+      <span class="lb-rank ${medals[i]||''}">${i===0?'👑':i===1?'✦':i===2?'✧':i+1}</span>
+      <span class="lb-name">${escHtml(s.name)}</span>
+      <span class="lb-score">${s.score.toLocaleString()}</span>
+      <span class="lb-scissors">✂</span>
+    </div>
+  `).join('');
+}
+
+function escHtml(s){ return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+lbSubmit.addEventListener('click', async () => {
+  const name = lbName.value.trim();
+  const score = window._lastScore || 0;
+  if(!name){ lbMsg.textContent = 'Entre ton pseudo !'; lbMsg.style.color='var(--nerf)'; return; }
+  if(score <= 0){ lbMsg.textContent = 'Joue d'abord une partie !'; lbMsg.style.color='var(--nerf)'; return; }
+  lbSubmit.disabled = true;
+  lbMsg.textContent = 'Envoi en cours...'; lbMsg.style.color='var(--muted)';
+  try {
+    await window._submitScore(name, score);
+    lbMsg.textContent = '✂ Score soumis ! (' + score + ')'; lbMsg.style.color='var(--buff)';
+    lbName.value = '';
+    window._lastScore = 0;
+    await loadAndRender();
+  } catch(e) {
+    lbMsg.textContent = 'Erreur, réessaie !'; lbMsg.style.color='var(--nerf)';
+  }
+  lbSubmit.disabled = false;
+});
+</script>
+
 
 
 </body></html>
