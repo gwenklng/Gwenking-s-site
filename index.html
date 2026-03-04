@@ -1030,8 +1030,8 @@ footer a{color:var(--violet);text-decoration:none;}
   }
 
   // Spawn papers every 1.8s
-  setInterval(spawnPaper,1800);
-  spawnPaper();spawnPaper();spawnPaper(); // start with 3
+  window.addEventListener('load',function(){setTimeout(function(){setInterval(spawnPaper,1800);},2000);});
+// papers spawn after load
 
   // Click to cut
   document.addEventListener('click',e=>{
