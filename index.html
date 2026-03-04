@@ -2572,3 +2572,24 @@ window.buildCard = function(p,i){
 
   </div>`;
 };
+/* ═══════════════════════════════
+   HARD REMOVE DPM TEXT
+═══════════════════════════════ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  function removeDPM() {
+    document.querySelectorAll("*").forEach(el => {
+      if (el.textContent.trim() === "DPM") {
+        el.remove();
+      }
+    });
+  }
+
+  removeDPM();
+
+  // Au cas où ça se recharge dynamiquement
+  const observer = new MutationObserver(removeDPM);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+});
