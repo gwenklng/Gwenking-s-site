@@ -2486,24 +2486,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
 window.addEventListener('load', () => {
 
-  /* 1️⃣ Supprimer toutes les feuilles déjà présentes */
   document.querySelectorAll('.paper-sheet').forEach(p => p.remove());
 
   if (typeof papers !== "undefined") {
     papers.length = 0;
   }
 
-  /* 2️⃣ Stopper les anciens intervals si jamais */
   if (typeof spawnInterval !== "undefined") {
     clearInterval(spawnInterval);
   }
 
-  /* 3️⃣ Lancer animation propre */
   if (typeof animate === "function") {
     animate();
   }
 
-  /* 4️⃣ Spawn progressif (aucune feuille au départ) */
   window.spawnInterval = setInterval(() => {
     if (typeof spawnPaper === "function") {
       spawnPaper();
@@ -2511,3 +2507,68 @@ window.addEventListener('load', () => {
   }, 1800);
 
 });
+
+
+/* ========= FORCE OVERRIDE buildCard ========= */
+
+window.buildCard = function(p,i){
+
+  const active = i === cur;
+
+  const badges = p.badges
+    .map(b => `<span class="pro-badge ${b}">${BADGE_LABELS[b]}</span>`)
+    .join('');
+
+  const items = p.build
+    .map(it => `<span class="pro-item${it===p.mythic?' mythic':''}">${it}</span>`)
+    .join('');
+
+  return `<div class="pro-card" style="--pc:${p.color}">
+    <div class="pro-top">
+      <div class="pro-player">
+        <div class="pro-name">${p.player}</div>
+        <div class="pro-team">${p.team} · ${p.league}</div>
+        <div class="pro-event">${p.event}</div>
+      </div>
+      <div class="pro-badges">${badges}</div>
+    </div>
+
+    <div class="pro-stats">
+
+      <div class="pro-stat">
+        <div class="pro-stat-val${p.kda.includes('0/0')||p.kda==='13/0/3'?' gold':''}">
+          ${p.kda}
+        </div>
+        <div class="pro-stat-lbl">Score best</div>
+      </div>
+
+      <div class="pro-stat">
+        <div class="pro-stat-val green">${p.wr}</div>
+        <div class="pro-stat-lbl">Win Rate Gwen</div>
+      </div>
+
+      <div class="pro-stat">
+        <div class="pro-stat-val">${p.kdaAvg}</div>
+        <div class="pro-stat-lbl">KDA moyen</div>
+      </div>
+
+      <div class="pro-stat">
+        <div class="pro-stat-val">${p.games}</div>
+        <div class="pro-stat-lbl">Parties</div>
+      </div>
+
+      <div class="pro-stat">
+        <div class="pro-stat-val">${p.year}</div>
+        <div class="pro-stat-lbl">Saison</div>
+      </div>
+
+    </div>
+
+    <div class="pro-build-label">
+      Build · <span style="font-size:9px;color:var(--muted)">Core items</span>
+    </div>
+
+    <div class="pro-build">${items}</div>
+
+  </div>`;
+};
