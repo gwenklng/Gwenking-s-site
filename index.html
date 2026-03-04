@@ -1851,17 +1851,13 @@ window._lbRender=async function(){
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    const tftFixes = [
-      { label: 'Chibi Gwen',                        href: 'https://modelviewer.lol/model-viewer?group=tft&id=68001' },
-      { label: 'Chibi Soul Fighter',                href: 'https://modelviewer.lol/model-viewer?group=tft&id=68002' },
-      { label: 'Prestige Chibi Café Cuties ✨',     href: 'https://modelviewer.lol/model-viewer?group=tft&id=68003' },
-      { label: 'Chibi Crystal Rose',                href: 'https://modelviewer.lol/model-viewer?group=tft&id=68004' }
-    ];
-
-    document.querySelectorAll('#tab-3d .splash-card[href]').forEach(function(card){
+    document.querySelectorAll('#tab-3d .splash-card').forEach(function(card){
       const label = card.querySelector('.splash-label')?.textContent.trim();
-      const fix = tftFixes.find(f => f.label === label);
-      if(fix) card.setAttribute('href', fix.href);
+      if(label && label.toLowerCase().includes('chibi')){
+        card.removeAttribute('href');
+        card.style.cursor = 'default';
+        card.style.pointerEvents = 'none';
+      }
     });
   });
 </script>
