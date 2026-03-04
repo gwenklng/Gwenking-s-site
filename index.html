@@ -1851,13 +1851,10 @@ window._lbRender=async function(){
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('#tab-3d .splash-card').forEach(function(card){
-      const label = card.querySelector('.splash-label')?.textContent.trim();
-      if(label && label.toLowerCase().includes('chibi')){
-        card.removeAttribute('href');
-        card.style.cursor = 'default';
-        card.style.pointerEvents = 'none';
-      }
+    document.querySelectorAll('#tab-chibi .splash-card').forEach(function(card){
+      card.removeAttribute('href');
+      card.style.cursor = 'default';
+      card.style.pointerEvents = 'none';
     });
   });
 </script>
