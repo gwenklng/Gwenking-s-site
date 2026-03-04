@@ -2479,3 +2479,35 @@ document.addEventListener('DOMContentLoaded', function(){
   }, 800);
 });
 </script>
+/* ════════════════════════════════════════
+   FIX START PAPERS — GWENKING
+   Aucune feuille au chargement
+════════════════════════════════════════ */
+
+window.addEventListener('load', () => {
+
+  /* 1️⃣ Supprimer toutes les feuilles déjà présentes */
+  document.querySelectorAll('.paper-sheet').forEach(p => p.remove());
+
+  if (typeof papers !== "undefined") {
+    papers.length = 0;
+  }
+
+  /* 2️⃣ Stopper les anciens intervals si jamais */
+  if (typeof spawnInterval !== "undefined") {
+    clearInterval(spawnInterval);
+  }
+
+  /* 3️⃣ Lancer animation propre */
+  if (typeof animate === "function") {
+    animate();
+  }
+
+  /* 4️⃣ Spawn progressif (aucune feuille au départ) */
+  window.spawnInterval = setInterval(() => {
+    if (typeof spawnPaper === "function") {
+      spawnPaper();
+    }
+  }, 1800);
+
+});
