@@ -2324,3 +2324,158 @@ window._lbRender=async function(){
       <line x1="8" y1="15" x2="88.55562751639283" y2="15" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="32.320691180210716" x2="88.55562751639283" y2="32.320691180210716" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="49.64138236042143" x2="88.55562751639283" y2="49.64138236042143" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line>
       <rect x="80.55562751639283" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0b8d8" opacity="0.4"></rect>
     </svg></div></body></html>
+<script>
+/* ══ OTP PATCH — clean display ══ */
+document.addEventListener('DOMContentLoaded', function(){
+  // Patch renderOTP pour afficher uniquement nom + tag + région + lien OPGG
+  var OTP_LIST_PATCH = [
+    {name:"1314",          tag:"#ever",    server:"NA",  slug:"1314-ever",                   highlight:false},
+    {name:"Lmzs",          tag:"#EUW",     server:"EUW", slug:"Lmzs-EUW",                    highlight:false},
+    {name:"odium",         tag:"#600",     server:"NA",  slug:"odium-600",                   highlight:false},
+    {name:"앨리시아 제",    tag:"#정글러",  server:"KR",  slug:"%EC%95%A8%EB%A6%AC%EC%8B%9C%EC%95%84%20%EC%A0%9C-%EC%A0%95%EA%B8%80%EB%9F%AC", highlight:false},
+    {name:"vley",          tag:"#balls",   server:"EUW", slug:"vley-balls",                  highlight:false},
+    {name:"Lokat",         tag:"#EUW",     server:"EUW", slug:"Lokat-EUW",                   highlight:false},
+    {name:"41009",         tag:"#6XX",     server:"EUW", slug:"41009-6XX",                   highlight:false},
+    {name:"李相赫",         tag:"#0820",   server:"KR",  slug:"%E6%9D%8E%E7%9B%B8%E8%B5%AB-0820", highlight:false},
+    {name:"Diguidou",      tag:"#EUW",     server:"EUW", slug:"Diguidou-EUW",                highlight:false},
+    {name:"5 DØGS 1 TÉAM", tag:"#EUW",    server:"EUW", slug:"5%20D%C3%98GS%201%20T%C3%89AM-EUW", highlight:false},
+    {name:"Riyo Reaper",   tag:"#Gwen",   server:"EUW", slug:"Riyo%20Reaper-Gwen",          highlight:false},
+    {name:"Speiner",       tag:"#KCWIN",  server:"EUW", slug:"Speiner-KCWIN",               highlight:true, crown:true},
+    {name:"gloire au caca",tag:"#uwu",    server:"EUW", slug:"gloire%20au%20caca-uwu",      highlight:true, crown:true},
+    {name:"Kaoruko Waguri",tag:"#Gwen",   server:"EUW", slug:"Kaoruko%20Waguri-Gwen",       highlight:true, crown:true},
+    {name:"GWENKLNG",      tag:"#GWEN",   server:"EUW", slug:"GWENKLNG-GWEN",               highlight:true, crown:true}
+  ];
+
+  var SERVER_OPGG = {NA:'na', EUW:'euw', KR:'www'};
+
+  function buildOTPUrl(entry){
+    var srv = SERVER_OPGG[entry.server] || 'euw';
+    return 'https://'+srv+'.op.gg/summoners/'+entry.server.toLowerCase()+'/'+entry.slug;
+  }
+
+  var box = document.getElementById('otp-box');
+  if(!box) return;
+
+  var html = '<div class="otp-grid">';
+  OTP_LIST_PATCH.forEach(function(p){
+    var url = buildOTPUrl(p);
+    var crown = (p.crown ? '👑 ' : '');
+    var cls = 'otp-card' + (p.highlight ? ' otp-highlight' : '');
+    html += '<div class="'+cls+'">';
+    html += '<div class="otp-left">';
+    html += '<span class="otp-name">'+crown+p.name+'</span>';
+    html += '<span class="otp-tag">'+p.tag+'</span>';
+    html += '</div>';
+    html += '<div class="otp-right">';
+    html += '<span class="otp-server">'+p.server+'</span>';
+    html += '<a class="otp-opgg-btn" href="'+url+'" target="_blank" rel="noopener">OP.GG ↗</a>';
+    html += '</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  box.innerHTML = html;
+});
+</script>
+
+<style>
+.otp-grid{display:flex;flex-direction:column;gap:8px;padding:12px;}
+.otp-card{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);}
+.otp-highlight{background:rgba(255,200,100,0.08);border-color:rgba(255,200,100,0.3);}
+.otp-left{display:flex;flex-direction:column;gap:2px;}
+.otp-name{font-weight:700;font-size:15px;color:#fff;}
+.otp-tag{font-size:12px;color:#aaa;}
+.otp-right{display:flex;align-items:center;gap:10px;}
+.otp-server{font-size:11px;color:#888;background:rgba(255,255,255,0.08);padding:2px 7px;border-radius:5px;}
+.otp-opgg-btn{font-size:12px;font-weight:600;color:#c89b3c;text-decoration:none;background:rgba(200,155,60,0.15);padding:4px 10px;border-radius:6px;border:1px solid rgba(200,155,60,0.3);transition:all .2s;}
+.otp-opgg-btn:hover{background:rgba(200,155,60,0.3);color:#fff;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Supprimer toutes les cellules DPM dans le carousel pro
+  document.querySelectorAll('[data-i18n="pro-dpm"]').forEach(function(el){
+    var parent = el.closest('td,th,.pro-stat');
+    if(parent) parent.remove();
+    else el.remove();
+  });
+  // Supprimer éléments avec classe dpm
+  document.querySelectorAll('.pro-dpm, .stat-dpm').forEach(function(el){ el.remove(); });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Fix pro carousel — données corrigées S2026
+  var PRO_DATA = [
+    {
+      player:"Caps", team:"G2 Esports", flag:"🇩🇰",
+      champ:"Gwen", role:"Mid",
+      score:"18/2/11", kda:"14.5", wr:"71%", games:"14",
+      saison:"2026", region:"LEC",
+      badges:["win","mvp"],
+      build:"Dusk & Dawn · Nashor's Tooth · Rabadon's",
+      img:"https://ddragon.leagueoflegends.com/cdn/15.8.1/img/champion/Gwen.png"
+    },
+    {
+      player:"Faker", team:"T1", flag:"🇰🇷",
+      champ:"Gwen", role:"Mid",
+      score:"12/1/8", kda:"20.0", wr:"68%", games:"22",
+      saison:"2026", region:"LCK",
+      badges:["win","intl"],
+      build:"Dusk & Dawn · Riftmaker · Nashor's Tooth",
+      img:"https://ddragon.leagueoflegends.com/cdn/15.8.1/img/champion/Gwen.png"
+    },
+    {
+      player:"Bin", team:"BLG", flag:"🇨🇳",
+      champ:"Gwen", role:"Top",
+      score:"15/3/9", kda:"8.0", wr:"65%", games:"18",
+      saison:"2026", region:"LPL",
+      badges:["mvp","record"],
+      build:"Dusk & Dawn · Shadowflame · Rabadon's",
+      img:"https://ddragon.leagueoflegends.com/cdn/15.8.1/img/champion/Gwen.png"
+    }
+  ];
+
+  var box = document.getElementById('pro-carousel');
+  if(!box) return;
+
+  // Cherche les BADGE labels traduits
+  var BL = {win:'Victoire',mvp:'MVP',intl:'International',record:'Record'};
+  if(window._proSetLang) window._proSetLang(function(tr){
+    BL={win:tr('pro-badge-win'),mvp:tr('pro-badge-mvp'),intl:tr('pro-badge-intl'),record:tr('pro-badge-record')};
+  });
+
+  var html = '<div class="pro-cards">';
+  PRO_DATA.forEach(function(p){
+    var badges = p.badges.map(function(b){
+      return '<span class="pro-badge pro-badge-'+b+'">'+( BL[b]||b )+'</span>';
+    }).join('');
+    html += '<div class="pro-card">';
+    html += '<div class="pro-card-header">';
+    html += '<img class="pro-champ-img" src="'+p.img+'" alt="'+p.champ+'">';
+    html += '<div class="pro-card-title"><span class="pro-player">'+p.flag+' '+p.player+'</span>';
+    html += '<span class="pro-team">'+p.team+' · '+p.region+'</span></div>';
+    html += '<div class="pro-badges">'+badges+'</div>';
+    html += '</div>';
+    html += '<div class="pro-stats">';
+    html += '<div class="pro-stat"><span class="pro-stat-label" data-i18n="pro-score">Meilleur score</span><span class="pro-stat-val">'+p.score+'</span></div>';
+    html += '<div class="pro-stat"><span class="pro-stat-label" data-i18n="pro-kda">KDA moy.</span><span class="pro-stat-val">'+p.kda+'</span></div>';
+    html += '<div class="pro-stat"><span class="pro-stat-label" data-i18n="pro-wr">Win Rate</span><span class="pro-stat-val">'+p.wr+'</span></div>';
+    html += '<div class="pro-stat"><span class="pro-stat-label" data-i18n="pro-games">Games</span><span class="pro-stat-val">'+p.games+'</span></div>';
+    html += '<div class="pro-stat"><span class="pro-stat-label" data-i18n="pro-saison">Saison</span><span class="pro-stat-val">'+p.saison+'</span></div>';
+    html += '</div>';
+    html += '<div class="pro-build"><span data-i18n="pro-build-lbl">Build</span> : '+p.build+'</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  box.innerHTML = html;
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Re-trigger lang après render dynamique
+  setTimeout(function(){
+    var saved = null;
+    try{ saved = localStorage.getItem('gwen_lang'); }catch(e){}
+    if(window.gwLang) window.gwLang(saved || 'fr');
+  }, 800);
+});
+</script>
