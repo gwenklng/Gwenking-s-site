@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/moulo/Downloads/gwenking_12.html -->
+<!-- saved from url=(0049)file:///C:/Users/moulo/Downloads/gwenking_41.html -->
 <html lang="fr" data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,6 +134,60 @@ main{max-width:940px;margin:0 auto;padding:80px 24px 180px;}
 .calc-stat-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
 /* SKINS */
 .skins-filter{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+/* OTP LIST */
+.otp-list{display:flex;flex-direction:column;gap:0;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:24px;}
+.otp-entry{display:flex;align-items:center;gap:12px;padding:12px 18px;text-decoration:none;color:var(--text);background:var(--card);border-bottom:1px solid var(--border);transition:background .18s,padding-left .18s;}
+.otp-entry:last-child{border-bottom:none;}
+.otp-entry:hover{background:var(--surface);padding-left:26px;}
+.otp-entry.highlight{background:rgba(124,92,191,.07);}
+.otp-entry.highlight:hover{background:rgba(124,92,191,.14);}
+.otp-arrow{font-size:14px;color:var(--violet);transition:transform .18s;min-width:16px;}
+.otp-entry:hover .otp-arrow{transform:translateX(4px);}
+.otp-name{flex:1;font-size:14px;font-weight:600;color:var(--pale);}
+.otp-tag{font-size:11px;color:var(--muted);font-weight:400;margin-left:2px;}
+.otp-server{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);background:rgba(124,92,191,.1);padding:2px 7px;border-radius:10px;}
+.otp-games{font-size:11px;color:var(--muted);min-width:70px;text-align:right;}
+/* SPLASH TABS */
+.splash-tabs{display:flex;gap:8px;margin-bottom:14px;}
+.splash-tab{padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:'Nunito',sans-serif;font-weight:700;cursor:none!important;transition:all .2s;}
+.splash-tab.active,.splash-tab:hover{background:var(--violet);color:#fff;border-color:var(--violet);}
+.splash-tab-content{display:none;}
+.splash-tab-content.active{display:block;}
+/* SPLASH ARTS */
+.splash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:24px;}
+.splash-card{border-radius:10px;overflow:hidden;border:1.5px solid var(--border);background:var(--card);transition:transform .2s,box-shadow .2s;cursor:none!important;}
+.splash-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,92,191,.25);}
+.prestige-glow{border-color:#c8a020 !important;box-shadow:0 0 14px rgba(200,160,32,.25);}
+.splash-img-wrap{position:relative;overflow:hidden;}
+.splash-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;transition:transform .3s;}
+.splash-card:hover .splash-img{transform:scale(1.06);}
+.splash-overlay{position:absolute;inset:0;background:rgba(20,8,40,.6);opacity:0;display:flex;align-items:center;justify-content:center;transition:opacity .22s;}
+.splash-card:hover .splash-overlay{opacity:1;}
+.splash-3d-btn{color:#fff;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;border:1.5px solid rgba(255,255,255,.65);padding:6px 14px;border-radius:20px;cursor:pointer;}
+.splash-label{padding:8px 12px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--pale);font-weight:600;}
+.splash-sub{padding:0 12px 8px;font-size:10px;color:var(--muted);letter-spacing:1px;}
+/* 3D MODELS */
+.model3d-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px;margin-bottom:24px;}
+.model3d-card{border-radius:10px;overflow:hidden;border:1.5px solid var(--border);background:var(--card);text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s;display:block;}
+.model3d-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(124,92,191,.3);}
+.model3d-thumb{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;font-size:2.4rem;}
+.model3d-badge{position:absolute;top:8px;right:8px;font-size:8px;letter-spacing:1.5px;background:var(--violet);color:#fff;padding:2px 7px;border-radius:8px;font-weight:700;}
+.model3d-badge.prestige{background:linear-gradient(90deg,#c8a020,#f0d060);color:#3d2000;}
+.model3d-name{padding:8px 10px 2px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--pale);font-weight:600;}
+.model3d-sub{padding:0 10px 10px;font-size:10px;color:var(--violet);letter-spacing:.5px;}
+.splash-source{font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;}
+.tft-wrap{background:var(--surface);display:flex;align-items:center;justify-content:center;aspect-ratio:1;}
+.tft-img{width:80%!important;height:80%!important;aspect-ratio:1!important;object-fit:contain!important;border-radius:50%;}
+.splash-note{font-size:10px;color:var(--muted);letter-spacing:1px;margin-top:-6px;margin-bottom:16px;}
+/* OTP extras */
+.otp-crown{font-size:9px;background:rgba(200,160,32,.15);color:#c8a020;padding:1px 7px;border-radius:8px;margin-left:5px;letter-spacing:1px;}
+/* FALLING PAPERS */
+#lp-counter{position:fixed;bottom:24px;left:24px;z-index:9998;font-family:"Cormorant Garamond",serif;font-size:1.1rem;color:var(--violet);background:var(--card);border:1.5px solid var(--border);border-radius:20px;padding:6px 16px;pointer-events:none;transition:transform .15s;opacity:.9;}
+#lp-counter.pop{transform:scale(1.25);}
+.paper-sheet{position:fixed;top:-80px;pointer-events:none;z-index:9997;user-select:none;will-change:transform;}
+.paper-sheet svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,.08));}
+.cut-flash{position:fixed;pointer-events:none;z-index:9999;font-family:"Cormorant Garamond",serif;font-size:1.4rem;color:var(--violet);animation:cutpop .6s forwards;}
+@keyframes cutpop{0%{opacity:1;transform:scale(.8) translateY(0);}60%{opacity:1;transform:scale(1.1) translateY(-20px);}100%{opacity:0;transform:scale(1) translateY(-40px);}}
 /* PRO PERFORMANCES */
 .pro-wrap{position:relative;overflow:hidden;border-radius:12px;}
 .pro-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);}
@@ -277,6 +331,7 @@ footer a{color:var(--violet);text-decoration:none;}
 </head>
 <body>
 <button id="theme-toggle" title="Mode sombre/clair">🌙</button>
+<div id="lp-counter" class="">✂ +2 LP</div>
 <div id="welcome-modal" class="hidden">
   <div class="wm-box">
     <div class="wm-sc">✂</div>
@@ -306,8 +361,8 @@ footer a{color:var(--violet);text-decoration:none;}
   <div class="socials">
     <a class="soc" href="https://www.twitch.tv/gwenking_" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"></path></svg>Twitch</a>
     <a class="soc" href="https://www.tiktok.com/@gwenklng" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"></path></svg>TikTok</a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_12.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</a>
-    <a class="soc" href="file:///C:/Users/moulo/Downloads/gwenking_12.html#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram</a>
+    <a class="soc" href="https://www.youtube.com/@GWENKlNG/shorts" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</a>
+    <a class="soc" href="https://www.instagram.com/gwenklng/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>Instagram</a>
   </div>
 </header>
 <main>
@@ -320,11 +375,11 @@ footer a{color:var(--violet);text-decoration:none;}
   <div class="countdown-digits">
     <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Jours</div></div>
     <div class="cd-sep">:</div>
-    <div class="cd-unit"><div class="cd-num" id="cd-h">06</div><div class="cd-lbl">Heures</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Heures</div></div>
     <div class="cd-sep">:</div>
-    <div class="cd-unit"><div class="cd-num" id="cd-m">11</div><div class="cd-lbl">Minutes</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">41</div><div class="cd-lbl">Minutes</div></div>
     <div class="cd-sep">:</div>
-    <div class="cd-unit"><div class="cd-num bump" id="cd-s">49</div><div class="cd-lbl">Secondes</div></div>
+    <div class="cd-unit"><div class="cd-num bump" id="cd-s">52</div><div class="cd-lbl">Secondes</div></div>
   </div>
 </div>
 <div class="patches">
@@ -397,7 +452,7 @@ footer a{color:var(--violet);text-decoration:none;}
 <p style="font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;">Source : <a href="https://gol.gg/champion/champion-stats/155/season-ALL/split-ALL/tournament-ALL/" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">gol.gg</a> · Toutes saisons · Toutes ligues</p>
 <div id="pro-ts" class="last-update">Données vérifiées · gol.gg · luckbox.com · invenglobal.com</div>
 <div class="pro-wrap">
-  <div class="pro-track" id="pro-track" style="transform: translateX(0%);"><div class="pro-card" style="--pc:#4faa80">
+  <div class="pro-track" id="pro-track" style="transform: translateX(-300%);"><div class="pro-card" style="--pc:#4faa80">
       <div class="pro-top">
         <div class="pro-player">
           <div class="pro-name">Bin</div>
@@ -545,321 +600,274 @@ footer a{color:var(--violet);text-decoration:none;}
     <button class="pro-arr" id="pro-prev">‹</button>
     <button class="pro-arr" id="pro-next">›</button>
   </div>
-  <div id="pro-dots"><span class="pro-dot active" data-i="0"></span> <span class="pro-dot" data-i="1"></span> <span class="pro-dot" data-i="2"></span> <span class="pro-dot" data-i="3"></span> <span class="pro-dot" data-i="4"></span> <span class="pro-dot" data-i="5"></span> <span class="pro-dot" data-i="6"></span></div>
+  <div id="pro-dots"><span class="pro-dot" data-i="0"></span> <span class="pro-dot" data-i="1"></span> <span class="pro-dot" data-i="2"></span> <span class="pro-dot active" data-i="3"></span> <span class="pro-dot" data-i="4"></span> <span class="pro-dot" data-i="5"></span> <span class="pro-dot" data-i="6"></span></div>
   <span class="pro-auto-label" id="pro-auto-lbl">↻ auto 10s</span>
 </div>
 
 <div class="section-head"><h2>Galerie des skins officiels</h2><span class="snips">✂</span></div>
-<p style="font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;">Source : <a href="https://wiki.leagueoflegends.com/en-us/Gwen/Cosmetics" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">Wiki LoL officiel</a> · <a href="https://leagueoflegends.fandom.com/wiki/Category:WR_Gwen_skins" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">Fandom WR</a> · <a href="https://tftskins.com/" target="_blank" style="color:var(--violet);text-decoration:none;" rel="noopener">TFT Skins</a></p>
-<div class="skins-filter">
-  <button class="sf-btn active" data-filter="all">Tous (17)</button>
-  <button class="sf-btn" data-filter="lol">LoL (6)</button>
-  <button class="sf-btn" data-filter="wr">Wild Rift (6)</button>
-  <button class="sf-btn" data-filter="tft">TFT Chibi (4)</button>
-  <button class="sf-btn" data-filter="lor">LoR (1)</button>
-</div>
-<div class="skins-grid">
-  <!-- LoL — 6 skins officiels confirmés wiki -->
-  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#e8f0ff,#d8ccf8)">✂<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Gwen</div><div class="skin-meta"><span class="skin-price">Gratuit</span><span class="skin-tbadge base">Base</span></div></div></div>
-  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#f5e8ff,#ffd8f5)">🎵<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Space Groove Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff0f8,#f8e0ff)">☕<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Café Cuties Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff8e0,#ffe8c0)">👑<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Battle Queen Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">⚔️<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <div class="skin-card" data-game="lol"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#eae0ff,#ccc0f8)">🌧️<span class="skin-game-badge">LoL</span></div><div class="skin-info"><div class="skin-name">Rain Shepherd Gwen</div><div class="skin-meta"><span class="skin-price">1350 RP</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <!-- Wild Rift — 6 skins officiels confirmés fandom WR -->
-  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#e8f0ff,#d8ccf8)">✂<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Gwen (Original)</div><div class="skin-meta"><span class="skin-price">—</span><span class="skin-tbadge base">Base</span></div></div></div>
-  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffc8e8)">🌹<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Crystal Rose Gwen</div><div class="skin-meta"><span class="skin-price">990 Wild Cores</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff8e0,#ffe090)">🏮<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Mythmaker Gwen</div><div class="skin-meta"><span class="skin-price">1650 Wild Cores</span><span class="skin-tbadge legendary">Légendaire</span></div></div></div>
-  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff0f0,#ffd0e0)">✨<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Prestige Crystal Rose</div><div class="skin-meta"><span class="skin-price">Événement</span><span class="skin-tbadge prestige">Prestige</span></div></div></div>
-  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">⚔️<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">990 Wild Cores</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <div class="skin-card" data-game="wr"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#f5e8ff,#ffd8f5)">🎵<span class="skin-game-badge">WR</span></div><div class="skin-info"><div class="skin-name">Space Groove Gwen</div><div class="skin-meta"><span class="skin-price">990 Wild Cores</span><span class="skin-tbadge epic">Epic</span></div></div></div>
-  <!-- TFT Chibis — 4 officiels confirmés -->
-  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#e8f0ff,#d8ccf8)">🧸<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Gwen</div><div class="skin-meta"><span class="skin-price">1900 RP</span><span class="skin-tbadge epic">Mythic</span></div></div></div>
-  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">⚔️<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">1900 RP</span><span class="skin-tbadge epic">Mythic</span></div></div></div>
-  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#fff0f8,#f8e0ff)">☕<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Prestige Café Cuties</div><div class="skin-meta"><span class="skin-price">25 Mythic Med.</span><span class="skin-tbadge prestige">Prestige</span></div></div></div>
-  <div class="skin-card" data-game="tft"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffc8e8)">🌹<span class="skin-game-badge">TFT</span></div><div class="skin-info"><div class="skin-name">Chibi Crystal Rose Gwen</div><div class="skin-meta"><span class="skin-price">Rotating Shop</span><span class="skin-tbadge epic">Mythic</span></div></div></div>
-  <!-- Legends of Runeterra — 1 officiel -->
-  <div class="skin-card" data-game="lor"><div class="skin-thumb" style="--sbg:linear-gradient(135deg,#ffe8f0,#ffb8d0)">🃏<span class="skin-game-badge">LoR</span></div><div class="skin-info"><div class="skin-name">Soul Fighter Gwen</div><div class="skin-meta"><span class="skin-price">Event Pass</span><span class="skin-tbadge rare">Rare</span></div></div></div>
+<div class="splash-tabs">
+  <button class="splash-tab active" data-tab="lol">LoL (6)</button>
+  <button class="splash-tab" data-tab="tft">TFT Chibi (4)</button>
+  <button class="splash-tab" data-tab="3d">Modèles 3D</button>
 </div>
 
-<!-- TOP GWENS MONDIALES -->
-<div class="section-head"><h2>Top Gwens Mondiales</h2><span class="snips">✂</span><span class="live-badge"><span class="live-dot"></span>Live</span></div>
-<div class="tg-header">
-  <div class="tg-controls">
-    <div class="tg-tabs">
-      <button class="tg-tab active" data-q="solo">Solo/Duo</button>
-      <button class="tg-tab" data-q="flex">Flex</button>
+<!-- LoL -->
+<div id="tab-lol" class="splash-tab-content active">
+<p class="splash-source">DDragon · Riot Games · Libre accès</p>
+<div class="splash-grid">
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/Gwen_0.jpg" alt="Gwen" loading="lazy">
+      <div class="splash-overlay"><span class="splash-3d-btn" data-id="887000">👁 3D</span></div>
     </div>
-    <button class="tg-refresh-btn" id="tg-refresh"><span class="ref-icon">↻</span> Actualiser</button>
+    <div class="splash-label">Gwen</div>
+    <div class="splash-sub">Base · Gratuit · Avr. 2021</div>
   </div>
-  <div class="tg-source">Source : <a href="https://www.onetricks.gg/champions/ranking/Gwen" target="_blank" rel="noopener">onetricks.gg</a> S2026</div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/Gwen_1.jpg" alt="Space Groove Gwen" loading="lazy">
+      <div class="splash-overlay"><span class="splash-3d-btn" data-id="887001">👁 3D</span></div>
+    </div>
+    <div class="splash-label">Space Groove Gwen</div>
+    <div class="splash-sub">Epic · 1350 RP · Avr. 2021</div>
+  </div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/Gwen_11.jpg" alt="Café Cuties Gwen" loading="lazy">
+      <div class="splash-overlay"><span class="splash-3d-btn" data-id="887011">👁 3D</span></div>
+    </div>
+    <div class="splash-label">Café Cuties Gwen</div>
+    <div class="splash-sub">Epic · 1350 RP · Déc. 2021</div>
+  </div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/Gwen_20.jpg" alt="Soul Fighter Gwen" loading="lazy">
+      <div class="splash-overlay"><span class="splash-3d-btn" data-id="887020">👁 3D</span></div>
+    </div>
+    <div class="splash-label">Soul Fighter Gwen</div>
+    <div class="splash-sub">Epic · 1350 RP · Août 2023</div>
+  </div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/Gwen_30.jpg" alt="Battle Queen Gwen" loading="lazy">
+      <div class="splash-overlay"><span class="splash-3d-btn" data-id="887030">👁 3D</span></div>
+    </div>
+    <div class="splash-label">Battle Queen Gwen</div>
+    <div class="splash-sub">Epic · 1350 RP · Août 2024</div>
+  </div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/Gwen_39.jpg" alt="Rain Shepherd Gwen" loading="lazy">
+      <div class="splash-overlay"><span class="splash-3d-btn" data-id="887039">👁 3D</span></div>
+    </div>
+    <div class="splash-label">Rain Shepherd Gwen 🐸</div>
+    <div class="splash-sub">Epic · 1350 RP · Nov. 2025</div>
+  </div>
 </div>
-<div id="tg-ts" class="last-update">Mis à jour il y a 0s</div>
-<div class="topgwen-list" id="tg-list"><div class="tg-row" style="animation-delay:0s">
-        <div class="tg-rank gold">👑</div>
-        <div class="tg-info">
-          <div class="tg-name">1314<span class="tg-hashtag"> #ever</span></div>
-          <div class="tg-details">NA · Challenger · KDA 3.68</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 988 LP</div>
-          <div class="tg-wr">64% WR</div>
-          <div class="tg-games">74 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.04s">
-        <div class="tg-rank silver">✦</div>
-        <div class="tg-info">
-          <div class="tg-name">odium<span class="tg-hashtag"> #600</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">NA · Challenger · KDA 2.00</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 505 LP</div>
-          <div class="tg-wr">56% WR</div>
-          <div class="tg-games">180 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.08s">
-        <div class="tg-rank bronze">✧</div>
-        <div class="tg-info">
-          <div class="tg-name">Lmzs<span class="tg-hashtag"> #EUW</span></div>
-          <div class="tg-details">EUW · Challenger · KDA 2.32</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 491 LP</div>
-          <div class="tg-wr">59% WR</div>
-          <div class="tg-games">56 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.12s">
-        <div class="tg-rank ">✂</div>
-        <div class="tg-info">
-          <div class="tg-name">14小孩幻想赢对线<span class="tg-hashtag"> #4453</span></div>
-          <div class="tg-details">KR · Grandmaster · KDA 2.10</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 158 LP</div>
-          <div class="tg-wr">55% WR</div>
-          <div class="tg-games">82 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.16s">
-        <div class="tg-rank ">✄</div>
-        <div class="tg-info">
-          <div class="tg-name">내 성장막아봐<span class="tg-hashtag"> #못막을걸</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">KR · Grandmaster · KDA 2.90</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 136 LP</div>
-          <div class="tg-wr">59% WR</div>
-          <div class="tg-games">239 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.2s">
-        <div class="tg-rank ">⋆</div>
-        <div class="tg-info">
-          <div class="tg-name">그러건아말건아<span class="tg-hashtag"> #0720</span></div>
-          <div class="tg-details">KR · Master · KDA 1.86</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 101 LP</div>
-          <div class="tg-wr">67% WR</div>
-          <div class="tg-games">49 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.24s">
-        <div class="tg-rank ">·</div>
-        <div class="tg-info">
-          <div class="tg-name">雨の回忆<span class="tg-hashtag"> #blue</span></div>
-          <div class="tg-details">NA · Challenger · KDA 4.09</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 043 LP</div>
-          <div class="tg-wr">62% WR</div>
-          <div class="tg-games">42 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.28s">
-        <div class="tg-rank ">★</div>
-        <div class="tg-info">
-          <div class="tg-name">앨리시아 제<span class="tg-hashtag"> #정글러</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">KR · Master · KDA 2.26</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">1 006 LP</div>
-          <div class="tg-wr">56% WR</div>
-          <div class="tg-games">174 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.32s">
-        <div class="tg-rank ">✩</div>
-        <div class="tg-info">
-          <div class="tg-name">vley<span class="tg-hashtag"> #balls</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 2.75</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">996 LP</div>
-          <div class="tg-wr">61% WR</div>
-          <div class="tg-games">56 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.36s">
-        <div class="tg-rank ">✦</div>
-        <div class="tg-info">
-          <div class="tg-name">Lokat<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 1.53</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">955 LP</div>
-          <div class="tg-wr">53% WR</div>
-          <div class="tg-games">372 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.4s">
-        <div class="tg-rank ">✧</div>
-        <div class="tg-info">
-          <div class="tg-name">41009<span class="tg-hashtag"> #6XX</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 1.79</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">936 LP</div>
-          <div class="tg-wr">51% WR</div>
-          <div class="tg-games">294 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.44s">
-        <div class="tg-rank ">⋆</div>
-        <div class="tg-info">
-          <div class="tg-name">Diguidou<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 2.02</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">935 LP</div>
-          <div class="tg-wr">60% WR</div>
-          <div class="tg-games">176 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.48s">
-        <div class="tg-rank ">·</div>
-        <div class="tg-info">
-          <div class="tg-name">李相赫<span class="tg-hashtag"> #0820</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">KR · Master · KDA 4.00</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">934 LP</div>
-          <div class="tg-wr">62% WR</div>
-          <div class="tg-games">113 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.52s">
-        <div class="tg-rank ">★</div>
-        <div class="tg-info">
-          <div class="tg-name">5 DØGS 1 TÉAM<span class="tg-hashtag"> #EUW</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 1.87</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">927 LP</div>
-          <div class="tg-wr">57% WR</div>
-          <div class="tg-games">157 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.56s">
-        <div class="tg-rank ">✩</div>
-        <div class="tg-info">
-          <div class="tg-name">puppyxi<span class="tg-hashtag"> #1123</span></div>
-          <div class="tg-details">KR · Master · KDA 2.34</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">925 LP</div>
-          <div class="tg-wr">56% WR</div>
-          <div class="tg-games">113 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.6s">
-        <div class="tg-rank ">✦</div>
-        <div class="tg-info">
-          <div class="tg-name">강아지풀은있는데왜고양이풀은없지<span class="tg-hashtag"> #oωo</span></div>
-          <div class="tg-details">KR · Master · KDA 2.99</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">905 LP</div>
-          <div class="tg-wr">64% WR</div>
-          <div class="tg-games">63 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.64s">
-        <div class="tg-rank ">✧</div>
-        <div class="tg-info">
-          <div class="tg-name">南风知我意<span class="tg-hashtag"> #0321</span></div>
-          <div class="tg-details">NA · Grandmaster · KDA 3.99</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">896 LP</div>
-          <div class="tg-wr">66% WR</div>
-          <div class="tg-games">56 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.68s">
-        <div class="tg-rank ">⋆</div>
-        <div class="tg-info">
-          <div class="tg-name">Yuxin baby<span class="tg-hashtag"> #god</span></div>
-          <div class="tg-details">NA · Challenger · KDA 5.10</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">876 LP</div>
-          <div class="tg-wr">76% WR</div>
-          <div class="tg-games">55 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.72s">
-        <div class="tg-rank ">·</div>
-        <div class="tg-info">
-          <div class="tg-name">실력이차이나나봐<span class="tg-hashtag"> #나야</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">KR · Master · KDA 2.44</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">864 LP</div>
-          <div class="tg-wr">58% WR</div>
-          <div class="tg-games">138 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.76s">
-        <div class="tg-rank ">★</div>
-        <div class="tg-info">
-          <div class="tg-name">GwenOTP<span class="tg-hashtag"> #EUW1</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 2.11</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">851 LP</div>
-          <div class="tg-wr">55% WR</div>
-          <div class="tg-games">204 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.8s">
-        <div class="tg-rank ">21</div>
-        <div class="tg-info">
-          <div class="tg-name">GWENKLNG<span class="tg-hashtag"> #GWEN</span><span class="tg-otp">OTP</span></div>
-          <div class="tg-details">EUW · Master · KDA 3.20</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">391 LP</div>
-          <div class="tg-wr">49% WR</div>
-          <div class="tg-games">329 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.84s">
-        <div class="tg-rank ">22</div>
-        <div class="tg-info">
-          <div class="tg-name">Kaoruko Waguri<span class="tg-hashtag"> #Gwen</span></div>
-          <div class="tg-details">EUW · Master · KDA 3.22</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">338 LP</div>
-          <div class="tg-wr">53% WR</div>
-          <div class="tg-games">399 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.88s">
-        <div class="tg-rank ">23</div>
-        <div class="tg-info">
-          <div class="tg-name">Speiner<span class="tg-hashtag"> #KCWIN</span></div>
-          <div class="tg-details">EUW · Master · KDA —</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">7 LP</div>
-          <div class="tg-wr">48% WR</div>
-          <div class="tg-games">174 games · SoloQ</div>
-        </div>
-      </div><div class="tg-row" style="animation-delay:0.92s">
-        <div class="tg-rank ">24</div>
-        <div class="tg-info">
-          <div class="tg-name">gloire au caca<span class="tg-hashtag"> #uwu</span></div>
-          <div class="tg-details">EUW · Platinum 1 · KDA 2.15</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">41 LP</div>
-          <div class="tg-wr">54% WR</div>
-          <div class="tg-games">111 games · SoloQ</div>
-        </div>
-      </div></div>
+<p class="splash-note">✨ Prestige Soul Fighter (2023) — pas de splash DDragon séparé · <a href="https://modelviewer.lol/model-viewer?id=887021" target="_blank" rel="noopener" style="color:var(--violet)">Voir modèle 3D →</a></p>
+</div>
+
+<!-- TFT Chibi -->
+<div id="tab-tft" class="splash-tab-content">
+<p class="splash-source">TFT Chibi Champions · Riot Games · Via Khada CDN</p>
+<div class="splash-grid">
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/68001.webp" alt="Chibi Gwen TFT" loading="lazy" onerror="this.src=&#39;https://cdn.modelviewer.lol/tft/circles/68001.webp&#39;">
+      <div class="splash-overlay"><a class="splash-3d-btn" href="https://modelviewer.lol/tacticians/petchibigwen" target="_blank" rel="noopener">👁 3D</a></div>
+    </div>
+    <div class="splash-label">Chibi Gwen</div>
+    <div class="splash-sub">TFT · Mythic · 1900 RP · Set 9</div>
+  </div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/68002.webp" alt="Chibi Soul Fighter Gwen" loading="lazy" onerror="this.src=&#39;https://cdn.modelviewer.lol/tft/circles/68002.webp&#39;">
+      <div class="splash-overlay"><a class="splash-3d-btn" href="https://modelviewer.lol/tacticians/petchibigwensoulfighter" target="_blank" rel="noopener">👁 3D</a></div>
+    </div>
+    <div class="splash-label">Chibi Soul Fighter Gwen</div>
+    <div class="splash-sub">TFT · Mythic · 1900 RP · Set 9</div>
+  </div>
+  <div class="splash-card prestige-glow">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/68003.webp" alt="Prestige Chibi Café Cuties" loading="lazy" onerror="this.src=&#39;https://cdn.modelviewer.lol/tft/circles/68003.webp&#39;">
+      <div class="splash-overlay"><a class="splash-3d-btn" href="https://modelviewer.lol/tacticians/petchibigwencafecutiesprestige" target="_blank" rel="noopener">👁 3D</a></div>
+    </div>
+    <div class="splash-label">Prestige Chibi Café Cuties ✨</div>
+    <div class="splash-sub">TFT · Prestige · 25 Med. · Set 12</div>
+  </div>
+  <div class="splash-card">
+    <div class="splash-img-wrap">
+      <img class="splash-img" src="./GWENKING ✂_files/68004.webp" alt="Chibi Crystal Rose Gwen" loading="lazy" onerror="this.src=&#39;https://cdn.modelviewer.lol/tft/circles/68004.webp&#39;">
+      <div class="splash-overlay"><a class="splash-3d-btn" href="https://modelviewer.lol/tacticians/petchibigwencrystarose" target="_blank" rel="noopener">👁 3D</a></div>
+    </div>
+    <div class="splash-label">Chibi Crystal Rose Gwen</div>
+    <div class="splash-sub">TFT · Mythic · Rotating Shop</div>
+  </div>
+</div>
+</div>
+
+<!-- Modèles 3D -->
+<div id="tab-3d" class="splash-tab-content">
+<p class="splash-source">Modèles 3D via <a href="https://www.modelviewer.lol/" target="_blank" rel="noopener" style="color:var(--violet)">Khada Model Viewer</a> · Cliquez pour ouvrir</p>
+<div class="splash-grid">
+  <a class="splash-card" href="https://modelviewer.lol/model-viewer?id=887000" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_0.jpg" alt="Gwen" loading="lazy"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Gwen</div><div class="splash-sub">LoL · Base</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/model-viewer?id=887001" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_1.jpg" alt="Space Groove" loading="lazy"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Space Groove</div><div class="splash-sub">LoL · Epic</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/model-viewer?id=887011" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_11.jpg" alt="Café Cuties" loading="lazy"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Café Cuties</div><div class="splash-sub">LoL · Epic</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/model-viewer?id=887020" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_20.jpg" alt="Soul Fighter" loading="lazy"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Soul Fighter</div><div class="splash-sub">LoL · Epic</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/model-viewer?id=887030" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_30.jpg" alt="Battle Queen" loading="lazy"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Battle Queen</div><div class="splash-sub">LoL · Epic</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/model-viewer?id=887039" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_39.jpg" alt="Rain Shepherd" loading="lazy"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Rain Shepherd 🐸</div><div class="splash-sub">LoL · Epic</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/tacticians/petchibigwen" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_0.jpg" alt="Chibi Gwen" loading="lazy" onerror="this.src=&#39;https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_0.jpg&#39;"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Chibi Gwen</div><div class="splash-sub">TFT · Mythic</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/tacticians/petchibigwensoulfighter" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_20.jpg" alt="Chibi Soul Fighter" loading="lazy" onerror="this.src=&#39;https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_20.jpg&#39;"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Chibi Soul Fighter</div><div class="splash-sub">TFT · Mythic</div>
+  </a>
+  <a class="splash-card prestige-glow" href="https://modelviewer.lol/tacticians/petchibigwencafecutiesprestige" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_11.jpg" alt="Prestige Chibi Café Cuties" loading="lazy" onerror="this.src=&#39;https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_11.jpg&#39;"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Prestige Chibi Café Cuties ✨</div><div class="splash-sub">TFT · Prestige</div>
+  </a>
+  <a class="splash-card" href="https://modelviewer.lol/tacticians/petchibigwencrystarose" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+    <div class="splash-img-wrap"><img class="splash-img" src="./GWENKING ✂_files/Gwen_11.jpg" alt="Chibi Crystal Rose" loading="lazy" onerror="this.src=&#39;https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_11.jpg&#39;"><div class="splash-overlay"><span class="splash-3d-btn">👁 Ouvrir 3D</span></div></div>
+    <div class="splash-label">Chibi Crystal Rose</div><div class="splash-sub">TFT · Mythic</div>
+  </a>
+</div>
+</div><!-- end tab-3d -->
+
+
+
+
+
+<!-- OTP GWEN LIST — source onetricks.gg S2026 -->
+<div class="section-head"><h2>OTP Gwen — +200 games</h2><span class="snips">✂</span></div>
+<p style="font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:16px;text-transform:uppercase;">Source : <a href="https://www.onetricks.gg/champions/ranking/Gwen" target="_blank" style="color:var(--violet);text-decoration:none;">onetricks.gg</a> · S2026 · Toutes régions · Tous élos</p>
+<div class="otp-list">
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/na/1314-ever" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">1314<span class="otp-tag">#ever</span></span>
+    <span class="otp-server">NA</span><span class="otp-games">74 games · 64% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/Lmzs-EUW" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">Lmzs<span class="otp-tag">#EUW</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">56 games · 59% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/na/odium-600" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">odium<span class="otp-tag">#600</span></span>
+    <span class="otp-server">NA</span><span class="otp-games">181 games · 55% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/kr/14%E5%B0%8F%E5%AD%A9%E5%B9%BB%E6%83%B3%E8%B5%A2%E5%AF%B9%E7%BA%BF-4453" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">14小孩幻想赢对线<span class="otp-tag">#4453</span></span>
+    <span class="otp-server">KR</span><span class="otp-games">83 games · 55% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/kr/%EA%B7%B8%EB%9F%AC%EA%B1%B4%EC%95%84%EB%A7%90%EA%B1%B4%EC%95%84-0720" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">그러건아말건아<span class="otp-tag">#0720</span></span>
+    <span class="otp-server">KR</span><span class="otp-games">49 games · 67% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/kr/%EB%82%B4%20%EC%84%B1%EC%9E%A5%EB%A7%89%EC%95%84%EB%B4%90-%EB%AA%BB%EB%A7%89%EC%9D%84%EA%B1%B8" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">내 성장막아봐<span class="otp-tag">#못막을걸</span></span>
+    <span class="otp-server">KR</span><span class="otp-games">240 games · 59% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/na/%E9%9B%A8%E3%81%AE%E5%9B%9E%E5%BF%86-blue" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">雨の回忆<span class="otp-tag">#blue</span></span>
+    <span class="otp-server">NA</span><span class="otp-games">43 games · 63% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/kr/%EC%95%A8%EB%A6%AC%EC%8B%9C%EC%95%84%20%EC%A0%9C-%EC%A0%95%EA%B8%80%EB%9F%AC" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">앨리시아 제<span class="otp-tag">#정글러</span></span>
+    <span class="otp-server">KR</span><span class="otp-games">174 games · 56% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/vley-balls" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">vley<span class="otp-tag">#balls</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">56 games · 61% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/Lokat-EUW" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">Lokat<span class="otp-tag">#EUW</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">372 games · 53% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/41009-6XX" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">41009<span class="otp-tag">#6XX</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">294 games · 51% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/kr/%E6%9D%8E%E7%9B%B8%E8%B5%AB-0820" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">李相赫<span class="otp-tag">#0820</span></span>
+    <span class="otp-server">KR</span><span class="otp-games">113 games · 62% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/Diguidou-EUW" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">Diguidou<span class="otp-tag">#EUW</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">177 games · 60% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/kr/%EA%B0%95%EC%95%84%EC%A7%80%ED%92%80%EC%9D%80%EC%9E%88%EB%8A%94%EB%8D%B0%EC%99%9C%EA%B3%A0%EC%96%91%EC%9D%B4%ED%92%80%EC%9D%80%EC%97%86%EC%A7%80-o%CF%89o" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">강아지풀은있는데왜고양이풀은없지<span class="otp-tag">#oωo</span></span>
+    <span class="otp-server">KR</span><span class="otp-games">63 games · 64% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/na/%E5%8D%97%E9%A3%8E%E7%9F%A5%E6%88%91%E6%84%8F-0321" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">南风知我意<span class="otp-tag">#0321</span></span>
+    <span class="otp-server">NA</span><span class="otp-games">56 games · 66% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/5%20D%C3%98GS%201%20T%C3%89AM-EUW" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">5 DØGS 1 TÉAM<span class="otp-tag">#EUW</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">160 games · 56% WR · OTP</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/Riyo%20Reaper-Gwen" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">Riyo Reaper<span class="otp-tag">#Gwen</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">51 games · 59% WR</span>
+  </a>
+
+  <a class="otp-entry highlight" href="https://op.gg/lol/summoners/euw/GWENKLNG-GWEN" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">GWENKLNG<span class="otp-tag">#GWEN</span> <span class="otp-crown">👑 Streamer</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">329 games · OTP</span>
+  </a>
+
+  <a class="otp-entry highlight" href="https://op.gg/fr/lol/summoners/euw/Kaoruko%20Waguri-Gwen" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">Kaoruko Waguri<span class="otp-tag">#Gwen</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">399 games · 53% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/lol/summoners/euw/Speiner-KCWIN" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">Speiner<span class="otp-tag">#KCWIN</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">174 games · 48% WR</span>
+  </a>
+
+  <a class="otp-entry" href="https://op.gg/fr/lol/summoners/euw/gloire%20au%20caca-uwu" target="_blank" rel="noopener">
+    <span class="otp-arrow">→</span><span class="otp-name">gloire au caca<span class="otp-tag">#uwu</span></span>
+    <span class="otp-server">EUW</span><span class="otp-games">111 games · 54% WR</span>
+  </a>
+
+</div>
 
 </main>
 <footer>
@@ -900,12 +908,147 @@ footer a{color:var(--violet);text-decoration:none;}
   <button id="lb-toggle"><span class="lbarr">▲</span>&nbsp;🏆 Classement</button>
 </div>
 <!-- CURSOR -->
-<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" style="position: fixed; pointer-events: none; z-index: 99999; left: 659px; top: 402px; transform: translate(-50%, -50%);">
-  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(-9.85159e-11deg);"><line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
-  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(9.85159e-11deg);"><line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
+<svg id="sc-cursor" width="46" height="46" viewBox="0 0 46 46" fill="none" style="position: fixed; pointer-events: none; z-index: 99999; left: 549px; top: 0px; transform: translate(-50%, -50%);">
+  <g id="sc-top" style="transform-origin: 21px 21px; transform: rotate(-3.6234e-07deg);"><line x1="21" y1="21" x2="38" y2="5" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="28" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="28" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
+  <g id="sc-bot" style="transform-origin: 21px 21px; transform: rotate(3.6234e-07deg);"><line x1="21" y1="21" x2="38" y2="37" stroke="#3d2566" stroke-width="2.8" stroke-linecap="round"></line><circle cx="14" cy="14" r="7" stroke="#7c5cbf" stroke-width="2.2" fill="rgba(196,168,232,.22)"></circle><line x1="21" y1="21" x2="14" y2="14" stroke="#7c5cbf" stroke-width="2.2" stroke-linecap="round"></line></g>
   <circle cx="21" cy="21" r="3.8" fill="#7c5cbf"></circle><circle cx="21" cy="21" r="1.6" fill="white"></circle>
 </svg>
 <script>
+/* ══ FALLING PAPERS + CUT MECHANIC ══ */
+(function(){
+  const W=()=>window.innerWidth, H=()=>window.innerHeight;
+  let lp=0, papers=[], animFrame;
+  const lpEl=document.getElementById('lp-counter');
+
+  // Paper colors — soft pastel
+  const COLORS=['#f0e8ff','#ffe8f4','#e8f0ff','#fff4e8','#eafff0','#fff8e8'];
+  const LINES=['#d4b8f0','#f0b8d8','#b8d0f0','#f0d8b8','#b8f0d0','#f0e8b8'];
+
+  function makePaper(){
+    const el=document.createElement('div');
+    el.className='paper-sheet';
+    const w=60+Math.random()*50, h=70+Math.random()*50;
+    const col=COLORS[Math.floor(Math.random()*COLORS.length)];
+    const lc=LINES[Math.floor(Math.random()*LINES.length)];
+    const rot=-15+Math.random()*30;
+    // SVG paper with lines
+    const nLines=3+Math.floor(Math.random()*3);
+    let linesSVG='';
+    for(let i=0;i<nLines;i++){
+      const y=15+i*(h-20)/(nLines);
+      linesSVG+=`<line x1="8" y1="${y}" x2="${w-8}" y2="${y}" stroke="${lc}" stroke-width="1.5" stroke-linecap="round"/>`;
+    }
+    el.innerHTML=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="3" fill="${col}" stroke="${lc}" stroke-width="1"/>
+      ${linesSVG}
+      <rect x="${w-16}" y="1" width="15" height="14" rx="0 3 0 0" fill="${lc}" opacity="0.4"/>
+    </svg>`;
+    el.style.left=Math.random()*(W()-80)+'px';
+    el.style.top='-80px';
+    el.dataset.x=parseFloat(el.style.left);
+    el.dataset.y=-80;
+    el.dataset.vx=(Math.random()-.5)*1.2;
+    el.dataset.vy=0.8+Math.random()*1.2;
+    el.dataset.rot=rot;
+    el.dataset.vrot=(Math.random()-.5)*.8;
+    el.dataset.cut='0';
+    document.body.appendChild(el);
+    return el;
+  }
+
+  function spawnPaper(){
+    if(papers.length<18){
+      papers.push(makePaper());
+    }
+  }
+
+  function cutFlash(x,y){
+    const f=document.createElement('div');
+    f.className='cut-flash';
+    f.textContent='✂ +1 LP';
+    f.style.left=(x-30)+'px';
+    f.style.top=(y-20)+'px';
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),700);
+  }
+
+  function updateLP(){
+    lpEl.textContent='✂ +'+lp+' LP';
+    lpEl.classList.add('pop');
+    setTimeout(()=>lpEl.classList.remove('pop'),200);
+  }
+
+  function checkCut(mx,my){
+    let cut=false;
+    papers=papers.filter(p=>{
+      if(p.dataset.cut==='1')return false;
+      const px=parseFloat(p.dataset.x);
+      const py=parseFloat(p.dataset.y);
+      const pw=p.querySelector('svg').getAttribute('width')*1;
+      const ph=p.querySelector('svg').getAttribute('height')*1;
+      if(mx>px&&mx<px+pw&&my>py&&my<py+ph){
+        p.dataset.cut='1';
+        // Cut animation — split into two halves
+        p.style.transition='transform .3s,opacity .3s';
+        p.style.transform=`rotate(${parseFloat(p.dataset.rot)+180}deg) scale(.5)`;
+        p.style.opacity='0';
+        setTimeout(()=>p.remove(),350);
+        lp++;
+        updateLP();
+        cutFlash(mx,my);
+        cut=true;
+        return false;
+      }
+      return true;
+    });
+    return cut;
+  }
+
+  function animate(){
+    papers=papers.filter(p=>{
+      if(p.dataset.cut==='1')return false;
+      let x=parseFloat(p.dataset.x);
+      let y=parseFloat(p.dataset.y);
+      let vx=parseFloat(p.dataset.vx);
+      let vy=parseFloat(p.dataset.vy);
+      let rot=parseFloat(p.dataset.rot);
+      let vrot=parseFloat(p.dataset.vrot);
+      // Gentle sway
+      vx+=Math.sin(Date.now()*.001+x*.01)*.04;
+      x+=vx; y+=vy; rot+=vrot;
+      // Bounce off walls
+      if(x<0||x>W()-80){vx*=-1;}
+      p.dataset.x=x; p.dataset.y=y; p.dataset.vx=vx; p.dataset.vy=vy;
+      p.dataset.rot=rot; p.dataset.vrot=vrot;
+      p.style.left=x+'px'; p.style.top=y+'px';
+      p.style.transform=`rotate(${rot}deg)`;
+      // Remove if below screen
+      if(y>H()+100){p.remove();return false;}
+      return true;
+    });
+    animFrame=requestAnimationFrame(animate);
+  }
+
+  // Spawn papers every 1.8s
+  setInterval(spawnPaper,1800);
+  spawnPaper();spawnPaper();spawnPaper(); // start with 3
+
+  // Click to cut
+  document.addEventListener('click',e=>{
+    checkCut(e.clientX,e.clientY);
+  });
+
+  // Mouse move also cuts if moving fast (drag)
+  let lastMX=0,lastMY=0;
+  document.addEventListener('mousemove',e=>{
+    const dx=Math.abs(e.clientX-lastMX),dy=Math.abs(e.clientY-lastMY);
+    if(dx+dy>30)checkCut(e.clientX,e.clientY);
+    lastMX=e.clientX;lastMY=e.clientY;
+  });
+
+  animate();
+})();
+
 /* ══ THEME TOGGLE ══ */
 (function(){
   const btn=document.getElementById("theme-toggle");
@@ -1001,112 +1144,6 @@ document.querySelectorAll('.sf-btn').forEach(b=>{
     document.querySelectorAll('.skin-card').forEach(c=>c.classList.toggle('hidden',f!=='all'&&c.dataset.game!==f));
   });
 });
-
-/* ══ TOP GWENS — données réelles onetricks.gg S2026 ══ */
-(function(){
-  // Données scrappées de onetricks.gg S2026 — maj manuelle possible via bouton
-  const DB={
-    solo:[
-      {name:'1314',tag:'ever',server:'NA',tier:'Challenger',lp:1988,wr:'64%',games:74,kda:'3.68',otp:false},
-      {name:'odium',tag:'600',server:'NA',tier:'Challenger',lp:1505,wr:'56%',games:180,kda:'2.00',otp:true},
-      {name:'Lmzs',tag:'EUW',server:'EUW',tier:'Challenger',lp:1491,wr:'59%',games:56,kda:'2.32',otp:false},
-      {name:'14小孩幻想赢对线',tag:'4453',server:'KR',tier:'Grandmaster',lp:1158,wr:'55%',games:82,kda:'2.10',otp:false},
-      {name:'내 성장막아봐',tag:'못막을걸',server:'KR',tier:'Grandmaster',lp:1136,wr:'59%',games:239,kda:'2.90',otp:true},
-      {name:'그러건아말건아',tag:'0720',server:'KR',tier:'Master',lp:1101,wr:'67%',games:49,kda:'1.86',otp:false},
-      {name:'雨の回忆',tag:'blue',server:'NA',tier:'Challenger',lp:1043,wr:'62%',games:42,kda:'4.09',otp:false},
-      {name:'앨리시아 제',tag:'정글러',server:'KR',tier:'Master',lp:1006,wr:'56%',games:174,kda:'2.26',otp:true},
-      {name:'vley',tag:'balls',server:'EUW',tier:'Master',lp:996,wr:'61%',games:56,kda:'2.75',otp:true},
-      {name:'Lokat',tag:'EUW',server:'EUW',tier:'Master',lp:955,wr:'53%',games:372,kda:'1.53',otp:true},
-      {name:'41009',tag:'6XX',server:'EUW',tier:'Master',lp:936,wr:'51%',games:294,kda:'1.79',otp:true},
-      {name:'Diguidou',tag:'EUW',server:'EUW',tier:'Master',lp:935,wr:'60%',games:176,kda:'2.02',otp:true},
-      {name:'李相赫',tag:'0820',server:'KR',tier:'Master',lp:934,wr:'62%',games:113,kda:'4.00',otp:true},
-      {name:'5 DØGS 1 TÉAM',tag:'EUW',server:'EUW',tier:'Master',lp:927,wr:'57%',games:157,kda:'1.87',otp:true},
-      {name:'puppyxi',tag:'1123',server:'KR',tier:'Master',lp:925,wr:'56%',games:113,kda:'2.34',otp:false},
-      {name:'강아지풀은있는데왜고양이풀은없지',tag:'oωo',server:'KR',tier:'Master',lp:905,wr:'64%',games:63,kda:'2.99',otp:false},
-      {name:'南风知我意',tag:'0321',server:'NA',tier:'Grandmaster',lp:896,wr:'66%',games:56,kda:'3.99',otp:false},
-      {name:'Yuxin baby',tag:'god',server:'NA',tier:'Challenger',lp:876,wr:'76%',games:55,kda:'5.10',otp:false},
-      {name:'실력이차이나나봐',tag:'나야',server:'KR',tier:'Master',lp:864,wr:'58%',games:138,kda:'2.44',otp:true},
-      {name:'GwenOTP',tag:'EUW1',server:'EUW',tier:'Master',lp:851,wr:'55%',games:204,kda:'2.11',otp:true},
-      {name:'GWENKLNG',tag:'GWEN',server:'EUW',tier:'Master',lp:391,wr:'49%',games:329,kda:'3.20',otp:true},
-      {name:'Kaoruko Waguri',tag:'Gwen',server:'EUW',tier:'Master',lp:338,wr:'53%',games:399,kda:'3.22',otp:false},
-      {name:'Speiner',tag:'KCWIN',server:'EUW',tier:'Master',lp:7,wr:'48%',games:174,kda:'—',otp:false},
-      {name:'gloire au caca',tag:'uwu',server:'EUW',tier:'Platinum 1',lp:41,wr:'54%',games:111,kda:'2.15',otp:false},
-    ],
-    flex:[
-      {name:'FlexQueen',tag:'GWN',server:'EUW',tier:'Challenger',lp:1312,wr:'63%',games:89,kda:'3.21',otp:true},
-      {name:'gwenflexKR',tag:'0001',server:'KR',tier:'Challenger',lp:1189,wr:'58%',games:142,kda:'2.88',otp:false},
-      {name:'Lmzs',tag:'EUW',server:'EUW',tier:'Challenger',lp:1134,wr:'62%',games:47,kda:'2.90',otp:false},
-      {name:'GWENKLNG',tag:'GWEN',server:'EUW',tier:'Challenger',lp:1101,wr:'54%',games:141,kda:'2.90',otp:true},
-      {name:'odium',tag:'600',server:'NA',tier:'Challenger',lp:1098,wr:'59%',games:156,kda:'2.14',otp:true},
-      {name:'Snip Master',tag:'FLEX',server:'NA',tier:'Challenger',lp:1034,wr:'63%',games:78,kda:'3.45',otp:false},
-      {name:'softsnip',tag:'wr',server:'EUW',tier:'Grandmaster',lp:987,wr:'57%',games:203,kda:'2.67',otp:true},
-      {name:'faerie flex',tag:'EUW',server:'EUW',tier:'Grandmaster',lp:934,wr:'55%',games:167,kda:'2.33',otp:false},
-      {name:'stitchmaster',tag:'EUNE',server:'EUNE',tier:'Grandmaster',lp:899,wr:'60%',games:98,kda:'2.88',otp:false},
-      {name:'lilaflex',tag:'KR',server:'KR',tier:'Master',lp:867,wr:'54%',games:189,kda:'2.05',otp:true},
-      {name:'purplethread',tag:'BR1',server:'BR',tier:'Master',lp:812,wr:'56%',games:134,kda:'2.44',otp:false},
-      {name:'gwen enjoyer',tag:'TR',server:'TR',tier:'Master',lp:778,wr:'59%',games:88,kda:'2.67',otp:false},
-      {name:'needles flex',tag:'JP',server:'JP',tier:'Master',lp:734,wr:'53%',games:211,kda:'1.99',otp:true},
-      {name:'강아지풀은있는데왜고양이풀은없지',tag:'oωo',server:'KR',tier:'Master',lp:712,wr:'61%',games:74,kda:'2.88',otp:false},
-      {name:'Diguidou',tag:'EUW',server:'EUW',tier:'Master',lp:698,wr:'57%',games:132,kda:'1.95',otp:true},
-      {name:'scissorqueen',tag:'KR1',server:'KR',tier:'Master',lp:681,wr:'55%',games:159,kda:'2.22',otp:false},
-      {name:'Kaoruko Waguri',tag:'Gwen',server:'EUW',tier:'Unranked',lp:0,wr:'—',games:0,kda:'—',otp:false},
-      {name:'gloire au caca',tag:'uwu',server:'EUW',tier:'Silver 3',lp:13,wr:'44%',games:18,kda:'—',otp:false},
-      {name:'Speiner',tag:'KCWIN',server:'EUW',tier:'Master',lp:7,wr:'48%',games:174,kda:'—',otp:false},
-    ]
-  };
-  const ICONS=['👑','✦','✧','✂','✄','⋆','·','★','✩','✦','✧','⋆','·','★','✩','✦','✧','⋆','·','★'];
-  const MEDALS=['gold','silver','bronze'];
-  let lastQ='solo', lastFetched={solo:null,flex:null};
-
-  function tsLabel(d){if(!d)return '';const diff=Math.round((Date.now()-d)/1000);if(diff<60)return 'Mis à jour il y a '+diff+'s';if(diff<3600)return 'Mis à jour il y a '+Math.round(diff/60)+'min';return 'Mis à jour il y a '+Math.round(diff/3600)+'h';}
-
-  function render(q){
-    const list=document.getElementById('tg-list'),ts=document.getElementById('tg-ts');
-    const data=DB[q];
-    if(!data||!data.length){list.innerHTML='<div class="tg-loading">Aucune donnée</div>';return;}
-    ts.textContent=lastFetched[q]?tsLabel(lastFetched[q]):'Données chargées au démarrage';
-    list.innerHTML=data.map((p,i)=>{
-      const otp=p.otp?'<span class="tg-otp">OTP</span>':'';
-      return `<div class="tg-row" style="animation-delay:${i*.04}s">
-        <div class="tg-rank ${MEDALS[i]||''}">${ICONS[i]||i+1}</div>
-        <div class="tg-info">
-          <div class="tg-name">${p.name}<span class="tg-hashtag"> #${p.tag}</span>${otp}</div>
-          <div class="tg-details">${p.server} · ${p.tier} · KDA ${p.kda}</div>
-        </div>
-        <div class="tg-right">
-          <div class="tg-lp">${p.lp.toLocaleString()} LP</div>
-          <div class="tg-wr">${p.wr} WR</div>
-          <div class="tg-games">${p.games} games · ${q==='solo'?'SoloQ':'Flex'}</div>
-        </div>
-      </div>`;
-    }).join('');
-  }
-
-  // Simule une « actualisation » avec animation + timestamp
-  async function refresh(q){
-    const btn=document.getElementById('tg-refresh');
-    btn.classList.add('spinning');
-    document.getElementById('tg-list').innerHTML='<div class="tg-loading"><span class="spin">✂</span> Actualisation...</div>';
-    await new Promise(r=>setTimeout(r,1200));
-    lastFetched[q]=Date.now();
-    btn.classList.remove('spinning');
-    render(q);
-  }
-
-  document.querySelectorAll('.tg-tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      document.querySelectorAll('.tg-tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');lastQ=tab.dataset.q;render(lastQ);
-    });
-  });
-  document.getElementById('tg-refresh').addEventListener('click',()=>refresh(lastQ));
-
-  // Auto-refresh toutes les 5 minutes
-  setInterval(()=>{lastFetched[lastQ]=Date.now();render(lastQ);},300000);
-  // Init
-  lastFetched.solo=Date.now();lastFetched.flex=Date.now();
-  render('solo');
-})();
 
 /* ══ PRO PERFORMANCES CAROUSEL ══ */
 (function(){
@@ -1295,386 +1332,459 @@ document.querySelectorAll('.sf-btn').forEach(b=>{
   function spawnWord(x,y){const el=document.createElement('span');el.className='snip-word';el.textContent=WORDS[Math.floor(Math.random()*WORDS.length)];el.style.left=(x-20)+'px';el.style.top=(y-12)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),900);}
 })();
 
-/* ══ MINI GAME INFINITE v2 — Snip Jump ══ */
+/* ══ SNIP JUMP v4 — TRULY INFINITE ══ */
 (function(){
-  const panel=document.getElementById('game-panel'),tog=document.getElementById('game-toggle'),arr=tog.querySelector('.arr');
+  /* panel toggle */
+  const panel=document.getElementById('game-panel'),
+        tog=document.getElementById('game-toggle'),
+        arr=tog.querySelector('.arr');
   let open=false;
-  tog.addEventListener('click',()=>{open=!open;panel.classList.toggle('open',open);arr.style.transform=open?'rotate(180deg)':'';});
+  tog.addEventListener('click',()=>{
+    open=!open;
+    panel.classList.toggle('open',open);
+    arr.style.transform=open?'rotate(180deg)':'';
+  });
 
-  const C=document.getElementById('gc'),ctx=C.getContext('2d'),W=C.width,H=C.height;
-  const scoreEl=document.getElementById('g-score'),bestEl=document.getElementById('g-best'),ov=document.getElementById('g-ov'),ds=document.getElementById('g-ds'),btn=document.getElementById('g-btn');
-  const GRAV=.35,JV=-10.8,PH=11;
-  let state='idle',score=0,best=0,scrollOff=0,frame=0;
-  let plats=[],enemies=[],parts=[],powerups=[],rockets=[];
-  let keys={},diffLevel=0,lastDiffTime=0;
-  let activePowerup=null,powerupTimer=0; // shield, speed, magnet, tiny
-  let flashMsg='',flashAlpha=0;
-  const P={x:W/2,y:H-80,vx:0,vy:0,facing:1,shield:false,speedBoost:false,magnet:false};
-  let platMaxY=H-60;
+  const C=document.getElementById('gc'),ctx=C.getContext('2d');
+  const W=C.width, H=C.height;
+  const scoreEl=document.getElementById('g-score'),
+        bestEl=document.getElementById('g-best'),
+        ov=document.getElementById('g-ov'),
+        ds=document.getElementById('g-ds'),
+        btn=document.getElementById('g-btn');
 
-  // ── Difficulty tiers (every 15s of playtime) ──
+  /* ── constants ── */
+  const GRAV=0.32, JUMP=-11, PH=10;
+
+  /* ── state ── */
+  let playing=false, dead=false;
+  let score=0, best=0, frame=0, diffLvl=0, lastDiffFrame=0;
+  let cameraY=0; // world Y of screen top (increases as player goes up)
+  let plats=[], enemies=[], parts=[], pups=[], rockets=[], flashQ=[];
+  let nextPlatY=0; // next platform world-Y to generate (decreasing = up)
+  let activePU=null, puTimer=0;
+  let keys={}, tx0=null;
+
+  /* ── player ── */
+  let px, py, pvx, pvy, pfacing;
+  let pShield,pSpeed,pMagnet,pTiny,pInv;
+
+  /* ── difficulty ── */
   const DIFF=[
-    {spd:4.2,enemyRate:0,mvRate:.18,springRate:.12,gapMin:48,gapMax:46,rockets:false},  // 0
-    {spd:4.5,enemyRate:400,mvRate:.22,springRate:.13,gapMin:52,gapMax:48,rockets:false}, // 1
-    {spd:5.0,enemyRate:340,mvRate:.26,springRate:.14,gapMin:56,gapMax:50,rockets:false}, // 2
-    {spd:5.5,enemyRate:280,mvRate:.30,springRate:.15,gapMin:60,gapMax:52,rockets:true},  // 3
-    {spd:6.0,enemyRate:220,mvRate:.34,springRate:.16,gapMin:65,gapMax:54,rockets:true},  // 4
-    {spd:6.5,enemyRate:160,mvRate:.38,springRate:.17,gapMin:70,gapMax:56,rockets:true},  // 5+
+    {eRate:0,   rkt:false, et:['walk']},
+    {eRate:420, rkt:false, et:['walk']},
+    {eRate:320, rkt:false, et:['walk','bounce']},
+    {eRate:220, rkt:true,  et:['walk','bounce','dive']},
+    {eRate:160, rkt:true,  et:['walk','bounce','dive']},
+    {eRate:110, rkt:true,  et:['walk','bounce','dive','spin']},
+    {eRate:75,  rkt:true,  et:['walk','bounce','dive','spin']},
   ];
-  function getDiff(){return DIFF[Math.min(diffLevel,DIFF.length-1)];}
+  const D=()=>DIFF[Math.min(diffLvl,DIFF.length-1)];
 
-  function getColor(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()||'#7c5cbf';}
+  /* ── powerups ── */
+  const PUD={
+    shield:   {e:'🛡',c:'#60d0ff',l:'Bouclier !',  d:420},
+    speed:    {e:'⚡',c:'#ffe860',l:'Vitesse !',    d:360},
+    magnet:   {e:'🧲',c:'#ff80d0',l:'Aimant !',     d:400},
+    tiny:     {e:'💊',c:'#a0ff80',l:'Mini-Gwen !',  d:380},
+    invincible:{e:'⭐',c:'#ffa060',l:'Invincible !',d:300},
+  };
+  const PUKEYS=Object.keys(PUD);
 
-  function genChunk(from){
-    const d=getDiff();
-    let y=from;
-    const until=from-H*2;
-    while(y>until){
-      const sp=Math.random()<d.springRate;
-      const mv=!sp&&Math.random()<d.mvRate;
-      const pw=sp?66:58;
-      const x=8+Math.random()*(W-pw-16);
-      plats.push({x,y,w:pw,h:PH,spring:sp,mv,vx:mv?(Math.random()<.5?d.spd*.3:-d.spd*.3):0,broken:false});
-      // Powerup spawn ~8% chance per platform
-      if(Math.random()<.08){
-        const types=['shield','speed','magnet','tiny','invincible'];
-        powerups.push({x:x+pw/2,worldY:y-18,type:types[Math.floor(Math.random()*types.length)],bob:Math.random()*Math.PI*2,collected:false});
-      }
-      y-=d.gapMin+Math.random()*d.gapMax;
-    }
-    platMaxY=y;
-  }
-
-  function init(){
-    score=0;scrollOff=0;frame=0;diffLevel=0;lastDiffTime=0;
-    enemies=[];parts=[];powerups=[];rockets=[];
-    plats=[];platMaxY=H-60;
-    P.x=W/2;P.y=H-80;P.vx=0;P.vy=0;P.facing=1;P.shield=false;P.speedBoost=false;P.magnet=false;
-    activePowerup=null;powerupTimer=0;
-    plats.push({x:W/2-35,y:H-55,w:70,h:PH,spring:false,mv:false,vx:0,broken:false});
-    genChunk(H-120);
-  }
-
-  function spawnParts(x,y,col,n=6){
+  function flash(t,c='#7c5cbf'){flashQ.push({t,c,n:80});}
+  function burst(x,y,col,n=7){
     for(let i=0;i<n;i++){
       const a=Math.random()*Math.PI*2,s=1.5+Math.random()*3;
-      parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,life:1,col});
+      parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,l:1,c:col});
     }
   }
 
-  function showFlash(msg){flashMsg=msg;flashAlpha=1;}
+  /* ── generate platforms ahead of camera ── */
+  /* ALL coords are WORLD coords: world-Y=0 at start bottom, increases upward */
+  /* screen Y = cameraY - worldY   (0=top, H=bottom of canvas) */
 
-  function update(){
-    if(state!=='playing')return;
-    frame++;
+  function worldToScreen(wy){ return H-(wy-cameraY); }
+  function screenVisible(wy){ const sy=worldToScreen(wy); return sy>-20&&sy<H+20; }
 
-    // Difficulty every 15 seconds (900 frames @60fps)
-    if(frame-lastDiffTime>900){
-      diffLevel++;lastDiffTime=frame;
-      showFlash('Niveau '+(diffLevel+1)+' !');
-    }
-
-    const d=getDiff();
-    if(platMaxY>scrollOff-H*3)genChunk(platMaxY);
-    if(plats.length>250)plats=plats.filter(p=>p.y+scrollOff<H+100);
-
-    // Enemies
-    if(d.enemyRate>0&&frame%Math.max(40,d.enemyRate-diffLevel*10)===0){
-      const types=['walk','dive','bounce'];
-      const t=diffLevel>=3?types[Math.floor(Math.random()*types.length)]:'walk';
-      enemies.push({x:Math.random()*(W-28)+14,worldY:scrollOff-H-Math.random()*300,
-        vx:(Math.random()<.5?1:-1)*(1+diffLevel*.2),t:0,type:t,vy:t==='dive'?2:0});
-    }
-
-    // Rockets (level 3+)
-    if(d.rockets&&frame%Math.max(120,260-diffLevel*20)===0){
-      const fromLeft=Math.random()<.5;
-      rockets.push({x:fromLeft?-20:W+20,worldY:scrollOff-H*.2-Math.random()*H*.6,
-        vx:fromLeft?4+diffLevel*.3:-(4+diffLevel*.3),warned:false,t:0});
-    }
-
-    // Player movement
-    const spd=d.spd*(P.speedBoost?1.55:1);
-    if(keys['ArrowLeft']||keys['a']){P.vx=-spd;P.facing=-1;}
-    else if(keys['ArrowRight']||keys['d']){P.vx=spd;P.facing=1;}
-    else P.vx*=.72;
-    P.vy+=GRAV;P.x+=P.vx;P.y+=P.vy;
-    if(P.x<-10)P.x=W+10;if(P.x>W+10)P.x=-10;
-
-    // Scroll
-    const thresh=H*.4;
-    if(P.y<thresh){
-      const dy=thresh-P.y;scrollOff+=dy;P.y=thresh;
-      score+=Math.round(dy*.55);window._lastScore=score;
-      scoreEl.textContent=score;
-      if(score>best){best=score;bestEl.textContent='Best: '+best;}
-    }
-
-    // Platform collisions
-    if(P.vy>0){
-      for(const pl of plats){
-        const sy=pl.y+scrollOff;
-        if(P.x+10>pl.x&&P.x-10<pl.x+pl.w&&P.y+14>sy&&P.y+14<sy+pl.h+P.vy+2){
-          P.vy=pl.spring?JV*1.52:JV;
-          P.y=sy-14;
-          spawnParts(P.x,sy,pl.spring?'#a87dd4':'#d4b8f0',pl.spring?12:5);
-          if(pl.broken){plats.splice(plats.indexOf(pl),1);}
-        }
+  function generatePlatforms(){
+    // Generate until we have platforms 3 screens above camera top
+    const target = cameraY + H*3;
+    while(nextPlatY < target){
+      nextPlatY += 44 + Math.random()*40; // gap 44-84px world units
+      const sp = Math.random()<.13;
+      const mv = !sp && Math.random()<.22;
+      const pw = sp?72:64;
+      const x = 8+Math.random()*(W-pw-16);
+      plats.push({
+        x, wy:nextPlatY, w:pw, sp, mv,
+        vx: mv?(Math.random()<.5?1.3:-1.3):0
+      });
+      // powerup on platform
+      if(Math.random()<.1){
+        const type=PUKEYS[Math.floor(Math.random()*PUKEYS.length)];
+        pups.push({x:x+pw/2, wy:nextPlatY+22, type, bob:Math.random()*Math.PI*2, alive:true});
       }
     }
-
-    // Moving platforms
-    for(const pl of plats)if(pl.mv){pl.x+=pl.vx;if(pl.x<4||pl.x+pl.w>W-4)pl.vx*=-1;}
-
-    // Powerup collection (magnet increases range)
-    const magR=P.magnet?60:18;
-    for(const pu of powerups){
-      if(pu.collected)continue;
-      pu.bob+=.06;
-      const py=pu.worldY+scrollOff;
-      if(Math.abs(P.x-pu.x)<magR&&Math.abs(P.y-py)<magR){
-        pu.collected=true;
-        activatePowerup(pu.type);
-        spawnParts(pu.x,py,POWERUP_COLS[pu.type]||'#ffe860',14);
-        showFlash(POWERUP_LABELS[pu.type]);
-      }
-    }
-    powerups=powerups.filter(pu=>!pu.collected&&pu.worldY+scrollOff>-20);
-
-    // Powerup timer
-    if(activePowerup){
-      powerupTimer--;
-      if(powerupTimer<=0){
-        if(activePowerup==='shield')P.shield=false;
-        if(activePowerup==='speed')P.speedBoost=false;
-        if(activePowerup==='magnet')P.magnet=false;
-        if(activePowerup==='tiny')P._tiny=false;
-        if(activePowerup==='invincible')P._invincible=false;
-        activePowerup=null;
-      }
-    }
-
-    // Enemies
-    for(let i=enemies.length-1;i>=0;i--){
-      const e=enemies[i];e.t++;
-      if(e.type==='walk'){e.x+=e.vx;if(e.x<10||e.x>W-10)e.vx*=-1;}
-      else if(e.type==='dive'){e.vy+=.08;e.worldY+=e.vy;e.x+=e.vx;if(e.x<10||e.x>W-10)e.vx*=-1;}
-      else if(e.type==='bounce'){e.x+=e.vx;e.worldY+=Math.sin(e.t*.08)*2;if(e.x<10||e.x>W-10)e.vx*=-1;}
-      const ey=e.worldY+scrollOff;
-      const hitR=P._tiny?10:16;
-      if(!P._invincible&&Math.abs(P.x-e.x)<hitR&&Math.abs(P.y-ey)<hitR){
-        if(P.shield){P.shield=false;activePowerup=null;powerupTimer=0;spawnParts(P.x,P.y,'#60d0ff',16);showFlash('Bouclier brisé !');enemies.splice(i,1);}
-        else{die();return;}
-      }
-      if(ey>H+60)enemies.splice(i,1);
-    }
-
-    // Rockets
-    for(let i=rockets.length-1;i>=0;i--){
-      const r=rockets[i];r.x+=r.vx;r.t++;
-      const ry=r.worldY+scrollOff;
-      if(!P._invincible&&Math.abs(P.x-r.x)<22&&Math.abs(P.y-ry)<14){
-        if(P.shield){P.shield=false;activePowerup=null;powerupTimer=0;spawnParts(r.x,ry,'#ff8040',18);showFlash('Bouclier brisé !');rockets.splice(i,1);}
-        else{die();return;}
-      }
-      if(r.x<-50||r.x>W+50)rockets.splice(i,1);
-    }
-
-    // Particles
-    for(let i=parts.length-1;i>=0;i--){
-      const p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.life-=.038;
-      if(p.life<=0)parts.splice(i,1);
-    }
-
-    // Flash fade
-    if(flashAlpha>0)flashAlpha-=.025;
-
-    if(P.y>H+50)die();
+    // Remove platforms way below camera
+    plats=plats.filter(p=>worldToScreen(p.wy)<H+120);
+    pups=pups.filter(p=>p.alive&&worldToScreen(p.wy)<H+120);
   }
 
-  const POWERUP_COLS={shield:'#60d0ff',speed:'#ffe860',magnet:'#ff80d0',tiny:'#a0ff80',invincible:'#ffa060'};
-  const POWERUP_LABELS={shield:'🛡 Bouclier !',speed:'⚡ Vitesse !',magnet:'🧲 Aimant !',tiny:'💊 Mini !',invincible:'⭐ Invincible !'};
-  const POWERUP_EMOJI={shield:'🛡',speed:'⚡',magnet:'🧲',tiny:'💊',invincible:'⭐'};
+  /* ── init ── */
+  function init(){
+    score=0; frame=0; diffLvl=0; lastDiffFrame=0;
+    cameraY=0; nextPlatY=0;
+    plats=[]; enemies=[]; parts=[]; pups=[]; rockets=[]; flashQ=[];
+    activePU=null; puTimer=0;
+    pShield=pSpeed=pMagnet=pTiny=pInv=false;
 
-  function activatePowerup(type){
-    activePowerup=type;powerupTimer=360;
-    if(type==='shield')P.shield=true;
-    if(type==='speed')P.speedBoost=true;
-    if(type==='magnet')P.magnet=true;
-    if(type==='tiny')P._tiny=true;
-    if(type==='invincible')P._invincible=true;
+    // Player starts just above bottom
+    px=W/2; py=H-60; pvx=0; pvy=0; pfacing=1;
+
+    // Seed first platform directly under player
+    plats.push({x:W/2-36,wy:40,w:72,sp:false,mv:false,vx:0});
+    nextPlatY=40;
+    generatePlatforms();
   }
 
+  /* ── powerup activate ── */
+  function activatePU(type){
+    const d=PUD[type]; if(!d)return;
+    activePU=type; puTimer=d.d;
+    pShield=type==='shield'; pSpeed=type==='speed';
+    pMagnet=type==='magnet'; pTiny=type==='tiny'; pInv=type==='invincible';
+    flash(d.e+' '+d.l, d.c);
+  }
+  function clearPU(){
+    pShield=pSpeed=pMagnet=pTiny=pInv=false; activePU=null; puTimer=0;
+  }
+
+  /* ── die ── */
   function die(){
-    state='dead';window._lastScore=score;
-    ds.style.display='block';ds.textContent='Score : '+score+' · Niveau '+(diffLevel+1);
-    ov.querySelector('h3').textContent='Game Over';
-    ov.querySelector('.gsub').textContent='Tu peux faire mieux !';
+    if(!playing||dead)return;
+    dead=true; playing=false;
+    ds.style.display='block';
+    ds.textContent='Score : '+score+' · Niveau '+(diffLvl+1);
+    ov.querySelector('h3').textContent='Game Over ✂';
+    ov.querySelector('.gsub').textContent='Continue ?';
     btn.textContent='Rejouer ✂';
     ov.classList.remove('hidden');
   }
 
+  /* ── update ── */
+  function update(){
+    if(!playing)return;
+    frame++;
+
+    // Difficulty every 900 frames
+    if(frame-lastDiffFrame>=900){
+      diffLvl=Math.min(diffLvl+1,DIFF.length-1);
+      lastDiffFrame=frame;
+      flash('⚡ Niveau '+(diffLvl+1)+' !','#e06040');
+    }
+
+    const d=D();
+    const spd=3.8*(pSpeed?1.6:1)*(pTiny?.85:1);
+
+    // Input
+    if(keys['ArrowLeft']||keys['a']){pvx=-spd;pfacing=-1;}
+    else if(keys['ArrowRight']||keys['d']){pvx=spd;pfacing=1;}
+    else pvx*=.72;
+
+    pvy+=GRAV;
+    px+=pvx; py+=pvy;
+
+    // Wrap X
+    if(px<-10) px=W+10;
+    if(px>W+10) px=-10;
+
+    // Camera follows player when going up
+    // cameraY = world height of screen bottom. Player screen pos = H-(playerWorldY - cameraY)
+    // playerWorldY = cameraY + (H - py)
+    const playerWorldY = cameraY + (H - py);
+
+    const scrollThresh = H*0.42;
+    if(py < scrollThresh){
+      const rise = scrollThresh - py;
+      py = scrollThresh;
+      cameraY += rise;
+      score += Math.round(rise*0.55);
+      scoreEl.textContent=score;
+      if(score>best){best=score;bestEl.textContent='Best: '+best;}
+    }
+
+    // Generate more platforms as camera rises
+    generatePlatforms();
+
+    // Platform collision (land on top)
+    if(pvy>0){
+      const hr=pTiny?9:13;
+      for(const pl of plats){
+        const sy=worldToScreen(pl.wy);
+        if(px+hr>pl.x && px-hr<pl.x+pl.w && py+hr>sy && py+hr<sy+PH+pvy+1){
+          pvy = pl.sp ? JUMP*1.55 : JUMP;
+          py = sy - hr;
+          burst(px, sy, pl.sp?'#a87dd4':'#c8a8e8', pl.sp?14:5);
+        }
+      }
+    }
+
+    // Move platforms
+    for(const pl of plats) if(pl.mv){
+      pl.x+=pl.vx;
+      if(pl.x<4||pl.x+pl.w>W-4) pl.vx*=-1;
+    }
+
+    // Powerup collection
+    const magR=pMagnet?65:20;
+    for(const pu of pups){
+      if(!pu.alive)continue;
+      pu.bob+=.07;
+      const sy=worldToScreen(pu.wy)+Math.sin(pu.bob)*4;
+      if(Math.abs(px-pu.x)<magR && Math.abs(py-sy)<magR){
+        pu.alive=false;
+        activatePU(pu.type);
+        burst(pu.x, sy, PUD[pu.type]?.c||'#fff', 16);
+      }
+    }
+
+    // PU timer
+    if(activePU){puTimer--;if(puTimer<=0)clearPU();}
+
+    // Spawn enemies
+    if(d.eRate>0&&frame%Math.max(40,d.eRate)===0){
+      const type=d.et[Math.floor(Math.random()*d.et.length)];
+      const wy=cameraY+H*.8+Math.random()*H*.5; // spawn just above screen
+      enemies.push({x:Math.random()*(W-28)+14, wy, vx:(Math.random()<.5?1:-1)*(1+diffLvl*.2), vy:type==='dive'?1.5:0, t:0, type});
+    }
+    enemies=enemies.filter(e=>worldToScreen(e.wy)<H+80);
+
+    // Spawn rockets
+    if(d.rkt&&frame%Math.max(120,280-diffLvl*20)===0){
+      const left=Math.random()<.5;
+      const wy=cameraY+H*.2+Math.random()*H*.6;
+      rockets.push({x:left?-24:W+24, wy, vx:(left?1:-1)*(3.5+diffLvl*.4), t:0});
+    }
+    rockets=rockets.filter(r=>r.x>-60&&r.x<W+60);
+
+    // Update enemies
+    for(let i=enemies.length-1;i>=0;i--){
+      const e=enemies[i]; e.t++;
+      if(e.type==='walk'||e.type==='spin'){e.x+=e.vx;if(e.x<10||e.x>W-10)e.vx*=-1;}
+      else if(e.type==='bounce'){e.x+=e.vx;e.wy+=Math.sin(e.t*.08)*1.8;if(e.x<10||e.x>W-10)e.vx*=-1;}
+      else if(e.type==='dive'){e.vy+=.06;e.wy-=e.vy;e.x+=e.vx;if(e.x<10||e.x>W-10)e.vx*=-1;}
+      const esy=worldToScreen(e.wy);
+      const hr=pTiny?9:15;
+      if(!pInv&&Math.abs(px-e.x)<hr&&Math.abs(py-esy)<hr){
+        if(pShield){clearPU();burst(px,py,'#60d0ff',20);flash('🛡 Bouclier brisé !','#60d0ff');enemies.splice(i,1);}
+        else{die();return;}
+      }
+    }
+
+    // Update rockets
+    for(let i=rockets.length-1;i>=0;i--){
+      const r=rockets[i];r.t++;r.x+=r.vx;
+      const rsy=worldToScreen(r.wy);
+      if(!pInv&&Math.abs(px-r.x)<22&&Math.abs(py-rsy)<12){
+        if(pShield){clearPU();burst(r.x,rsy,'#ff8040',22);flash('🛡 Bouclier brisé !','#60d0ff');rockets.splice(i,1);}
+        else{die();return;}
+      }
+    }
+
+    // Particles
+    for(let i=parts.length-1;i>=0;i--){
+      const p=parts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.09;p.l-=.04;
+      if(p.l<=0)parts.splice(i,1);
+    }
+
+    // Flash queue
+    for(let i=flashQ.length-1;i>=0;i--){flashQ[i].n--;if(flashQ[i].n<=0)flashQ.splice(i,1);}
+
+    // Fell off bottom
+    if(py>H+80) die();
+  }
+
+  /* ── draw ── */
   function draw(){
     const dark=document.documentElement.getAttribute('data-theme')==='dark';
     ctx.clearRect(0,0,W,H);
 
-    // Background gradient (changes with difficulty)
-    const pg=Math.min(1,diffLevel/5);
-    const hue=dark?270-pg*30:270;
-    const sat=dark?40+pg*20:35+pg*20;
-    const lgt=dark?8-pg*4:97-pg*8;
+    // Background
+    const hue=dark?(270-diffLvl*15):(270-diffLvl*8);
     const g=ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,`hsl(${hue},${sat}%,${lgt}%)`);
-    g.addColorStop(1,dark?'#0d0a14':'#fff');
-    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    g.addColorStop(0,dark?`hsl(${hue},40%,${Math.max(4,8-diffLvl)}%)`:`hsl(${hue},30%,${Math.max(55,96-diffLvl*5)}%)`);
+    g.addColorStop(1,dark?'#0d0a14':'#ffffff');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    if(diffLvl>=4){ctx.fillStyle=`rgba(160,30,30,${Math.min((diffLvl-3)*.05,.18)})`;ctx.fillRect(0,0,W,H);}
 
-    // Difficulty overlay tint
-    if(diffLevel>=3){
-      const alpha=(diffLevel-2)*.04;
-      ctx.fillStyle=`rgba(180,60,60,${Math.min(alpha,.15)})`;
-      ctx.fillRect(0,0,W,H);
-    }
-
-    // Stars in bg at high levels
-    if(diffLevel>=2){
-      ctx.fillStyle=dark?'rgba(255,255,255,.06)':'rgba(100,60,180,.04)';
+    // Stars
+    if(diffLvl>=2){
+      ctx.fillStyle=dark?'rgba(255,255,255,.06)':'rgba(120,80,200,.04)';
       for(let i=0;i<30;i++){
-        const sx=(i*97+scrollOff*.05)%W,sy=(i*73+scrollOff*.08)%H;
-        ctx.beginPath();ctx.arc(sx,sy,1,0,Math.PI*2);ctx.fill();
+        ctx.beginPath();
+        ctx.arc((i*127+cameraY*.03)%W,(i*83+cameraY*.05)%H,1,0,Math.PI*2);
+        ctx.fill();
       }
     }
 
     // Platforms
     for(const pl of plats){
-      const sy=pl.y+scrollOff;if(sy<-PH||sy>H+PH)continue;
-      ctx.beginPath();ctx.roundRect(pl.x,sy,pl.w,pl.h,5);
-      const lg=ctx.createLinearGradient(pl.x,sy,pl.x,sy+pl.h);
-      if(pl.spring){lg.addColorStop(0,dark?'#8050b0':'#a87dd4');lg.addColorStop(1,dark?'#5a3090':'#7c5cbf');}
-      else{lg.addColorStop(0,dark?'#3a2860':'#d4b8f0');lg.addColorStop(1,dark?'#2a1e50':'#c0a0e0');}
-      ctx.fillStyle=lg;ctx.fill();
-      ctx.beginPath();ctx.roundRect(pl.x+4,sy+2,pl.w-8,3,2);
-      ctx.fillStyle='rgba(255,255,255,.22)';ctx.fill();
-      if(pl.spring){ctx.font='9px sans-serif';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText('✂',pl.x+pl.w/2,sy+PH-1);}
+      const sy=worldToScreen(pl.wy);
+      if(sy<-PH||sy>H+PH)continue;
+      const lg=ctx.createLinearGradient(pl.x,sy,pl.x,sy+PH);
+      if(pl.sp){lg.addColorStop(0,dark?'#7040a0':'#a87dd4');lg.addColorStop(1,dark?'#4a2878':'#7c5cbf');}
+      else{lg.addColorStop(0,dark?'#332055':'#d4b8f0');lg.addColorStop(1,dark?'#221540':'#c0a0e0');}
+      ctx.beginPath();ctx.roundRect(pl.x,sy,pl.w,PH,5);ctx.fillStyle=lg;ctx.fill();
+      ctx.beginPath();ctx.roundRect(pl.x+4,sy+2,pl.w-8,3,2);ctx.fillStyle='rgba(255,255,255,.2)';ctx.fill();
+      if(pl.sp){ctx.font='9px sans-serif';ctx.fillStyle='#fff';ctx.textAlign='center';ctx.fillText('✂',pl.x+pl.w/2,sy+PH-1);}
     }
 
     // Powerups
-    for(const pu of powerups){
-      if(pu.collected)continue;
-      const py=pu.worldY+scrollOff+Math.sin(pu.bob)*4;
-      if(py<-20||py>H+20)continue;
-      ctx.save();ctx.translate(pu.x,py);
-      // Glow
-      const gc2=ctx.createRadialGradient(0,0,2,0,0,14);
-      gc2.addColorStop(0,(POWERUP_COLS[pu.type]||'#fff')+'99');
-      gc2.addColorStop(1,'transparent');
-      ctx.fillStyle=gc2;ctx.beginPath();ctx.arc(0,0,14,0,Math.PI*2);ctx.fill();
-      // Circle
-      ctx.beginPath();ctx.arc(0,0,9,0,Math.PI*2);
-      ctx.fillStyle=POWERUP_COLS[pu.type]||'#ffe860';ctx.fill();
-      ctx.strokeStyle='rgba(255,255,255,.6)';ctx.lineWidth=1.5;ctx.stroke();
-      ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillText(POWERUP_EMOJI[pu.type]||'?',0,1);
+    for(const pu of pups){
+      if(!pu.alive)continue;
+      const sy=worldToScreen(pu.wy)+Math.sin(pu.bob)*4;
+      if(sy<-20||sy>H+20)continue;
+      const pd=PUD[pu.type];
+      ctx.save();ctx.translate(pu.x,sy);
+      const gr=ctx.createRadialGradient(0,0,2,0,0,16);
+      gr.addColorStop(0,pd.c+'88');gr.addColorStop(1,'transparent');
+      ctx.fillStyle=gr;ctx.beginPath();ctx.arc(0,0,16,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(0,0,10,0,Math.PI*2);ctx.fillStyle=pd.c;ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,.55)';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.font='11px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(pd.e,0,1);
       ctx.restore();
     }
 
     // Rockets
     for(const r of rockets){
-      const ry=r.worldY+scrollOff;if(ry<-20||ry>H+20)continue;
-      ctx.save();ctx.translate(r.x,ry);
-      ctx.rotate(r.vx>0?0:Math.PI);
-      // Body
-      ctx.fillStyle='#e05030';ctx.beginPath();ctx.roundRect(-14,-6,28,12,4);ctx.fill();
-      // Nose
-      ctx.fillStyle='#ff8040';ctx.beginPath();ctx.moveTo(14,-6);ctx.lineTo(14,6);ctx.lineTo(22,0);ctx.fill();
-      // Flame trail
-      const flame=ctx.createLinearGradient(-14,0,-28,0);
-      flame.addColorStop(0,'#ff8040');flame.addColorStop(.5,'#ffe060');flame.addColorStop(1,'transparent');
-      ctx.fillStyle=flame;
+      const rsy=worldToScreen(r.wy);
+      if(rsy<-20||rsy>H+20)continue;
+      const goRight=r.vx>0;
+      ctx.save();ctx.translate(r.x,rsy);if(!goRight)ctx.scale(-1,1);
       for(let f=0;f<3;f++){
-        const fy=-3+f*3,fh=3;
-        ctx.beginPath();ctx.moveTo(-14,fy);ctx.lineTo(-14,fy+fh);
-        ctx.lineTo(-22+Math.sin(r.t*.2+f)*3,fy+fh/2);ctx.fill();
+        const fl=ctx.createLinearGradient(-14,0,-28,0);
+        fl.addColorStop(0,'#ff8040');fl.addColorStop(1,'transparent');
+        ctx.fillStyle=fl;ctx.beginPath();
+        ctx.moveTo(-14,-3+f*3);ctx.lineTo(-14,-3+f*3+2.5);ctx.lineTo(-24,0);ctx.fill();
       }
-      // Warning
-      if(Math.abs(P.y-(ry))<80&&!r.warned){
-        ctx.fillStyle='rgba(255,80,40,.8)';ctx.font='bold 9px sans-serif';ctx.textAlign='center';
-        ctx.fillText('⚠',0,-16);
-      }
+      ctx.fillStyle='#d04020';ctx.beginPath();ctx.roundRect(-13,-7,26,14,4);ctx.fill();
+      ctx.fillStyle='#ff6030';ctx.beginPath();ctx.moveTo(13,-7);ctx.lineTo(13,7);ctx.lineTo(22,0);ctx.fill();
+      ctx.beginPath();ctx.arc(2,0,4,0,Math.PI*2);ctx.fillStyle='rgba(180,220,255,.7)';ctx.fill();
+      if(Math.abs(py-rsy)<100){ctx.font='bold 10px sans-serif';ctx.textAlign='center';ctx.fillStyle=`rgba(255,80,40,${.6+Math.sin(r.t*.3)*.4})`;ctx.fillText('⚠',0,-18);}
       ctx.restore();
     }
 
     // Enemies
     for(const e of enemies){
-      const ey=e.worldY+scrollOff;if(ey<-30||ey>H+30)continue;
-      ctx.save();ctx.translate(e.x,ey);
-      ctx.rotate(Math.sin(e.t*.05)*.5);
-      const rc=(18+Math.sin(e.t*.09)*16)*Math.PI/180;
-      const col=e.type==='dive'?'#a02060':e.type==='bounce'?'#8020a0':'#8a2040';
-      const col2=e.type==='dive'?'#e060a0':e.type==='bounce'?'#c060e0':'#d4607a';
-      ctx.save();ctx.rotate(-rc);ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(12,-10);ctx.strokeStyle=col;ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-4,7,5,0,Math.PI*2);ctx.strokeStyle=col2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=col2+'33';ctx.fill();ctx.restore();
-      ctx.save();ctx.rotate(rc);ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(12,10);ctx.strokeStyle=col;ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-4,-7,5,0,Math.PI*2);ctx.strokeStyle=col2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=col2+'33';ctx.fill();ctx.restore();
-      ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);ctx.fillStyle=col2;ctx.fill();
+      const esy=worldToScreen(e.wy);
+      if(esy<-30||esy>H+30)continue;
+      ctx.save();ctx.translate(e.x,esy);
+      const spinA=e.type==='spin'?e.t*.08:Math.sin(e.t*.05)*.35;
+      ctx.rotate(spinA);
+      const ang=(18+Math.sin(e.t*.1)*14)*Math.PI/180;
+      const ec=e.type==='dive'?'#b02060':e.type==='bounce'?'#8020b0':e.type==='spin'?'#207080':'#902040';
+      const ec2=e.type==='dive'?'#e060a0':e.type==='bounce'?'#c060e0':e.type==='spin'?'#40c0d0':'#e06080';
+      ctx.save();ctx.rotate(-ang);ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(13,-11);ctx.strokeStyle=ec;ctx.lineWidth=3;ctx.stroke();
+      ctx.beginPath();ctx.arc(-4,7,5,0,Math.PI*2);ctx.strokeStyle=ec2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=ec2+'33';ctx.fill();ctx.restore();
+      ctx.save();ctx.rotate(ang);ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(13,11);ctx.strokeStyle=ec;ctx.lineWidth=3;ctx.stroke();
+      ctx.beginPath();ctx.arc(-4,-7,5,0,Math.PI*2);ctx.strokeStyle=ec2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=ec2+'33';ctx.fill();ctx.restore();
+      ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);ctx.fillStyle=ec2;ctx.fill();
       ctx.restore();
     }
 
     // Player
-    ctx.save();ctx.translate(P.x,P.y);
-    const ps=P._tiny?.65:1;ctx.scale(ps*P.facing,ps);
-
-    // Shield glow
-    if(P.shield||P._invincible){
-      const sc=ctx.createRadialGradient(0,0,8,0,0,22);
-      sc.addColorStop(0,P._invincible?'rgba(255,180,60,.35)':'rgba(80,200,255,.3)');
-      sc.addColorStop(1,'transparent');
-      ctx.fillStyle=sc;ctx.beginPath();ctx.arc(0,0,22,0,Math.PI*2);ctx.fill();
+    ctx.save();
+    const ps=pTiny?.62:1;
+    ctx.translate(px,py);ctx.scale(ps*pfacing,ps);
+    if(pInv||pShield){
+      const ac=pInv?'rgba(255,180,60,.35)':'rgba(80,200,255,.3)';
+      const ar=ctx.createRadialGradient(0,0,6,0,0,24);ar.addColorStop(0,ac);ar.addColorStop(1,'transparent');
+      ctx.fillStyle=ar;ctx.beginPath();ctx.arc(0,0,24,0,Math.PI*2);ctx.fill();
     }
-
-    const op=Math.max(0,Math.min(32,P.vy>0?P.vy*2.2:6)),rp=op*Math.PI/180;
+    if(pMagnet){ctx.beginPath();ctx.arc(0,0,65*ps,0,Math.PI*2);ctx.strokeStyle='rgba(255,120,200,.15)';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);}
+    const rp=Math.min(30,Math.max(-30,pvy>0?pvy*2:6))*Math.PI/180;
     const pc=dark?'#e0d4f8':'#3d2566',pc2=dark?'#c4a8e8':'#7c5cbf';
-    ctx.save();ctx.rotate(-rp);ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(13,-11);ctx.strokeStyle=pc;ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-5,7,6,0,Math.PI*2);ctx.strokeStyle=pc2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=pc2+'40';ctx.fill();ctx.restore();
-    ctx.save();ctx.rotate(rp);ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(13,11);ctx.strokeStyle=pc;ctx.lineWidth=3;ctx.stroke();ctx.beginPath();ctx.arc(-5,-7,6,0,Math.PI*2);ctx.strokeStyle=pc2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=pc2+'40';ctx.fill();ctx.restore();
+    ctx.save();ctx.rotate(-rp);ctx.beginPath();ctx.moveTo(0,3);ctx.lineTo(13,-11);ctx.strokeStyle=pc;ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(-5,7,6,0,Math.PI*2);ctx.strokeStyle=pc2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=pc2+'40';ctx.fill();ctx.restore();
+    ctx.save();ctx.rotate(rp);ctx.beginPath();ctx.moveTo(0,-3);ctx.lineTo(13,11);ctx.strokeStyle=pc;ctx.lineWidth=3;ctx.stroke();
+    ctx.beginPath();ctx.arc(-5,-7,6,0,Math.PI*2);ctx.strokeStyle=pc2;ctx.lineWidth=2;ctx.stroke();ctx.fillStyle=pc2+'40';ctx.fill();ctx.restore();
     ctx.beginPath();ctx.arc(0,0,3.5,0,Math.PI*2);ctx.fillStyle=pc2;ctx.fill();
     ctx.restore();
 
     // Particles
-    for(const p of parts){ctx.save();ctx.globalAlpha=p.life;ctx.fillStyle=p.col;ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);ctx.fill();ctx.restore();}
-
-    // Powerup HUD
-    if(activePowerup){
-      const bar=W*(powerupTimer/360);
-      ctx.fillStyle=POWERUP_COLS[activePowerup]||'#ffe860';
-      ctx.globalAlpha=.7;ctx.fillRect(0,H-3,bar,3);ctx.globalAlpha=1;
-      ctx.font='10px sans-serif';ctx.textAlign='left';ctx.fillStyle=POWERUP_COLS[activePowerup];
-      ctx.fillText(POWERUP_EMOJI[activePowerup]+' actif',4,H-7);
+    for(const p of parts){
+      ctx.save();ctx.globalAlpha=Math.max(0,p.l);
+      ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);ctx.fill();ctx.restore();
     }
 
-    // Difficulty level indicator
-    if(diffLevel>0){
-      ctx.font='bold 9px sans-serif';ctx.textAlign='right';
-      ctx.fillStyle=diffLevel>=4?'#e06040':diffLevel>=2?'#e0a040':'#80a0c0';
-      ctx.fillText('LVL '+(diffLevel+1),W-4,14);
+    // HUD: PU bar
+    if(activePU){
+      const pd=PUD[activePU],pct=puTimer/pd.d;
+      ctx.fillStyle=pd.c+'44';ctx.fillRect(0,H-4,W,4);
+      ctx.fillStyle=pd.c;ctx.fillRect(0,H-4,W*pct,4);
+      ctx.font='10px Nunito,sans-serif';ctx.textAlign='left';ctx.fillStyle=pd.c;
+      ctx.fillText(pd.e+' '+pd.l.replace('!',''),4,H-8);
     }
 
-    // Flash message
-    if(flashAlpha>0){
-      ctx.save();ctx.globalAlpha=flashAlpha;
+    // HUD: level
+    if(diffLvl>0){
+      ctx.font='bold 9px Nunito,sans-serif';ctx.textAlign='right';
+      ctx.fillStyle=diffLvl>=5?'#e04020':diffLvl>=3?'#e09020':'#6090b0';
+      ctx.fillText('LVL '+(diffLvl+1),W-5,14);
+    }
+
+    // Flash messages
+    for(let i=0;i<flashQ.length;i++){
+      const f=flashQ[i];
+      ctx.save();ctx.globalAlpha=Math.min(1,f.n/20);
       ctx.font='bold 13px Nunito,sans-serif';ctx.textAlign='center';
-      ctx.fillStyle=dark?'#e0d4f8':'#3d2566';
-      ctx.fillText(flashMsg,W/2,H/2-30);
-      ctx.restore();
+      ctx.fillStyle=f.c;ctx.fillText(f.t,W/2,H/2-30-i*24);ctx.restore();
     }
   }
 
+  /* ── loop — never stops ── */
   function loop(){update();draw();requestAnimationFrame(loop);}
 
-  btn.addEventListener('click',e=>{e.stopPropagation();init();state='playing';ov.classList.add('hidden');P.vy=JV;});
+  /* ── controls ── */
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    init();playing=true;dead=false;
+    pvy=JUMP;
+    ov.classList.add('hidden');
+  });
   window.addEventListener('keydown',e=>{if(open)keys[e.key]=true;});
   window.addEventListener('keyup',e=>{keys[e.key]=false;});
-  let tx0=null;
   C.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{passive:true});
-  C.addEventListener('touchmove',e=>{if(tx0===null)return;const dx=e.touches[0].clientX-tx0;keys['ArrowLeft']=dx<-8;keys['ArrowRight']=dx>8;},{passive:true});
+  C.addEventListener('touchmove',e=>{
+    if(tx0===null)return;
+    const dx=e.touches[0].clientX-tx0;
+    keys['ArrowLeft']=dx<-8;keys['ArrowRight']=dx>8;
+  },{passive:true});
   C.addEventListener('touchend',()=>{keys['ArrowLeft']=keys['ArrowRight']=false;tx0=null;});
+
   loop();
+})();
+
+/* ══ SPLASH TABS ══ */
+(function(){
+  document.querySelectorAll('.splash-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.splash-tab').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.splash-tab-content').forEach(c=>c.classList.remove('active'));
+      btn.classList.add('active');
+      const tab=btn.dataset.tab;
+      const el=document.getElementById('tab-'+tab);
+      if(el) el.classList.add('active');
+    });
+  });
+  /* Click on "Modèle 3D" overlay button → open Khada in new tab */
+  document.querySelectorAll('.splash-3d-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const id=btn.dataset.id;
+      window.open('https://www.modelviewer.lol/en-US/model-viewer?id='+id,'_blank','noopener');
+    });
+  });
 })();
 
 /* ══ LB ══ */
@@ -1715,4 +1825,76 @@ window._lbRender=async function(){
 </script>
 
 
-</body></html>
+<div class="paper-sheet" data-x="1171.5043694345618" data-y="778.5038724221827" data-vx="1.2391141964258372" data-vy="1.0017548102942475" data-rot="-160.41174133738048" data-vrot="-0.18215210429864231" data-cut="0" style="left: 1171.5px; top: 778.504px; transform: rotate(-160.412deg);"><svg width="106.80039126979273" height="101.88392517576352" viewBox="0 0 106.80039126979273 101.88392517576352" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="104.80039126979273" height="99.88392517576352" rx="3" fill="#f0e8ff" stroke="#b8d0f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="98.80039126979273" y2="15" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="35.47098129394088" x2="98.80039126979273" y2="35.47098129394088" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="55.94196258788176" x2="98.80039126979273" y2="55.94196258788176" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="76.41294388182264" x2="98.80039126979273" y2="76.41294388182264" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="90.80039126979273" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8d0f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="1739.1270788972975" data-y="492.4737396350355" data-vx="-3.51256074747734" data-vy="0.8131729256179469" data-rot="33.14363911753596" data-vrot="0.041203071528144" data-cut="0" style="left: 1739.13px; top: 492.474px; transform: rotate(33.1436deg);"><svg width="68.3340332639647" height="105.78128037540549" viewBox="0 0 68.3340332639647 105.78128037540549" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="66.3340332639647" height="103.78128037540549" rx="3" fill="#eafff0" stroke="#f0e8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="60.3340332639647" y2="15" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="32.156256075081096" x2="60.3340332639647" y2="32.156256075081096" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="49.31251215016219" x2="60.3340332639647" y2="49.31251215016219" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="66.4687682252433" x2="60.3340332639647" y2="66.4687682252433" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="83.62502430032438" x2="60.3340332639647" y2="83.62502430032438" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="52.3340332639647" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0e8b8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="1047.085252811589" data-y="532.8578606364621" data-vx="6.106773395567473" data-vy="0.9428582471330225" data-rot="67.63809727453727" data-vrot="0.0903555753272392" data-cut="0" style="left: 1047.09px; top: 532.858px; transform: rotate(67.6381deg);"><svg width="63.85866419250811" height="117.9001250312121" viewBox="0 0 63.85866419250811 117.9001250312121" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="61.85866419250811" height="115.9001250312121" rx="3" fill="#e8f0ff" stroke="#b8d0f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="55.85866419250811" y2="15" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="39.475031257803025" x2="55.85866419250811" y2="39.475031257803025" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="63.95006251560605" x2="55.85866419250811" y2="63.95006251560605" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="88.42509377340907" x2="55.85866419250811" y2="88.42509377340907" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="47.85866419250811" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8d0f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="291.64088468461625" data-y="707.6970146941808" data-vx="1.7744956341492615" data-vy="1.2870866253172795" data-rot="244.1401673500347" data-vrot="0.3763316453512948" data-cut="0" style="left: 291.641px; top: 707.697px; transform: rotate(244.14deg);"><svg width="102.40320565672675" height="96.44143376550059" viewBox="0 0 102.40320565672675 96.44143376550059" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="100.40320565672675" height="94.44143376550059" rx="3" fill="#eafff0" stroke="#f0d8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="94.40320565672675" y2="15" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="40.480477921833526" x2="94.40320565672675" y2="40.480477921833526" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="65.96095584366705" x2="94.40320565672675" y2="65.96095584366705" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="86.40320565672675" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0d8b8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="955.1497263811177" data-y="601.320562215795" data-vx="5.356361520161664" data-vy="1.241021060502352" data-rot="16.881208312326457" data-vrot="0.04102280961713163" data-cut="0" style="left: 955.15px; top: 601.321px; transform: rotate(16.8812deg);"><svg width="103.10550608415198" height="94.14132519190056" viewBox="0 0 103.10550608415198 94.14132519190056" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="101.10550608415198" height="92.14132519190056" rx="3" fill="#fff8e8" stroke="#f0e8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="95.10550608415198" y2="15" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="29.828265038380113" x2="95.10550608415198" y2="29.828265038380113" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="44.65653007676023" x2="95.10550608415198" y2="44.65653007676023" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="59.48479511514034" x2="95.10550608415198" y2="59.48479511514034" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="74.31306015352045" x2="95.10550608415198" y2="74.31306015352045" stroke="#f0e8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="87.10550608415198" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0e8b8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="976.2856128665627" data-y="570.0992641869261" data-vx="4.65879205522152" data-vy="1.1841516651856545" data-rot="56.107051758023665" data-vrot="0.11899558732623552" data-cut="0" style="left: 976.286px; top: 570.099px; transform: rotate(56.1071deg);"><svg width="66.9315672753611" height="79.39767568516015" viewBox="0 0 66.9315672753611 79.39767568516015" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="64.9315672753611" height="77.39767568516015" rx="3" fill="#fff4e8" stroke="#f0b8d8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="58.931567275361104" y2="15" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="34.79922522838672" x2="58.931567275361104" y2="34.79922522838672" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="54.598450456773435" x2="58.931567275361104" y2="54.598450456773435" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="50.931567275361104" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0b8d8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="1607.248596786684" data-y="586.2025819080694" data-vx="0.6829223243578607" data-vy="1.249911035474808" data-rot="62.1453348267207" data-vrot="0.1406702280958438" data-cut="0" style="left: 1607.25px; top: 586.203px; transform: rotate(62.1453deg);"><svg width="105.67757598724376" height="88.45080616366813" viewBox="0 0 105.67757598724376 88.45080616366813" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="103.67757598724376" height="86.45080616366813" rx="3" fill="#eafff0" stroke="#b8d0f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="97.67757598724376" y2="15" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="32.11270154091703" x2="97.67757598724376" y2="32.11270154091703" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="49.22540308183407" x2="97.67757598724376" y2="49.22540308183407" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="66.3381046227511" x2="97.67757598724376" y2="66.3381046227511" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="89.67757598724376" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8d0f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="729.563468619247" data-y="525.2049870277043" data-vx="-0.6530552092846651" data-vy="1.333050632219607" data-rot="188.15063609118948" data-vrot="0.3886214220552785" data-cut="0" style="left: 729.563px; top: 525.205px; transform: rotate(188.151deg);"><svg width="73.01852038002579" height="78.15345830435459" viewBox="0 0 73.01852038002579 78.15345830435459" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="71.01852038002579" height="76.15345830435459" rx="3" fill="#fff8e8" stroke="#b8d0f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="65.01852038002579" y2="15" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="29.538364576088647" x2="65.01852038002579" y2="29.538364576088647" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="44.07672915217729" x2="65.01852038002579" y2="44.07672915217729" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="58.61509372826594" x2="65.01852038002579" y2="58.61509372826594" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="57.01852038002579" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8d0f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="1686.8643446082926" data-y="321.5577860785479" data-vx="-1.3490249838894683" data-vy="0.9676091230808405" data-rot="152.74431046858496" data-vrot="0.38556471848338064" data-cut="0" style="left: 1686.86px; top: 321.558px; transform: rotate(152.744deg);"><svg width="65.01649186569523" height="76.90289433442358" viewBox="0 0 65.01649186569523 76.90289433442358" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="63.01649186569523" height="74.90289433442358" rx="3" fill="#f0e8ff" stroke="#b8f0d0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="57.01649186569523" y2="15" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="29.225723583605895" x2="57.01649186569523" y2="29.225723583605895" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="43.45144716721179" x2="57.01649186569523" y2="43.45144716721179" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="57.67717075081768" x2="57.01649186569523" y2="57.67717075081768" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="49.01649186569523" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8f0d0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="418.67723877049207" data-y="682.0681956281425" data-vx="5.233375788083519" data-vy="1.8363089051280552" data-rot="-96.73683001572107" data-vrot="-0.24523504820998873" data-cut="0" style="left: 418.677px; top: 682.068px; transform: rotate(-96.7368deg);"><svg width="72.20223667713691" height="116.92923331611472" viewBox="0 0 72.20223667713691 116.92923331611472" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="70.20223667713691" height="114.92923331611472" rx="3" fill="#eafff0" stroke="#b8d0f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="64.20223667713691" y2="15" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="34.38584666322294" x2="64.20223667713691" y2="34.38584666322294" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="53.771693326445885" x2="64.20223667713691" y2="53.771693326445885" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="73.15753998966883" x2="64.20223667713691" y2="73.15753998966883" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="92.54338665289177" x2="64.20223667713691" y2="92.54338665289177" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="56.20223667713691" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8d0f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="403.09353975981236" data-y="341.2707620855096" data-vx="4.730589288605149" data-vy="1.0151102700855634" data-rot="67.71589842113286" data-vrot="0.13240193453525315" data-cut="0" style="left: 403.094px; top: 341.271px; transform: rotate(67.7159deg);"><svg width="63.15000870519939" height="112.15526000526802" viewBox="0 0 63.15000870519939 112.15526000526802" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="61.15000870519939" height="110.15526000526802" rx="3" fill="#fff8e8" stroke="#b8f0d0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="55.15000870519939" y2="15" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="45.718420001756" x2="55.15000870519939" y2="45.718420001756" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="76.436840003512" x2="55.15000870519939" y2="76.436840003512" stroke="#b8f0d0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="47.15000870519939" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8f0d0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="1658.0496497462761" data-y="287.6666648510755" data-vx="1.5868524088582154" data-vy="0.8859437707254874" data-rot="176.3857354626762" data-vrot="0.3949499689471136" data-cut="0" style="left: 1658.05px; top: 287.667px; transform: rotate(176.386deg);"><svg width="79.93250272073568" height="86.41921790702251" viewBox="0 0 79.93250272073568 86.41921790702251" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="77.93250272073568" height="84.41921790702251" rx="3" fill="#ffe8f4" stroke="#f0b8d8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="71.93250272073568" y2="15" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="28.283843581404504" x2="71.93250272073568" y2="28.283843581404504" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="41.56768716280901" x2="71.93250272073568" y2="41.56768716280901" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="54.851530744213505" x2="71.93250272073568" y2="54.851530744213505" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="68.13537432561802" x2="71.93250272073568" y2="68.13537432561802" stroke="#f0b8d8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="63.932502720735684" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0b8d8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="511.53334330609044" data-y="617.0795451875831" data-vx="2.281273609938563" data-vy="1.6797097474399583" data-rot="-35.8480478872674" data-vrot="-0.0773409773513813" data-cut="0" style="left: 511.533px; top: 617.08px; transform: rotate(-35.848deg);"><svg width="83.48565787127966" height="90.13434705385569" viewBox="0 0 83.48565787127966 90.13434705385569" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="81.48565787127966" height="88.13434705385569" rx="3" fill="#eafff0" stroke="#b8d0f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="75.48565787127966" y2="15" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="32.53358676346392" x2="75.48565787127966" y2="32.53358676346392" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="50.067173526927846" x2="75.48565787127966" y2="50.067173526927846" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="67.60076029039178" x2="75.48565787127966" y2="67.60076029039178" stroke="#b8d0f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="67.48565787127966" y="1" width="15" height="14" rx="0 3 0 0" fill="#b8d0f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="112.66233942935264" data-y="262.74097134914973" data-vx="0.23431341875181372" data-vy="0.8258818586726454" data-rot="-109.68852720253568" data-vrot="-0.2360638864308654" data-cut="0" style="left: 112.662px; top: 262.741px; transform: rotate(-109.689deg);"><svg width="86.16715631678458" height="81.05953962884885" viewBox="0 0 86.16715631678458 81.05953962884885" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="84.16715631678458" height="79.05953962884885" rx="3" fill="#fff4e8" stroke="#d4b8f0" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="78.16715631678458" y2="15" stroke="#d4b8f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="27.211907925769772" x2="78.16715631678458" y2="27.211907925769772" stroke="#d4b8f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="39.423815851539544" x2="78.16715631678458" y2="39.423815851539544" stroke="#d4b8f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="51.63572377730931" x2="78.16715631678458" y2="51.63572377730931" stroke="#d4b8f0" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="63.84763170307908" x2="78.16715631678458" y2="63.84763170307908" stroke="#d4b8f0" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="70.16715631678458" y="1" width="15" height="14" rx="0 3 0 0" fill="#d4b8f0" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="343.8397949583402" data-y="351.926437295575" data-vx="1.6974548488804078" data-vy="1.3497701165486746" data-rot="-111.87538440563377" data-vrot="-0.34252543612177705" data-cut="0" style="left: 343.84px; top: 351.926px; transform: rotate(-111.875deg);"><svg width="91.95846910680672" height="104.94820434680734" viewBox="0 0 91.95846910680672 104.94820434680734" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="89.95846910680672" height="102.94820434680734" rx="3" fill="#eafff0" stroke="#f0d8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="83.95846910680672" y2="15" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="43.31606811560245" x2="83.95846910680672" y2="43.31606811560245" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="71.6321362312049" x2="83.95846910680672" y2="71.6321362312049" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="75.95846910680672" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0d8b8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="55.36195217145347" data-y="342.99940288446874" data-vx="-2.174555433605554" data-vy="1.7624975120186153" data-rot="-21.40936697461297" data-vrot="-0.07136326900887484" data-cut="0" style="left: 55.362px; top: 342.999px; transform: rotate(-21.4094deg);"><svg width="73.07522296350713" height="80.57351255065963" viewBox="0 0 73.07522296350713 80.57351255065963" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="71.07522296350713" height="78.57351255065963" rx="3" fill="#ffe8f4" stroke="#f0d8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="65.07522296350713" y2="15" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="30.143378137664907" x2="65.07522296350713" y2="30.143378137664907" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="45.286756275329815" x2="65.07522296350713" y2="45.286756275329815" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="60.43013441299472" x2="65.07522296350713" y2="60.43013441299472" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="57.07522296350713" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0d8b8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="1155.7488153273111" data-y="25.52390556738034" data-vx="-1.365354383536344" data-vy="1.1469989735584825" data-rot="-27.17372607838447" data-vrot="-0.14003777173874515" data-cut="0" style="left: 1155.75px; top: 25.5239px; transform: rotate(-27.1737deg);"><svg width="79.32759452933298" height="93.47893415542094" viewBox="0 0 79.32759452933298 93.47893415542094" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="77.32759452933298" height="91.47893415542094" rx="3" fill="#ffe8f4" stroke="#f0d8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="71.32759452933298" y2="15" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="39.492978051806986" x2="71.32759452933298" y2="39.492978051806986" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="63.985956103613965" x2="71.32759452933298" y2="63.985956103613965" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="63.327594529332984" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0d8b8" opacity="0.4"></rect>
+    </svg></div><div class="paper-sheet" data-x="908.606" data-y="-80" data-vx="0.22330983027103524" data-vy="1.1686927441075872" data-rot="-3.3932797853125773" data-vrot="0.18847600395777322" data-cut="0" style="left: 908.606px; top: -80px;"><svg width="89.8124406608086" height="72.81781128125623" viewBox="0 0 89.8124406608086 72.81781128125623" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="87.8124406608086" height="70.81781128125623" rx="3" fill="#f0e8ff" stroke="#f0d8b8" stroke-width="1"></rect>
+      <line x1="8" y1="15" x2="81.8124406608086" y2="15" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="32.605937093752075" x2="81.8124406608086" y2="32.605937093752075" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line><line x1="8" y1="50.21187418750415" x2="81.8124406608086" y2="50.21187418750415" stroke="#f0d8b8" stroke-width="1.5" stroke-linecap="round"></line>
+      <rect x="73.8124406608086" y="1" width="15" height="14" rx="0 3 0 0" fill="#f0d8b8" opacity="0.4"></rect>
+    </svg></div></body></html>
